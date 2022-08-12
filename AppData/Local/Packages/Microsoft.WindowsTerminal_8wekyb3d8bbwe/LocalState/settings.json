@@ -5,7 +5,7 @@
     [
         {
             "command": "paste",
-            "keys": "ctrl+v"
+            "keys": "ctrl+p"
         },
         {
             "command": 
@@ -13,15 +13,47 @@
                 "action": "copy",
                 "singleLine": false
             },
-            "keys": "ctrl+c"
+            "keys": "ctrl+y"
         },
         {
             "command": "unbound",
             "keys": "ctrl+shift+down"
         },
         {
-            "command": "find",
+            "command": "unbound",
+            "keys": "ctrl+shift+pgup"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+insert"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "command": "unbound",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+v"
+        },
+        {
+            "command": "unbound",
+            "keys": "shift+insert"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+pgdn"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+/"
         },
         {
             "command": 
@@ -33,11 +65,26 @@
             "keys": "alt+shift+d"
         },
         {
+            "command": "scrollUpPage",
+            "keys": "ctrl+b"
+        },
+        {
             "command": 
             {
                 "action": "scrollDown"
             },
             "keys": "ctrl+j"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollUp"
+            },
+            "keys": "ctrl+k"
+        },
+        {
+            "command": "scrollDownPage",
+            "keys": "ctrl+f"
         }
     ],
     "copyFormatting": "none",
