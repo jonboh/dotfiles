@@ -32,3 +32,6 @@ vim.opt.hidden = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
+
+vim.g.mapleader = " "
+vim.opt.timeout = false
