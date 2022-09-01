@@ -14,11 +14,15 @@ return require( packer ).startup(function(use)
     -- Utilities
     use( mbbill/undotree ) 
 
+    -- treesitter
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
     use("nvim-treesitter/nvim-treesitter-context")
-
+    use {
+        "nvim-telescope/telescope.nvim", branch =  0.1.x ,
+            requires = { { nvim-lua/plenary.nvim } }
+    }
     -- ThePrimegean List
     --use("sbdchd/neoformat")
 --
