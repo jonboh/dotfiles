@@ -22,8 +22,7 @@ vim.opt.smartcase = true
 -- history
 vim.opt.swapfile = false
 vim.opt.backup = false
---vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
-vim.opt.undodir = "C:/Users/jonbo/nvim/undodir"
+vim.opt.undodir = os.getenv("XDG_DATA_HOME") .. "/nvim-data/undodir"
 vim.opt.undofile = true
 
 vim.opt.hidden = true

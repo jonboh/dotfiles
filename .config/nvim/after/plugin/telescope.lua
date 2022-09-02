@@ -2,31 +2,23 @@ local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
 
 --nnoremap("<C-p>", function()
---    require( telescope.builtin ).git_files()
+--    require( telescope_builtin.builtin ).git_files()
 --end)
+local telescope_builtin = require( telescope.builtin )
+nnoremap("<leader>f", telescope_builtin.find_files)
 
-nnoremap("<leader>pf", function()
-    require( telescope.builtin ).find_files()
-end)
+nnoremap("<leader>b", telescope_builtin.buffers)
 
-nnoremap("<leader>pb", function()
-    require( telescope.builtin ).buffers()
-end)
-
+nnoremap("<leader>k", telescope_builtin.keymaps)
 -- git
-nnoremap("<leader>gb", function()
-    require( telescope.builtin ).git_branches()
-end)
+nnoremap("<leader>gb", telescope_builtin.git_branches)
+nnoremap("<leader>gf", telescope_builtin.git_files)
 
 -- vim related
 -- easily access help with preview
-nnoremap("<leader>vh", function()
-    require( telescope.builtin ).help_tags()
-end)
-
+nnoremap("<leader>vh", telescope_builtin.help_tags)
 -- config files
 nnoremap("<leader>vrc", function()
-    local tel = require( jonbo.telescope )
-    tel.search_dotfiles({ hidden = true })
+    require( jonbo.telescope ).search_dotfiles({ hidden = true })
 end)
 

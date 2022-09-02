@@ -23,6 +23,12 @@ return require( packer ).startup(function(use)
         "nvim-telescope/telescope.nvim", branch =  0.1.x ,
             requires = { { nvim-lua/plenary.nvim } }
     }
+
+    -- LSP
+    use  neovim/nvim-lspconfig  -- Configurations for Nvim LSP
+ 
+    use("hrsh7th/nvim-cmp") -- completion engine
+    use("hrsh7th/cmp-nvim-lsp") -- source for builtin nvim lsp client
     -- ThePrimegean List
     --use("sbdchd/neoformat")
 --
