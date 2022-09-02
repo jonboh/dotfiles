@@ -14,8 +14,8 @@ nnoremap("<C-d>", "<C-d>zz") -- centered page moves
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-k>", "<cmd>cnext<CR>zz")
 nnoremap("<C-j>", "<cmd>cprev<CR>zz")
-nnoremap("<leader>k", "<cmd>lnext<CR>zz")
-nnoremap("<leader>j", "<cmd>lprev<CR>zz")
+--nnoremap("<leader>k", "<cmd>lnext<CR>zz") -- move across locations
+--nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
 
 -- undotree
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
@@ -41,3 +41,4 @@ vnoremap("<leader>d", "\"_d")
 
 -- easily replace the current word
 nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+-- TODO: add <leader>s for visual selection
