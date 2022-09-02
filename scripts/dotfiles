@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git --git-dir=/home/jon/dotfiles --work-tree=/home/jon $*
