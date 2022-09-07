@@ -18,17 +18,25 @@ return require( packer ).startup(function(use)
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
-    use("nvim-treesitter/nvim-treesitter-context")
+    use("nvim-treesitter/nvim-treesitter-context") -- for the sticky context lines
+    
+    -- telescope
     use {
         "nvim-telescope/telescope.nvim", branch =  0.1.x ,
             requires = { { nvim-lua/plenary.nvim } }
     }
 
     -- LSP
-    use  neovim/nvim-lspconfig  -- Configurations for Nvim LSP
- 
+    use( neovim/nvim-lspconfig ) -- Configurations for Nvim LSP
     use("hrsh7th/nvim-cmp") -- completion engine
     use("hrsh7th/cmp-nvim-lsp") -- source for builtin nvim lsp client
+
+    -- Debugger
+    use("mfussenegger/nvim-dap")
+    use("rcarriga/nvim-dap-ui")
+    use("theHamsta/nvim-dap-virtual-text")
+    use("mfussenegger/nvim-dap-python") -- configs for debugpy
+
     -- ThePrimegean List
     --use("sbdchd/neoformat")
 --

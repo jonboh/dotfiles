@@ -7,7 +7,6 @@ local nnoremap = Remap.nnoremap
 local telescope_builtin = require( telescope.builtin )
 nnoremap("<leader>f", telescope_builtin.find_files)
 
-nnoremap("<leader>b", telescope_builtin.buffers)
 
 nnoremap("<leader>k", telescope_builtin.keymaps)
 -- git
@@ -15,10 +14,9 @@ nnoremap("<leader>gb", telescope_builtin.git_branches)
 nnoremap("<leader>gf", telescope_builtin.git_files)
 
 -- vim related
--- easily access help with preview
-nnoremap("<leader>vh", telescope_builtin.help_tags)
--- config files
+nnoremap("<leader>vb", telescope_builtin.buffers) --view open buffers
+nnoremap("<leader>vh", telescope_builtin.help_tags) -- easily access help with preview
 nnoremap("<leader>vrc", function()
-    require( jonbo.telescope ).search_dotfiles({ hidden = true })
+    require( jonbo.telescope ).search_dotfiles({ hidden = true }) -- config files
 end)
 
