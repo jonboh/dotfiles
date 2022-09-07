@@ -31,15 +31,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts)
   vim.keymap.set( n ,  <leader>ca , vim.lsp.buf.code_action, bufopts)
 end
-
-local function config(_config)
-	return vim.tbl_deep_extend("force", {
-	}, _config or {})
-end
 --[[
 function()
-			nnoremap("gd", function() vim.lsp.buf.definition() end)
-			nnoremap("K", function() vim.lsp.buf.hover() end)
 --			nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
 --			nnoremap("<leader>vca", function() vim.lsp.buf.code_action() end)
 --			nnoremap("<leader>vco", function() vim.lsp.buf.code_action({
@@ -57,9 +50,18 @@ function()
 			inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
 		end
 --]]
--- Advertise capabilities to `clangd`.
+
+
+-- LSP Configuration
+-- C++ 
 require lspconfig .clangd.setup {
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()), -- advertise capabilities
 		on_attach = on_attach,
 }
 
+require lspconfig .pylsp.setup{
+		on_attach = on_attach,
+    --config param available at 
+    --https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
+    --https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
+}
