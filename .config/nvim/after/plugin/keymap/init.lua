@@ -17,6 +17,8 @@ nnoremap("<C-j>", "<cmd>cprev<CR>zz")
 --nnoremap("<leader>k", "<cmd>lnext<CR>zz") -- move across locations
 --nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
 
+nnoremap("<C-c>", "Esc") -- in some places (block insert) <C-c> is not the same as Esc
+
 -- undotree
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
 
