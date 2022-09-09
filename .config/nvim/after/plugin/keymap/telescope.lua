@@ -5,7 +5,15 @@ local telescope_builtin = require( telescope.builtin )
 
 -- files
 nnoremap("<leader>tf", telescope_builtin.find_files) -- TODO: dont show hidden files
--- TODO: grep does not work
+nnoremap("<leader>tg", function()
+    telescope_builtin.live_grep(
+--    { search = vim.fn.input("Grep For > ")}
+)
+end)
+
+nnoremap("<leader>tw", function()
+    telescope_builtin.grep_string { search = vim.fn.expand("<cword>") }
+end)
 
 -- git
 nnoremap("<leader>gb", telescope_builtin.git_branches)
