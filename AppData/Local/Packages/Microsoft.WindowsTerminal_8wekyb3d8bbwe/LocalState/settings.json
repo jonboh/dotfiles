@@ -4,16 +4,20 @@
     "actions": 
     [
         {
-            "command": "paste",
-            "keys": "ctrl+p"
-        },
-        {
             "command": 
             {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+y"
+        },
+        {
+            "command": "paste",
+            "keys": "alt+p"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+/"
         },
         {
             "command": "unbound",
@@ -52,8 +56,8 @@
             "keys": "ctrl+shift+pgdn"
         },
         {
-            "command": "find",
-            "keys": "ctrl+/"
+            "command": "unbound",
+            "keys": "ctrl+p"
         },
         {
             "command": 
@@ -65,15 +69,15 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": "scrollUpPage",
-            "keys": "ctrl+b"
-        },
-        {
             "command": 
             {
                 "action": "scrollDown"
             },
             "keys": "ctrl+j"
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": "ctrl+b"
         },
         {
             "command": 

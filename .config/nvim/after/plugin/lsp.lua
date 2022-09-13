@@ -1,11 +1,11 @@
-
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 
 require cmp .setup {
   sources = {
-    { name =  nvim_lsp  }
+    { name =  nvim_lsp  },
+    { name =  buffer  }
   }
 }
 nnoremap( [d , vim.diagnostic.goto_prev)
@@ -52,6 +52,7 @@ function()
 --]]
 
 
+
 -- LSP Configuration
 -- C++ 
 require lspconfig .clangd.setup {
@@ -59,6 +60,7 @@ require lspconfig .clangd.setup {
 		on_attach = on_attach,
 }
 
+-- Python
 require lspconfig .pylsp.setup{
 		on_attach = on_attach,
     --config param available at 

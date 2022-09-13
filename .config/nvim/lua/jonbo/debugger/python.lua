@@ -1,4 +1,4 @@
-require( dap-python ).setup(os.getenv( XDG_CONFIG_HOME ) ..  ../.virtualenvs/debugpy/bin/python ) -- assuming HOME is the parent to XDG_CONFIG_HOME
+require( dap-python ).setup( python )
 table.insert(require( dap ).configurations.python, {
   type =  python ,
   request =  launch ,
