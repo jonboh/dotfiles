@@ -1,6 +1,38 @@
 require("jonbo.debugger.python")
 require("jonbo.debugger.cpp")
 
+local Remap = require("jonbo.keymap")
+local nnoremap = Remap.nnoremap
+local vnoremap = Remap.vnoremap
+
+-- DAP Configuration
+local dap = require( dap )
+nnoremap("<leader>q", function()
+    dap.close()
+end)
+
+nnoremap("<Up>", function()
+    dap.continue()
+end)
+nnoremap("<Down>", function()
+    dap.step_over()
+end)
+nnoremap("<Right>", function()
+    dap.step_into()
+end)
+nnoremap("<Left>", function()
+    dap.step_out()
+end)
+nnoremap("<Leader>b", function()
+    dap.toggle_breakpoint()
+end)
+nnoremap("<Leader>B", function()
+    dap.set_breakpoint(vim.fn.input( Breakpoint condition:  ))
+end)
+nnoremap("<leader>rc", function()
+    dap.run_to_cursor()
+end)
+
 -- DAP UI Config
 local dapui = require("dapui")
 dapui.setup({
@@ -60,8 +92,14 @@ dapui.setup({
   }
 })
 
-local dap = require( dap )
+nnoremap("<Home>", function()
+    dapui.toggle(1)
+end)
+nnoremap("<End>", function()
+    dapui.toggle(2)
+end)
 
+-- Open/Close dapui with debugger session
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end
@@ -73,3 +111,7 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
+
+-- Visual evaluation 
+vnoremap("<C-x>", "<Cmd>lua require(\"dapui\").eval()<CR>")
+
