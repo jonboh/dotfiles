@@ -4,6 +4,9 @@ local vnoremap = Remap.vnoremap -- noremap for visual and select mode
 local xnoremap = Remap.xnoremap -- noremap for visual
 local nmap = Remap.nmap
 
+-- <A-[]> Alt+[]
+-- <C-[]> Ctrl+[]
+
 nnoremap("<Space>", "<nop>") 
 
 -- navigation
@@ -12,10 +15,21 @@ nnoremap("n", "nzzzv") -- next result, center cursor, open folds to selection
 nnoremap("N", "Nzzzv")
 nnoremap("<C-d>", "<C-d>zz") -- centered page moves
 nnoremap("<C-u>", "<C-u>zz")
-nnoremap("<C-k>", "<cmd>cnext<CR>zz")
-nnoremap("<C-j>", "<cmd>cprev<CR>zz")
+--nnoremap("<C-k>", "<cmd>cnext<CR>zz")
+--nnoremap("<C-j>", "<cmd>cprev<CR>zz")
 --nnoremap("<leader>k", "<cmd>lnext<CR>zz") -- move across locations
 --nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
+
+-- windows
+nnoremap("<A-j>", "<C-W><C-j>")
+nnoremap("<A-k>", "<C-W><C-k>")
+nnoremap("<A-l>", "<C-W><C-l>")
+nnoremap("<A-h>", "<C-W><C-h>")
+nnoremap("<A-,>", "<C-W>5<") -- size horizontally
+nnoremap("<A-.>", "<C-W>5>") -- size horizontally
+nnoremap("<A-t>", "<C-W>+") -- size vertically
+nnoremap("<A-s>", "<C-W>-") -- size vertically
+
 
 nnoremap("<C-c>", "Esc") -- in some places (block insert) <C-c> is not the same as Esc
 
