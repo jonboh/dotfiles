@@ -14,6 +14,9 @@ return require( packer ).startup(function(use)
     -- Utilities
     use( mbbill/undotree ) 
 
+    use {  nvim-lualine/lualine.nvim ,
+          requires = {  kyazdani42/nvim-web-devicons , opt = true }
+        }
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
