@@ -2,6 +2,7 @@ local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
 
 local telescope_builtin = require( telescope.builtin )
+--require("telescope").load_extension("git_worktree") -- not yet working
 
 -- files
 nnoremap("<leader>tf", telescope_builtin.find_files) -- TODO: dont show hidden files
@@ -18,6 +19,11 @@ end)
 -- git
 nnoremap("<leader>gb", telescope_builtin.git_branches)
 nnoremap("<leader>gf", telescope_builtin.git_files)
+--not yet working
+--nnoremap("<leader>gw", require( telescope ).extensions.git_worktree.git_worktrees)
+-- <Enter> - switches to that worktree
+-- <c-d> - deletes that worktree
+-- <c-f> - toggles forcing of the next deletion
 
 -- vim related
 nnoremap("<leader>vk", telescope_builtin.keymaps)
