@@ -31,6 +31,8 @@ vim.opt.hidden = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
+vim.opt.fileformat = "unix"
+vim.opt.ff = "unix"
 
 vim.g.mapleader = " "
 vim.opt.timeout = false
