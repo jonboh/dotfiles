@@ -20,7 +20,7 @@ end)
 nnoremap("<leader>gb", telescope_builtin.git_branches)
 nnoremap("<leader>gf", telescope_builtin.git_files)
 --not yet working
---nnoremap("<leader>gw", require( telescope ).extensions.git_worktree.git_worktrees)
+nnoremap("<leader>gw", require( telescope ).extensions.git_worktree.git_worktrees)
 -- <Enter> - switches to that worktree
 -- <c-d> - deletes that worktree
 -- <c-f> - toggles forcing of the next deletion
