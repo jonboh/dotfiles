@@ -27,7 +27,15 @@ return require( packer ).startup(function(use)
         "nvim-telescope/telescope.nvim", branch =  0.1.x ,
             requires = { { nvim-lua/plenary.nvim } }
     }
+
+    -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
+    use {  TimUntersberger/neogit , requires =  nvim-lua/plenary.nvim  }
+    use {  sindrets/diffview.nvim , requires =  nvim-lua/plenary.nvim  }
+    use { 
+         lewis6991/gitsigns.nvim ,
+        tag =  release  -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+    }
 
     -- LSP
     use( neovim/nvim-lspconfig ) -- Configurations for Nvim LSP
