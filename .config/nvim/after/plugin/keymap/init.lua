@@ -26,6 +26,8 @@ nnoremap("<A-j>", "<C-W><C-j>")
 nnoremap("<A-k>", "<C-W><C-k>")
 nnoremap("<A-l>", "<C-W><C-l>")
 nnoremap("<A-h>", "<C-W><C-h>")
+nnoremap("<A-v>", "<C-W><C-v>")
+nnoremap("<A-s>", "<C-W><C-s>")
 nnoremap("<A-,>", "<C-W>5<") -- size horizontally
 nnoremap("<A-.>", "<C-W>5>") -- size horizontally
 nnoremap("<A-t>", "<C-W>+") -- size vertically
