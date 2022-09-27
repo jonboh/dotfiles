@@ -2,6 +2,7 @@ local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap -- noremap for normal mode
 local vnoremap = Remap.vnoremap -- noremap for visual and select mode
 local xnoremap = Remap.xnoremap -- noremap for visual
+local tnoremap = Remap.tnoremap -- noremap for terminal mode
 local nmap = Remap.nmap
 
 -- <A-[]> Alt+[]
@@ -32,6 +33,12 @@ nnoremap("<A-s>", "<C-W>-") -- size vertically
 
 
 nnoremap("<C-c>", "Esc") -- in some places (block insert) <C-c> is not the same as Esc
+
+-- Terminal mode
+nnoremap("<leader>te", ":terminal<CR>")
+tnoremap("<Esc>", "<C-\\><C-n>") -- Esc to exit terminal mode. C-c will still stop work
+tnoremap("<C-c>", "<C-c><C-\\><C-n>") -- C-c will still stop work, and exit from terminal mode
+-- TODO: add kill all terminals
 
 -- undotree
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
