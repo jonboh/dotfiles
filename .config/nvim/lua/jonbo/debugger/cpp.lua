@@ -1,11 +1,18 @@
 local dap = require( dap )
+
 dap.adapters.codelldb = {
   type =  server ,
-  host =  127.0.0.1 ,
-  port = 13000 -- 💀 Use the port printed out or specified with `--port`
+  port = "${port}",
+  executable = {
+    -- CHANGE THIS to your path!
+    command =  codelldb ,
+    args = {"--port", "${port}"},
+
+    -- On windows you may have to uncomment this:
+    -- detached = false,
+  }
 }
 
-local dap = require( dap )
 dap.configurations.cpp = {
   {
     name = "Launch file",
