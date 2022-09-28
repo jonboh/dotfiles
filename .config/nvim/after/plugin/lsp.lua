@@ -98,3 +98,6 @@ require lspconfig .pylsp.setup{
     --https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
     --https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
 }
+
+-- CMake
+require lspconfig .cmake.setup{}
