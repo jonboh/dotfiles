@@ -35,4 +35,4 @@ vim.opt.fileformat = "unix"
 vim.opt.ff = "unix"
 
 vim.g.mapleader = " "
-vim.opt.timeout = false
+vim.opt.timeout = true
