@@ -10,23 +10,18 @@ return require( packer ).startup(function(use)
     -- Color Scheemes
     use( folke/tokyonight.nvim )
 
-    -- Utilities
-    use( mbbill/undotree ) 
-
-    use {  nvim-lualine/lualine.nvim ,
-          requires = {  kyazdani42/nvim-web-devicons , opt = true }
-        }
-    -- treesitter
-    use("nvim-treesitter/nvim-treesitter", {
-        run = ":TSUpdate"
-    })
-    use("nvim-treesitter/nvim-treesitter-context") -- for the sticky context lines
-    
-    -- telescope
+    -- navigation
     use {
         "nvim-telescope/telescope.nvim", branch =  0.1.x ,
             requires = { { nvim-lua/plenary.nvim } }
     }
+    use{"ThePrimeagen/harpoon", requires =  nvim-lua/plenary.nvim  }
+
+    -- Utilities
+    use {  nvim-lualine/lualine.nvim ,
+          requires = {  kyazdani42/nvim-web-devicons , opt = true }
+        }
+    use( mbbill/undotree ) 
 
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
@@ -37,6 +32,12 @@ return require( packer ).startup(function(use)
         tag =  release  -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
 
+    -- treesitter
+    use("nvim-treesitter/nvim-treesitter", {
+        run = ":TSUpdate"
+    })
+    use("nvim-treesitter/nvim-treesitter-context") -- for the sticky context lines
+ 
     -- LSP
     use( neovim/nvim-lspconfig ) -- Configurations for Nvim LSP
     use("hrsh7th/nvim-cmp") -- completion engine
