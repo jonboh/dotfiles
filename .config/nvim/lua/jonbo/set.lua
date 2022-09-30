@@ -34,5 +34,17 @@ vim.opt.termguicolors = true
 vim.opt.fileformat = "unix"
 vim.opt.ff = "unix"
 
+-- folding
+vim.opt.foldmethod =  expr 
+vim.opt.foldexpr =  nvim_treesitter#foldexpr() 
+vim.opt.foldminlines = 3
+
 vim.g.mapleader = " "
 vim.opt.timeout = true
+
+-- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+-- delays and poor user experience.
+vim.opt.updatetime = 50
+
+-- Don t pass messages to |ins-completion-menu|.
+vim.opt.shortmess:append("c")
