@@ -22,6 +22,8 @@ return require( packer ).startup(function(use)
           requires = {  kyazdani42/nvim-web-devicons , opt = true }
         }
     use( mbbill/undotree ) 
+    use{ terrortylor/nvim-comment }
+    use{ anuvyklack/pretty-fold.nvim }
 
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
