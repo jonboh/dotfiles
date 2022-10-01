@@ -52,6 +52,8 @@ return require( packer ).startup(function(use)
     use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
 
+    -- TODO: add formatters
+
     -- ThePrimegean List
     --use("sbdchd/neoformat")
     ---- TJ created lodash of neovim
