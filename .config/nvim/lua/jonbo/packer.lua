@@ -64,6 +64,10 @@ return require( packer ).startup(function(use)
     use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
 
+
+    -- Games
+    use  ThePrimeagen/vim-be-good 
+
     -- TODO: add formatters
 
     -- ThePrimegean List
