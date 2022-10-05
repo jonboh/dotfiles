@@ -11,7 +11,7 @@ local nmap = Remap.nmap
 nnoremap("<Space>", "<nop>") 
 
 -- navigation
-nnoremap("<leader>pv", ":Ex<CR>")
+nnoremap("<leader>x", ":Ex<CR>")
 nnoremap("n", "nzzzv") -- next result, center cursor, open folds to selection
 nnoremap("N", "Nzzzv")
 nnoremap("<C-d>", "<C-d>zz") -- centered page moves
