@@ -9,6 +9,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
+vim.opt.mouse =   
 
 -- navigation
 vim.opt.scrolloff = 16
@@ -38,6 +39,7 @@ vim.opt.ff = "unix"
 vim.opt.foldmethod =  expr 
 vim.opt.foldexpr =  nvim_treesitter#foldexpr() 
 vim.opt.foldminlines = 3
+vim.opt.foldenable = false
 
 vim.g.mapleader = " "
 vim.opt.timeout = true
