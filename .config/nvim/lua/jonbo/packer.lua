@@ -36,6 +36,7 @@ return require( packer ).startup(function(use)
     --         "rcarriga/nvim-notify",
     --     }
     -- })
+    use{ MTDL9/vim-log-highlighting }
 
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
