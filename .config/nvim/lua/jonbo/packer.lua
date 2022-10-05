@@ -24,6 +24,18 @@ return require( packer ).startup(function(use)
     use( mbbill/undotree ) 
     use{ terrortylor/nvim-comment }
     use{ anuvyklack/pretty-fold.nvim }
+    -- use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
+    --     "folke/noice.nvim",
+    --     event = "VimEnter",
+    --     config = function()
+    --         require("noice").setup()
+    --     end,
+    --     requires = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "MunifTanjim/nui.nvim",
+    --         "rcarriga/nvim-notify",
+    --     }
+    -- })
 
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
