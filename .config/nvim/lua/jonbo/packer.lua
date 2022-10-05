@@ -38,8 +38,9 @@ return require( packer ).startup(function(use)
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
+    use( nvim-treesitter/nvim-treesitter-refactor ) -- for symbol under cursor highlighting
     use("nvim-treesitter/nvim-treesitter-context") -- for the sticky context lines
- 
+
     -- LSP
     use( neovim/nvim-lspconfig ) -- Configurations for Nvim LSP
     use("hrsh7th/nvim-cmp") -- completion engine
