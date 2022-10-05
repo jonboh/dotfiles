@@ -70,6 +70,9 @@ return require( packer ).startup(function(use)
     -- Games
     use  ThePrimeagen/vim-be-good 
 
+    -- TODO: check TODO-comments by folke
+    -- TODO: check indent-blankline by lukas-reineke
+    -- TODO: check more plugins from rcarriga dotfiles
     -- TODO: add formatters
 
     -- ThePrimegean List
