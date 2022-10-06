@@ -14,10 +14,12 @@ end
 nnoremap("<leader>tf", telescope_builtin.find_files) -- TODO: dont show hidden files
 nnoremap("<leader>tg", live_grep)
 nnoremap("<leader>tw", grep_word)
+nnoremap("<leader>tt", telescope_builtin.resume)
 
 -- git
 nnoremap("<leader>gb", telescope_builtin.git_branches)
 nnoremap("<leader>gf", telescope_builtin.git_files)
+
 --not yet working
 nnoremap("<leader>gw", require( telescope ).extensions.git_worktree.git_worktrees)
 -- <Enter> - switches to that worktree
