@@ -8,6 +8,7 @@ local nmap = Remap.nmap
 -- <A-[]> Alt+[]
 -- <C-[]> Ctrl+[]
 
+-- TODO: add silence
 nnoremap("<Space>", "<nop>") 
 nnoremap("<C-z>", "<nop>")
 vnoremap("<C-z>", "<nop>")
@@ -44,7 +45,6 @@ nnoremap("<C-c>", "Esc") -- in some places (block insert) <C-c> is not the same 
 nnoremap("<leader>te", ":terminal<CR>")
 tnoremap("<Esc>", "<C-\\><C-n>") -- Esc to exit terminal mode. C-c will still stop work
 tnoremap("<C-c>", "<C-c><C-\\><C-n>") -- C-c will still stop work, and exit from terminal mode
--- TODO: add kill all terminals
 
 -- undotree
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
