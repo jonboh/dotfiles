@@ -9,6 +9,10 @@ local nmap = Remap.nmap
 -- <C-[]> Ctrl+[]
 
 nnoremap("<Space>", "<nop>") 
+nnoremap("<C-z>", "<nop>")
+vnoremap("<C-z>", "<nop>")
+xnoremap("<C-z>", "<nop>")
+tnoremap("<C-z>", "<nop>")
 
 -- navigation
 nnoremap("<leader>x", ":Ex<CR>")
