@@ -73,7 +73,19 @@ return require( packer ).startup(function(use)
     -- TODO: check TODO-comments by folke
     -- TODO: check indent-blankline by lukas-reineke
     -- TODO: check more plugins from rcarriga dotfiles
+    -- TODO: check neovim-tasks, quick cmake running
+    -- TODO: check quick fix integration with cmake report
     -- TODO: add formatters
+    -- TODO: properly configure worktrees
+    -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
+            -- stage/unstage hunks
+            -- resolve merge conflicts
+            -- navigating log --graph
+            -- navigate history
+            -- blame
+    -- TODO: check hop.nvim and lightspeed.nvim
+    -- TODO: get a way to mass replace accross files
+    -- TODO: try neoscroll
 
     -- ThePrimegean List
     --use("sbdchd/neoformat")
