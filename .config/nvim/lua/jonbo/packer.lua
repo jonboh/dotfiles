@@ -70,9 +70,9 @@ return require( packer ).startup(function(use)
     -- Games
     use  ThePrimeagen/vim-be-good 
 
+    -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
     -- TODO: check TODO-comments by folke
     -- TODO: check indent-blankline by lukas-reineke
-    -- TODO: check more plugins from rcarriga dotfiles
     -- TODO: check neovim-tasks, quick cmake running
     -- TODO: check quick fix integration with cmake report
     -- TODO: add formatters
