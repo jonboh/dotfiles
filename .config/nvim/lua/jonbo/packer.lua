@@ -88,8 +88,6 @@ return require( packer ).startup(function(use)
     -- TODO: get a way to mass replace accross files
 
     -- ThePrimegean List
-    --use("sbdchd/neoformat")
-    ---- TJ created lodash of neovim
     --use("nvim-lua/popup.nvim")
     ---- All the things
     --use("onsails/lspkind-nvim")
