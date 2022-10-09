@@ -69,5 +69,6 @@ nnoremap("<leader>d", "\"_d")
 vnoremap("<leader>d", "\"_d")
 
 -- easily replace the current word
-nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") --<> on the selection limits the replacement to whole words
+vnoremap("<leader>s", "\"0y:%s/<C-r>0/<C-r>0/gI<Left><Left><Left>") -- this uses register 0
 -- TODO: add <leader>s for visual selection
