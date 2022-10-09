@@ -68,8 +68,17 @@ require lspconfig .clangd.setup {
 
 -- Python
 require lspconfig .pylsp.setup{
-		on_attach = on_attach,
-    --config param available at 
+    on_attach = on_attach,
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    --ignore = {  },
+                    maxLineLength = 100
+                }
+            }
+        }
+    }   --config param available at 
     --https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
     --https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
 }
