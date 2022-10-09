@@ -16,7 +16,9 @@ return require( packer ).startup(function(use)
             requires = { { nvim-lua/plenary.nvim } }
     }
     use{"ThePrimeagen/harpoon", requires =  nvim-lua/plenary.nvim  }
+    use{ ggandor/leap.nvim , requires= tpope/vim-repeat }
     use{ karb94/neoscroll.nvim }
+
 
     -- Utilities
     use {  nvim-lualine/lualine.nvim ,
@@ -72,7 +74,6 @@ return require( packer ).startup(function(use)
     use  ThePrimeagen/vim-be-good 
 
     -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
-    -- TODO: check TODO-comments by folke
     -- TODO: check indent-blankline by lukas-reineke
     -- TODO: check neovim-tasks, quick cmake running
     -- TODO: check quick fix integration with cmake report
@@ -84,9 +85,7 @@ return require( packer ).startup(function(use)
             -- navigating log --graph
             -- navigate history
             -- blame
-    -- TODO: check hop.nvim and lightspeed.nvim
     -- TODO: get a way to mass replace accross files
-    -- TODO: try neoscroll
 
     -- ThePrimegean List
     --use("sbdchd/neoformat")
