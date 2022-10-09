@@ -40,6 +40,8 @@ return require( packer ).startup(function(use)
     --     }
     -- })
     use{ MTDL9/vim-log-highlighting }
+    use "lukas-reineke/indent-blankline.nvim"
+    use {  mhartington/formatter.nvim  }
 
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
@@ -68,16 +70,14 @@ return require( packer ).startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
-
+    use  lewis6991/impatient.nvim 
 
     -- Games
     use  ThePrimeagen/vim-be-good 
 
     -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
-    -- TODO: check indent-blankline by lukas-reineke
     -- TODO: check neovim-tasks, quick cmake running
     -- TODO: check quick fix integration with cmake report
-    -- TODO: add formatters
     -- TODO: properly configure worktrees
     -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
             -- stage/unstage hunks
