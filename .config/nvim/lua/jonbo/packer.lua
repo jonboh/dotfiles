@@ -16,6 +16,7 @@ return require( packer ).startup(function(use)
             requires = { { nvim-lua/plenary.nvim } }
     }
     use{"ThePrimeagen/harpoon", requires =  nvim-lua/plenary.nvim  }
+    use{ karb94/neoscroll.nvim }
 
     -- Utilities
     use {  nvim-lualine/lualine.nvim ,
