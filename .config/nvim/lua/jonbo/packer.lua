@@ -42,7 +42,17 @@ return require( packer ).startup(function(use)
     use{ MTDL9/vim-log-highlighting }
     use "lukas-reineke/indent-blankline.nvim"
     use {  mhartington/formatter.nvim  }
-
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
     use {  TimUntersberger/neogit , requires =  nvim-lua/plenary.nvim  }
