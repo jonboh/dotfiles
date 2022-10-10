@@ -16,6 +16,9 @@ return require( packer ).startup(function(use)
             requires = { { nvim-lua/plenary.nvim } }
     }
     use{"ThePrimeagen/harpoon", requires =  nvim-lua/plenary.nvim  }
+    use{ ggandor/leap.nvim , requires= tpope/vim-repeat }
+    use{ karb94/neoscroll.nvim }
+
 
     -- Utilities
     use {  nvim-lualine/lualine.nvim ,
@@ -37,6 +40,8 @@ return require( packer ).startup(function(use)
     --     }
     -- })
     use{ MTDL9/vim-log-highlighting }
+    use "lukas-reineke/indent-blankline.nvim"
+    use {  mhartington/formatter.nvim  }
 
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
@@ -65,19 +70,24 @@ return require( packer ).startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
-
+    use  lewis6991/impatient.nvim 
 
     -- Games
     use  ThePrimeagen/vim-be-good 
 
-    -- TODO: check TODO-comments by folke
-    -- TODO: check indent-blankline by lukas-reineke
-    -- TODO: check more plugins from rcarriga dotfiles
-    -- TODO: add formatters
+    -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
+    -- TODO: check neovim-tasks, quick cmake running
+    -- TODO: check quick fix integration with cmake report
+    -- TODO: properly configure worktrees
+    -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
+            -- stage/unstage hunks
+            -- resolve merge conflicts
+            -- navigating log --graph
+            -- navigate history
+            -- blame
+    -- TODO: get a way to mass replace accross files
 
     -- ThePrimegean List
-    --use("sbdchd/neoformat")
-    ---- TJ created lodash of neovim
     --use("nvim-lua/popup.nvim")
     ---- All the things
     --use("onsails/lspkind-nvim")

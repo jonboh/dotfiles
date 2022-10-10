@@ -50,7 +50,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set( i ,  <C-h> , vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set( i ,  <C-t> , vim.lsp.buf.hover, bufopts)
   vim.keymap.set( n ,  <leader>rn , vim.lsp.buf.rename, bufopts)
-  vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts)
+--  vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts) -- disabled in favor of formatter.nvim
   vim.keymap.set( n ,  <leader>ca , vim.lsp.buf.code_action, bufopts)
   vim.keymap.set( n , "<leader>vd", vim.diagnostic.open_float)
   vim.keymap.set( n , "[d", vim.diagnostic.goto_next)
@@ -68,8 +68,17 @@ require lspconfig .clangd.setup {
 
 -- Python
 require lspconfig .pylsp.setup{
-		on_attach = on_attach,
-    --config param available at 
+    on_attach = on_attach,
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    --ignore = {  },
+                    maxLineLength = 100
+                }
+            }
+        }
+    }   --config param available at 
     --https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
     --https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
 }
