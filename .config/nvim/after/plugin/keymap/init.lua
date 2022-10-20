@@ -27,6 +27,10 @@ nnoremap("<C-u>", "<C-u>zz")
 --nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
 
 -- windows
+nnoremap("<A-Down>", "<C-W><C-j>") -- navigation layer
+nnoremap("<A-Up>", "<C-W><C-k>")
+nnoremap("<A-Right>", "<C-W><C-l>")
+nnoremap("<A-Left>", "<C-W><C-h>")
 nnoremap("<A-j>", "<C-W><C-j>")
 nnoremap("<A-k>", "<C-W><C-k>")
 nnoremap("<A-l>", "<C-W><C-l>")
