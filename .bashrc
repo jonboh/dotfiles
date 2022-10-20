@@ -75,9 +75,6 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls= ls --color=auto 
-    #alias dir= dir --color=auto 
-    #alias vdir= vdir --color=auto 
 
     alias grep= grep --color=auto 
     alias fgrep= fgrep --color=auto 
@@ -87,10 +84,6 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS= error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01 
 
-# some more ls aliases
-alias ll= ls -alF 
-alias la= ls -A 
-alias l= ls -CF 
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -127,6 +120,12 @@ PATH="$PATH:$HOME/apps/cmake/bin"
 PATH="$PATH:$HOME/apps/codelldb/adapter"
 PATH="$PATH:$HOME/apps/iwyu/bin"
 PATH="$PATH:$HOME/.local/bin"
+
+# exa
+alias ls= exa -1 --group-directories-first 
+alias l= exa --icons -F -1 --group-directories-first 
+alias la= exa --icons -F -1 --group-directories-first -a 
+alias ll= exa --icons -F -1 --group-directories-first -l -a 
 
 # fzf
 source /usr/share/fzf/key-bindings.bash
