@@ -128,5 +128,6 @@ PATH="$PATH:$HOME/apps/codelldb/adapter"
 PATH="$PATH:$HOME/apps/iwyu/bin"
 PATH="$PATH:$HOME/.local/bin"
 
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# fzf
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
