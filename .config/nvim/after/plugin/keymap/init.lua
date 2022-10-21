@@ -39,8 +39,6 @@ nnoremap("<A-t>", "<C-W>+") -- size vertically
 nnoremap("<A-s>", "<C-W>-") -- size vertically
 
 
-nnoremap("<C-c>", "Esc") -- in some places (block insert) <C-c> is not the same as Esc
-
 -- Terminal mode
 nnoremap("<leader>te", ":terminal<CR>")
 tnoremap("<Esc>", "<C-\\><C-n>") -- Esc to exit terminal mode. C-c will still stop work
