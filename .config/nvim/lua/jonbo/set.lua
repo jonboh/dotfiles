@@ -13,7 +13,7 @@ vim.opt.wrap = false
 vim.opt.mouse =   
 
 -- navigation
-vim.opt.scrolloff = 12
+vim.opt.scrolloff = 8
 
 -- search
 vim.opt.hlsearch = false
