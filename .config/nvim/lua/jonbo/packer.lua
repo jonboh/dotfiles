@@ -85,6 +85,7 @@ return require( packer ).startup(function(use)
     -- Games
     use  ThePrimeagen/vim-be-good 
 
+    -- TODO: improve current word highlighting. treesitter refactor does not highlight from function signature
     -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
     -- TODO: check neovim-tasks, quick cmake running
     -- TODO: check quick fix integration with cmake report
