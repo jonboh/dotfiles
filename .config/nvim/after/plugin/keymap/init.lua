@@ -27,6 +27,10 @@ nnoremap("<C-u>", "<C-u>zz")
 --nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
 
 -- windows
+nnoremap("<A-Down>", "<C-W><C-j>") -- navigation layer
+nnoremap("<A-Up>", "<C-W><C-k>")
+nnoremap("<A-Right>", "<C-W><C-l>")
+nnoremap("<A-Left>", "<C-W><C-h>")
 nnoremap("<A-j>", "<C-W><C-j>")
 nnoremap("<A-k>", "<C-W><C-k>")
 nnoremap("<A-l>", "<C-W><C-l>")
@@ -38,8 +42,6 @@ nnoremap("<A-.>", "<C-W>5>") -- size horizontally
 nnoremap("<A-t>", "<C-W>+") -- size vertically
 nnoremap("<A-s>", "<C-W>-") -- size vertically
 
-
-nnoremap("<C-c>", "Esc") -- in some places (block insert) <C-c> is not the same as Esc
 
 -- Terminal mode
 nnoremap("<leader>te", ":terminal<CR>")
