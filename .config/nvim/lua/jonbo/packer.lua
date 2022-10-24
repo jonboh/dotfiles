@@ -88,18 +88,17 @@ return require( packer ).startup(function(use)
     -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
     -- TODO: check neovim-tasks, quick cmake running
     -- TODO: check quick fix integration with cmake report
-    -- TODO: properly configure worktrees
     -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
             -- stage/unstage hunks
             -- resolve merge conflicts
             -- navigating log --graph
             -- navigate history
             -- blame
-    -- TODO: get a way to mass replace accross files
+            -- neogit has some performance problems in big projects...
+        -- check lazygit and gitui
+        -- give fugitive a try
+    -- TODO: get a way to mass replace accross files in current project
 
-    -- ThePrimegean List
-    --use("nvim-lua/popup.nvim")
-    ---- All the things
     --use("onsails/lspkind-nvim")
     --use("glepnir/lspsaga.nvim")
     --use("L3MON4D3/LuaSnip")
