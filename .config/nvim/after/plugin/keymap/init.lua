@@ -15,6 +15,11 @@ vnoremap("<C-z>", "<nop>")
 xnoremap("<C-z>", "<nop>")
 tnoremap("<C-z>", "<nop>")
 
+nnoremap("j", "<nop>") -- you ll use your nav layer and you ll like it!
+nnoremap("k", "<nop>") -- you ll use your nav layer and you ll like it!
+nnoremap("h", "<nop>") -- you ll use your nav layer and you ll like it!
+nnoremap("l", "<nop>") -- you ll use your nav layer and you ll like it!
+
 -- navigation
 nnoremap("<leader>x", ":Ex<CR>")
 nnoremap("n", "nzzzv") -- next result, center cursor, open folds to selection
@@ -27,20 +32,16 @@ nnoremap("<C-u>", "<C-u>zz")
 --nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
 
 -- windows
-nnoremap("<A-Down>", "<C-W><C-j>") -- navigation layer
-nnoremap("<A-Up>", "<C-W><C-k>")
-nnoremap("<A-Right>", "<C-W><C-l>")
-nnoremap("<A-Left>", "<C-W><C-h>")
-nnoremap("<A-j>", "<C-W><C-j>")
-nnoremap("<A-k>", "<C-W><C-k>")
-nnoremap("<A-l>", "<C-W><C-l>")
-nnoremap("<A-h>", "<C-W><C-h>")
-nnoremap("<A-v>", "<C-W><C-v>")
-nnoremap("<A-s>", "<C-W><C-s>")
-nnoremap("<A-,>", "<C-W>5<") -- size horizontally
-nnoremap("<A-.>", "<C-W>5>") -- size horizontally
-nnoremap("<A-t>", "<C-W>+") -- size vertically
-nnoremap("<A-s>", "<C-W>-") -- size vertically
+nnoremap("<leader>v", "<C-W><C-v><C-W><C-l>")
+nnoremap("<leader>h", "<C-W><C-s><C-W><C-j>")
+nnoremap("<leader><Down>", "<C-W>j") -- navigation layer
+nnoremap("<leader><Up>", "<C-W>k")
+nnoremap("<leader><Right>", "<C-W>l")
+nnoremap("<leader><Left>", "<C-W>h")
+nnoremap("<A-Left>", "<C-W>5<") -- size horizontally
+nnoremap("<A-Right>", "<C-W>5>") -- size horizontally
+nnoremap("<A-Up>", "<C-W>+") -- size vertically
+nnoremap("<A-Down>", "<C-W>-") -- size vertically
 
 
 -- Terminal mode
