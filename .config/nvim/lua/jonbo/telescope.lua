@@ -23,10 +23,17 @@ require("telescope").setup({
 --			},
 --		},
 	},
+	extensions = {
+            file_browser = {
+                hijack_netwr = true,
+
+              path = "%:p:h",
+            },
+          }
 })
+require("telescope").load_extension("file_browser")
 
 local M = {}
-
 M.search_dotfiles = function()
 	require("telescope.builtin").find_files({
 		prompt_title = "< VimRC >",
