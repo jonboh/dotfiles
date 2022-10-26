@@ -112,6 +112,7 @@ fi
 # Settings version control
 alias gs= git status 
 alias gc= git commit 
+alias gw= git worktree 
 
 alias gl= gl1 
 alias gl1= gl1-specific --all 
