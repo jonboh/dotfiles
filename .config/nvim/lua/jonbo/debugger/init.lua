@@ -11,6 +11,8 @@ nnoremap("<leader>q", function()
     dap.close()
 end)
 
+-- TODO: add pause 
+
 nnoremap("<F5>", function()
     dap.continue()
 end)
@@ -92,10 +94,8 @@ dapui.setup({
   }
 })
 
-nnoremap("<Home>", function()
+nnoremap("<F1>", function()
     dapui.toggle(1)
-end)
-nnoremap("<End>", function()
     dapui.toggle(2)
 end)
 
