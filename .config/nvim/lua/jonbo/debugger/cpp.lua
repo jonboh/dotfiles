@@ -21,10 +21,13 @@ dap.configurations.cpp = {
     program = function()
       return vim.fn.input( Path to executable:  , vim.fn.getcwd() ..  / ,  file )
     end,
-    cwd =  ${workspaceFolder} ,
+    cwd = function()
+      return vim.fn.input( Path to cwd:  , vim.fn.getcwd() ..  / ,  file )
+    end,
     stopOnEntry = false,
   },
 }
+-- TODO: fix cwd management
 -- If you want to use this for Rust and C, add something like this:
 
 dap.configurations.c = dap.configurations.cpp
