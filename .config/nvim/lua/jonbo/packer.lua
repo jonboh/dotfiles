@@ -15,6 +15,7 @@ return require( packer ).startup(function(use)
         "nvim-telescope/telescope.nvim", branch =  0.1.x ,
             requires = { { nvim-lua/plenary.nvim } }
     }
+    use { "nvim-telescope/telescope-file-browser.nvim" }
     use{"ThePrimeagen/harpoon", requires =  nvim-lua/plenary.nvim  }
     use{ ggandor/leap.nvim , requires= tpope/vim-repeat }
     use{ karb94/neoscroll.nvim }
