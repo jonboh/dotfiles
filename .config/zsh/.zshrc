@@ -30,8 +30,10 @@ alias d= dirs -v
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+if [ $(command -v "fzf") ]; then
+    source /usr/share/fzf/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
+fi
 
 # TODO: check edit-command-line functionality. it allows to edit commands on $EDITOR=nvim directly
 
