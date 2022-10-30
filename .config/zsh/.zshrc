@@ -1,11 +1,3 @@
-# General configuration
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-export EDITOR="nvim"
-export VISUAL="nvim"
-
 source $XDG_CONFIG_HOME/zsh/aliases
 
 # prompt configuration
@@ -37,15 +29,9 @@ fi
 
 # TODO: check edit-command-line functionality. it allows to edit commands on $EDITOR=nvim directly
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/$XDG_CACHE_HOME/zsh/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-bindkey -v
-# End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename  /home/jon/.zshrc 
+# zstyle :compinstall filename  /home/jon/.zshrc 
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
