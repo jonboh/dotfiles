@@ -28,10 +28,6 @@ if [ $(command -v "fzf") ]; then
 fi
 
 # TODO: check edit-command-line functionality. it allows to edit commands on $EDITOR=nvim directly
+# TODO: check bd directory navigation for quickly going back directories
 
-# The following lines were added by compinstall
-# zstyle :compinstall filename  /home/jon/.zshrc 
-
-# autoload -Uz compinit
-# compinit
-# End of lines added by compinstall
+autoload -Uz compinit; compinit # initialize completion engine
