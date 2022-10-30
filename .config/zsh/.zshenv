@@ -13,3 +13,6 @@ HISTFILE=$XDG_CACHE_HOME/zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 bindkey -v
+
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob  !.git "
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
