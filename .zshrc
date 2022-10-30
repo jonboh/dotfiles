@@ -19,6 +19,9 @@ _comp_options+=(globdots)
 source $XDG_CONFIG_HOME/zsh/external/completion.zsh # Phantas0s completion options
 fpath=($XDG_CONFIG_HOME/external/zsh-completions/src $fpath) # zsh-users completions
 
+# add syntax highlighting provided by zsh-syntax-highlighting package
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # configur directory stack
 setopt AUTO_PUSHD # Push the current directory visited on to the stack.
 setopt PUSHD_IGNORE_DUPS # Do not store duplicate directories in the stack.
