@@ -1,3 +1,8 @@
+if [ "$(tty)" = "/dev/tty1" ];
+then
+    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+fi
+
 source $XDG_CONFIG_HOME/zsh/aliases
 
 # prompt configuration
