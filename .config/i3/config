@@ -176,6 +176,11 @@ assign [class="Zathura" instance="org.pwmt.zathura"] $doc
 for_window [class="Spotify"] move container to workspace $media
 # assign [class="Spotify" instance="spotify"] $media
 
+# floating pop up automatically
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="Arandr"] floating enable
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
