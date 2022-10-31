@@ -257,3 +257,5 @@ bar {
         binding_mode       $background $red2 $white2
     }
 }
+
+exec $XDG_CONFIG_HOME/screenlayout/layout.sh
