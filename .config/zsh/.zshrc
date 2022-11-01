@@ -3,6 +3,8 @@ then
     pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
 fi
 
+pgrep fan2go  >/dev/null || $XDG_CONFIG_HOME/fan2go/fan2go.sh # if fan2go is not running start it
+
 source $XDG_CONFIG_HOME/zsh/aliases
 
 # prompt configuration
