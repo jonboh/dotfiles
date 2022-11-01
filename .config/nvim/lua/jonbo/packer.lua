@@ -54,6 +54,7 @@ return require( packer ).startup(function(use)
             }
         end
     }
+    use{ lambdalisue/suda.vim }
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
     use {  TimUntersberger/neogit , requires =  nvim-lua/plenary.nvim  }
