@@ -7,6 +7,9 @@ pgrep fan2go  >/dev/null || $XDG_CONFIG_HOME/fan2go/fan2go.sh # if fan2go is not
 
 source $XDG_CONFIG_HOME/zsh/aliases
 
+# key-bindings
+source $XDG_CONFIG_HOME/zsh/.zshbindings
+
 # prompt configuration
 fpath=($XDG_CONFIG_HOME/zsh/external $fpath)
 autoload -Uz prompt_purification_setup.zsh; prompt_purification_setup.zsh
