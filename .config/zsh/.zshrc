@@ -37,7 +37,9 @@ if [ $(command -v "fzf") ]; then
     source /usr/share/fzf/key-bindings.zsh
 fi
 
-# TODO: check edit-command-line functionality. it allows to edit commands on $EDITOR=nvim directly
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line # press  v  on vimode to open nvim and edit command
 # TODO: check bd directory navigation for quickly going back directories
 
 autoload -Uz compinit; compinit # initialize completion engine
