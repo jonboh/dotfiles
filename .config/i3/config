@@ -1,3 +1,4 @@
+exec $XDG_CONFIG_HOME/screenlayout/layout.sh
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -136,9 +137,9 @@ set $ws9 "9"
 set $ws10 "10"
 
 # set workspace to montor
-workspace $term output primary
-workspace $web output primary
-workspace $comm output primary
+workspace $term output HDMI-0 
+workspace $web output HDMI-0
+workspace $comm output HDMI-0
 
 # switch to workspace
 bindsym $mod+1 workspace number $term
@@ -258,4 +259,3 @@ bar {
     }
 }
 
-exec $XDG_CONFIG_HOME/screenlayout/layout.sh
