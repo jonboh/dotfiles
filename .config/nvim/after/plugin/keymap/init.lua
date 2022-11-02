@@ -10,10 +10,10 @@ local nmap = Remap.nmap
 
 -- TODO: add silence
 nnoremap("<Space>", "<nop>") 
-nnoremap("<C-z>", "<nop>")
-vnoremap("<C-z>", "<nop>")
-xnoremap("<C-z>", "<nop>")
-tnoremap("<C-z>", "<nop>")
+-- nnoremap("<C-z>", "<nop>")
+-- vnoremap("<C-z>", "<nop>")
+-- xnoremap("<C-z>", "<nop>")
+-- tnoremap("<C-z>", "<nop>")
 
 nnoremap("j", "<nop>") -- you ll use your nav layer and you ll like it!
 nnoremap("k", "<nop>") -- you ll use your nav layer and you ll like it!

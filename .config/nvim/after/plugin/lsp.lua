@@ -61,7 +61,7 @@ end
 -- C++ 
 nnoremap( <leader>o , "<cmd>:ClangdSwitchSourceHeader<CR>") -- TODO: add this on attach
 require lspconfig .clangd.setup {
-		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()), -- advertise capabilities
+		capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()), -- advertise capabilities
 		cmd = { "clangd", "--background-index" },
         on_attach = on_attach,
 }

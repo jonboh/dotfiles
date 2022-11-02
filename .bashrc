@@ -109,7 +109,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Settings version control
+# git
 alias gs= git status 
 alias gc= git commit 
 alias gw= git worktree 
@@ -124,6 +124,12 @@ alias gl2-specific="git log --graph --abbrev-commit --decorate --format=format: 
 alias gl3-specific="git log --graph --abbrev-commit --decorate --format=format: %C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n            %C(white)%s%C(reset)%n            %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset) "
 
 alias dotfiles= /usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME 
+# exa
+alias ls= exa -1 --group-directories-first 
+alias l= exa --icons -F -1 --group-directories-first 
+alias la= exa --icons -F -1 --group-directories-first -a 
+alias ll= exa --icons -F -1 --group-directories-first -l -a 
+
 # XDG variables
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -133,11 +139,6 @@ PATH="$PATH:$HOME/apps/codelldb/adapter"
 PATH="$PATH:$HOME/apps/iwyu/bin"
 PATH="$PATH:$HOME/.local/bin"
 
-# exa
-alias ls= exa -1 --group-directories-first 
-alias l= exa --icons -F -1 --group-directories-first 
-alias la= exa --icons -F -1 --group-directories-first -a 
-alias ll= exa --icons -F -1 --group-directories-first -l -a 
 
 # fzf
 source /usr/share/doc/fzf/examples/key-bindings.bash

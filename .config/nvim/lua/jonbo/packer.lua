@@ -43,6 +43,7 @@ return require( packer ).startup(function(use)
         end
     }
 	use{ neomake/neomake }
+    use{ lambdalisue/suda.vim }
     -- use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
     --     "folke/noice.nvim",
     --     event = "VimEnter",
@@ -101,7 +102,7 @@ return require( packer ).startup(function(use)
     -- TODO: get a way to mass replace accross files in current project
     -- TODO: check https://github.com/nvim-telescope/telescope-file-browser.nvim
 	-- TODO: canfigure neomake, for linting (and build errors?)
-
+    -- TODO: check https://gitlab.com/yorickpeterse/nvim-window, tmux style interactive window focus
     --use("onsails/lspkind-nvim")
     --use("glepnir/lspsaga.nvim")
     --use("L3MON4D3/LuaSnip")
