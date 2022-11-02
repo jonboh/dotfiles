@@ -20,7 +20,6 @@ return require( packer ).startup(function(use)
     use{ ggandor/leap.nvim , requires= tpope/vim-repeat }
     use{ karb94/neoscroll.nvim }
 
-
     -- Utilities
     use {  nvim-lualine/lualine.nvim ,
           requires = {  kyazdani42/nvim-web-devicons , opt = true }
@@ -28,18 +27,7 @@ return require( packer ).startup(function(use)
     use( mbbill/undotree ) 
     use{ terrortylor/nvim-comment }
     use{ anuvyklack/pretty-fold.nvim }
-    -- use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
-    --     "folke/noice.nvim",
-    --     event = "VimEnter",
-    --     config = function()
-    --         require("noice").setup()
-    --     end,
-    --     requires = {
-    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --         "MunifTanjim/nui.nvim",
-    --         "rcarriga/nvim-notify",
-    --     }
-    -- })
+    use  lewis6991/impatient.nvim 
     use{ MTDL9/vim-log-highlighting }
     use "lukas-reineke/indent-blankline.nvim"
     use {  mhartington/formatter.nvim  }
@@ -54,6 +42,20 @@ return require( packer ).startup(function(use)
             }
         end
     }
+	use{ neomake/neomake }
+    -- use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
+    --     "folke/noice.nvim",
+    --     event = "VimEnter",
+    --     config = function()
+    --         require("noice").setup()
+    --     end,
+    --     requires = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "MunifTanjim/nui.nvim",
+    --         "rcarriga/nvim-notify",
+    --     }
+    -- })
+
     -- git 
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
     use {  TimUntersberger/neogit , requires =  nvim-lua/plenary.nvim  }
@@ -64,9 +66,7 @@ return require( packer ).startup(function(use)
     }
 
     -- treesitter
-    use("nvim-treesitter/nvim-treesitter", {
-        run = ":TSUpdate"
-    })
+    use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
     use( nvim-treesitter/nvim-treesitter-refactor ) -- for symbol under cursor highlighting
     use("nvim-treesitter/nvim-treesitter-context") -- for the sticky context lines
 
@@ -81,7 +81,6 @@ return require( packer ).startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
-    use  lewis6991/impatient.nvim 
 
     -- Games
     use  ThePrimeagen/vim-be-good 
@@ -100,6 +99,8 @@ return require( packer ).startup(function(use)
         -- check lazygit and gitui
         -- give fugitive a try
     -- TODO: get a way to mass replace accross files in current project
+    -- TODO: check https://github.com/nvim-telescope/telescope-file-browser.nvim
+	-- TODO: canfigure neomake, for linting (and build errors?)
 
     --use("onsails/lspkind-nvim")
     --use("glepnir/lspsaga.nvim")

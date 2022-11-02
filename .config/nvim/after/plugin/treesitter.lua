@@ -41,3 +41,6 @@ require nvim-treesitter.configs .setup {
       },
   },
 }
+
+-- TODO: fold function bodies: https://youtu.be/Jes3bD6P0To?t=895
+-- TODO: extend selection
