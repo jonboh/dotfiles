@@ -26,8 +26,8 @@ nnoremap("n", "nzzzv") -- next result, center cursor, open folds to selection
 nnoremap("N", "Nzzzv")
 nnoremap("<C-d>", "<C-d>zz") -- centered page moves
 nnoremap("<C-u>", "<C-u>zz")
---nnoremap("<C-k>", "<cmd>cnext<CR>zz")
---nnoremap("<C-j>", "<cmd>cprev<CR>zz")
+nnoremap("<C-Down>", "<cmd>copen<CR><cmd>cnext<CR>zz")
+nnoremap("<C-Up>", "<cmd>copen<CR><cmd>cprev<CR>zz")
 --nnoremap("<leader>k", "<cmd>lnext<CR>zz") -- move across locations
 --nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
 
