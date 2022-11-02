@@ -46,6 +46,8 @@ vim.opt.foldenable = false
 vim.g.mapleader = " "
 vim.opt.timeout = true
 
+vim.opt.autowrite = true
+
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
 vim.opt.updatetime = 50
