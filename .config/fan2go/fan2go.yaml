@@ -1,0 +1,71 @@
+dbPath: "/etc/fan2go/fan2go.db"
+# A list of fans to control
+fans:
+  # A user defined ID.
+  # Used for logging only
+  - id: cpu
+    # The type of fan configuration, one of: hwmon | file
+    hwmon:
+      # The platform of the controller which is
+      # connected to this fan (see sensor.platform below)
+      platform: it8721-isa-0
+      # The index of this fan as displayed by `fan2go detect`
+      index: 1
+    # Indicates whether this fan should never stop rotating, regardless of
+    # how low the curve value is
+    neverStop: false
+    # The curve ID that should be used to determine the
+    # speed of this fan
+    curve: cpu_curve
+  - id: gpu_cmd
+    cmd:
+      setPwm:
+        exec: /usr/bin/nvidia-settings
+        args: ["-t", "-a", gputargetfanspeed=%pwm%]
+      getPwm:
+        exec: /usr/bin/nvidia-settings
+        args: ["-t", "-q", gputargetfanspeed]
+    # The curve ID that should be used to determine the
+    # speed of this fan
+    curve: gpu_curve
+
+# A list of sensors to monitor
+sensors:
+  # A user defined ID, which is used to reference
+  # a sensor in a curve configuration (see below)
+  - id: cpu_package
+    # The type of sensor configuration, one of: hwmon | file | cmd
+    hwmon:
+      # A regex matching a controller platform displayed by `fan2go detect`, f.ex.:
+      # "coretemp", "it8620", "corsaircpro-*" etc.
+      platform: it8721-isa-0
+      # The index of this sensor as displayed by `fan2go detect`
+      index: 1
+
+  - id: gpu_sensor_cmd
+    # The type of sensor configuration, one of: hwmon | file | cmd
+    cmd:
+        exec: /usr/bin/nvidia-settings
+        args: ["-t", "-q", gpucoretemp]
+
+curves:
+  - id: cpu_curve
+    # The type of the curve
+    linear:
+      # The sensor ID to use as a temperature input
+      sensor: cpu_package
+      # Steps to define a section-wise defined speed curve function.
+      steps:
+        # Sensor value -> Speed (in pwm)
+        - 30: 0
+        - 60: 255
+  - id: gpu_curve
+    # The type of the curve
+    linear:
+      # The sensor ID to use as a temperature input
+      sensor: gpu_sensor_cmd
+      # Steps to define a section-wise defined speed curve function.
+      steps:
+        # Sensor value -> Speed (in pwm)
+        - 30: 1
+        - 80: 100
