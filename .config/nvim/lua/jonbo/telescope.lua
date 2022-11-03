@@ -25,6 +25,7 @@ require("telescope").setup({
 	},
 	extensions = {
             file_browser = {
+                hidden = true,
                 hijack_netwr = true, -- TODO: fix hijacking
 
               path = "%:p:h",
