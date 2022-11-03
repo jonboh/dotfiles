@@ -58,15 +58,11 @@ vnoremap("J", ":m  >+1<CR>gv=gv")
 vnoremap("K", ":m  <-2<CR>gv=gv")
 
 -- yanking and pasting from system clipboard
-nnoremap("<leader>gy", "\"+y") 
-vnoremap("<leader>gy", "\"+y")
-nmap("<leader>gY", "\"+Y")
-nnoremap("<leader>gp", "\"+p")
-nnoremap("<leader>gP", "\"+P")
-
--- delete selection into void register and paste
-xnoremap("<leader>p", "\"_dP")
-xnoremap("<leader>gp", "\"_d\"+P") -- from system clipboard
+nnoremap("<leader>y", "\"+y") 
+vnoremap("<leader>y", "\"+y")
+nmap("<leader>Y", "\"+Y")
+nnoremap("<leader>p", "\"+p")
+nnoremap("<leader>P", "\"+P")
 
 -- delete into void register
 nnoremap("<leader>d", "\"_d")
@@ -75,4 +71,3 @@ vnoremap("<leader>d", "\"_d")
 -- easily replace the current word
 nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") --<> on the selection limits the replacement to whole words
 vnoremap("<leader>s", "\"0y:%s/<C-r>0/<C-r>0/gI<Left><Left><Left>") -- this uses register 0
--- TODO: add <leader>s for visual selection
