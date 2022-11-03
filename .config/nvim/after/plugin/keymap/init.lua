@@ -32,16 +32,17 @@ nnoremap("<C-Up>", "<cmd>copen<CR><cmd>cprev<CR>zz")
 --nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
 
 -- windows
-nnoremap("<leader>v", "<C-W><C-v><C-W><C-l>")
-nnoremap("<leader>h", "<C-W><C-s><C-W><C-j>")
-nnoremap("<leader><Down>", "<C-W>j") -- navigation layer
-nnoremap("<leader><Up>", "<C-W>k")
-nnoremap("<leader><Right>", "<C-W>l")
-nnoremap("<leader><Left>", "<C-W>h")
-nnoremap("<A-Left>", "<C-W>5<") -- size horizontally
-nnoremap("<A-Right>", "<C-W>5>") -- size horizontally
-nnoremap("<A-Up>", "<C-W>+") -- size vertically
-nnoremap("<A-Down>", "<C-W>-") -- size vertically
+nnoremap("<A-Down>", "<C-W>j") -- navigation layer
+nnoremap("<A-Up>", "<C-W>k")
+nnoremap("<A-Right>", "<C-W>l")
+nnoremap("<A-Left>", "<C-W>h")
+nnoremap("<A-v>", "<C-W><C-v><C-W><C-l>")
+nnoremap("<A-h>", "<C-W><C-s><C-W><C-j>")
+nnoremap("<A-q>", "<C-W>c")
+nnoremap("<A-C-Left>", "<C-W>5<") -- size horizontally
+nnoremap("<A-C-Right>", "<C-W>5>") -- size horizontally
+nnoremap("<A-C-Up>", "<C-W>+") -- size vertically
+nnoremap("<A-C-Down>", "<C-W>-") -- size vertically
 
 
 -- Terminal mode
