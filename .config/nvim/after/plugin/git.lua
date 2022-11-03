@@ -1,90 +1,9 @@
 -- neogit
-local neogit = require("neogit")
 local nnoremap = require( jonbo.keymap ).nnoremap
 
-nnoremap("<leader>gs", function()
-    neogit.open({ })
-end);
-
 nnoremap("<leader>ga", "<cmd>!git fetch --all<CR>");
-
-neogit.setup {
-    disable_signs = false,
-    disable_hint = false,
-    disable_context_highlighting = false,
-    disable_commit_confirmation = false,
-    -- Neogit refreshes its internal state after specific events, which can be expensive depending on the repository size. 
-    -- Disabling `auto_refresh` will make it so you have to manually refresh the status after you open it.
-    auto_refresh = true,
-    disable_builtin_notifications = false,
-    use_magit_keybindings = false,
-    -- Change the default way of opening neogit
-    kind = "replace",
-    -- Change the default way of opening the commit popup
-    commit_popup = {
-        kind = "split",
-    },
-    -- Change the default way of opening popups
-    popup = {
-        kind = "split",
-    },
-    -- customize displayed signs
-    signs = {
-        -- { CLOSED, OPENED }
-        section = { ">", "v" },
-        item = { ">", "v" },
-        hunk = { "", "" },
-    },
-    integrations = {
-        -- Neogit only provides inline diffs. If you want a more traditional way to look at diffs, you can use `sindrets/diffview.nvim`.
-        -- The diffview integration enables the diff popup, which is a wrapper around `sindrets/diffview.nvim`.
-        --
-        -- Requires you to have `sindrets/diffview.nvim` installed.
-        -- use { 
-            --    TimUntersberger/neogit , 
-            --   requires = { 
-                --      nvim-lua/plenary.nvim ,
-                --      sindrets/diffview.nvim  
-                --   }
-                -- }
-                --
-                diffview = false  
-            },
-            -- Setting any section to `false` will make the section not render at all
-            sections = {
-                untracked = {
-                    folded = true
-                },
-                unstaged = {
-                    folded = true
-                },
-                staged = {
-                    folded = true
-                },
-                stashes = {
-                    folded = true
-                },
-                unpulled = {
-                    folded = true
-                },
-                unmerged = {
-                    folded = true
-                },
-                recent = {
-                    folded = true
-                },
-            },
-            -- override/add mappings
-            mappings = {
-                -- modify status buffer mappings
-                status = {
-                    -- Adds a mapping with "B" as key that does the "BranchPopup" command
-                    ["B"] = "BranchPopup",
-                    -- Removes the default mapping of "s"
-                    --["s"] = "",
-                }
-            }
-}
+nnoremap("<leader>gs", "<cmd>DiffviewOpen<CR>") -- TODO: make toggle
+--TODO: add shortcut to open DiffviewFileHistory passing current file as arg
 
 -- gitsigns
 require( gitsigns ).setup {
@@ -282,27 +201,24 @@ commit_log_panel = {
           { { "n", "x" }, "3do", actions.diffget("theirs") }, -- Obtain the diff hunk from the THEIRS version of the file
       },
       file_panel = {
-          ["j"]             = actions.next_entry,         -- Bring the cursor to the next file entry
           ["<down>"]        = actions.next_entry,
-          ["k"]             = actions.prev_entry,         -- Bring the cursor to the previous file entry.
           ["<up>"]          = actions.prev_entry,
           ["<cr>"]          = actions.select_entry,       -- Open the diff for the selected entry.
           ["o"]             = actions.select_entry,
-          ["<2-LeftMouse>"] = actions.select_entry,
           ["-"]             = actions.toggle_stage_entry, -- Stage / unstage the selected entry.
           ["S"]             = actions.stage_all,          -- Stage all entries.
           ["U"]             = actions.unstage_all,        -- Unstage all entries.
           ["X"]             = actions.restore_entry,      -- Restore entry to the state on the left side.
           ["L"]             = actions.open_commit_log,    -- Open the commit log panel.
+          ["<c-u>"]         = actions.scroll_view(-0.25), -- Scroll the view up
+          ["<c-d>"]         = actions.scroll_view(0.25),  -- Scroll the view down
           ["<c-b>"]         = actions.scroll_view(-0.25), -- Scroll the view up
           ["<c-f>"]         = actions.scroll_view(0.25),  -- Scroll the view down
           ["<tab>"]         = actions.select_next_entry,
           ["<s-tab>"]       = actions.select_prev_entry,
           ["gf"]            = actions.goto_file,
           ["<C-w><C-f>"]    = actions.goto_file_split,
-          ["<C-w>gf"]       = actions.goto_file_tab,
           ["i"]             = actions.listing_style,        -- Toggle between  list  and  tree  views
-          ["f"]             = actions.toggle_flatten_dirs,  -- Flatten empty subdirectories in tree listing style.
           ["R"]             = actions.refresh_files,        -- Update stats and entries in the file list.
           ["<leader>e"]     = actions.focus_files,
           ["<leader>b"]     = actions.toggle_files,
@@ -317,13 +233,12 @@ commit_log_panel = {
           ["L"]             = actions.open_commit_log,
           ["zR"]            = actions.open_all_folds,
           ["zM"]            = actions.close_all_folds,
-          ["j"]             = actions.next_entry,
           ["<down>"]        = actions.next_entry,
-          ["k"]             = actions.prev_entry,
           ["<up>"]          = actions.prev_entry,
           ["<cr>"]          = actions.select_entry,
           ["o"]             = actions.select_entry,
-          ["<2-LeftMouse>"] = actions.select_entry,
+          ["<c-u>"]         = actions.scroll_view(-0.25),
+          ["<c-d>"]         = actions.scroll_view(0.25),
           ["<c-b>"]         = actions.scroll_view(-0.25),
           ["<c-f>"]         = actions.scroll_view(0.25),
           ["<tab>"]         = actions.select_next_entry,

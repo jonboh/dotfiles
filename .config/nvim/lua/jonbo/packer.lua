@@ -42,7 +42,10 @@ return require( packer ).startup(function(use)
             }
         end
     }
-	use{ neomake/neomake }
+	use{ nvim-tree/nvim-web-devicons ,
+        config = function() require( nvim-web-devicons ).setup{} end
+    }
+    use{ neomake/neomake }
     use{ lambdalisue/suda.vim }
     -- use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
     --     "folke/noice.nvim",
@@ -58,8 +61,8 @@ return require( packer ).startup(function(use)
     -- })
 
     -- git 
+    use { tpope/vim-fugitive }
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
-    use {  TimUntersberger/neogit , requires =  nvim-lua/plenary.nvim  }
     use {  sindrets/diffview.nvim , requires =  nvim-lua/plenary.nvim  }
     use { 
          lewis6991/gitsigns.nvim ,
@@ -88,19 +91,16 @@ return require( packer ).startup(function(use)
 
     -- TODO: improve current word highlighting. treesitter refactor does not highlight from function signature
     -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
-    -- TODO: check neovim-tasks, quick cmake running
-    -- TODO: check quick fix integration with cmake report
     -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
-            -- stage/unstage hunks
             -- resolve merge conflicts
             -- navigating log --graph
             -- navigate history
             -- blame
-            -- neogit has some performance problems in big projects...
         -- check lazygit and gitui
         -- give fugitive a try
+    -- check https://github.com/tpope/vim-unimpaired, might adapt mappings
     -- TODO: get a way to mass replace accross files in current project
-    -- TODO: check https://github.com/nvim-telescope/telescope-file-browser.nvim
+    -- TODO: check neovim-tasks, quick cmake running
 	-- TODO: canfigure neomake, for linting (and build errors?)
     -- TODO: check https://gitlab.com/yorickpeterse/nvim-window, tmux style interactive window focus
     --use("onsails/lspkind-nvim")
