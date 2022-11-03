@@ -14,13 +14,11 @@
 local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}
 t[ <C-u> ] = { scroll , { -vim.wo.scroll ,  true ,  35 }}
-t[ <C-d> ] = { scroll , {  vim.wo.scroll ,  true ,  35 }}
+t[ <C-d> ] = { scroll , {  vim.wo.scroll ,  true ,  35 }} --TODO: fix centering
 t[ <C-b> ] = { scroll , { -vim.api.nvim_win_get_height(0) ,  true ,  45 }}
 t[ <C-f> ] = { scroll , {  vim.api.nvim_win_get_height(0) ,  true ,  45 }}
 t[ <C-k> ] = { scroll , { -0.10 ,  false ,  10 }}
 t[ <C-j> ] = { scroll , {  0.10 ,  false ,  10 }}
-t[ <C-Down> ] = { scroll , { -0.10 ,  false ,  10 }}
-t[ <C-Up> ] = { scroll , { 0.10 ,  false ,  10 }}
 t[ zt ]    = { zt , { 25 }}
 t[ zz ]    = { zz , { 25 }}
 t[ zb ]    = { zb , { 25 }}
