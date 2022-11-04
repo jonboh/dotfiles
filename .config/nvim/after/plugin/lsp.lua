@@ -42,13 +42,13 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set( n ,  gd , vim.lsp.buf.definition, bufopts) -- TODO: add zt to command to place cursor above
-  vim.keymap.set( n ,  gD , vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set( n ,  gi , vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set( n ,  pd , vim.lsp.buf.definition, bufopts) -- TODO: add zt to command to place cursor above
+  vim.keymap.set( n ,  pD , vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set( n ,  pi , vim.lsp.buf.implementation, bufopts)
   -- vim.keymap.set( n ,  gt , vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set( n ,  gr , vim.lsp.buf.references, bufopts)
+  vim.keymap.set( n ,  pr , vim.lsp.buf.references, bufopts) -- TODO: conflic with git reset hunk
   vim.keymap.set( i ,  <C-h> , vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set( n ,  gt , vim.lsp.buf.hover, bufopts)
+  vim.keymap.set( n ,  pt , vim.lsp.buf.hover, bufopts)
   vim.keymap.set( n ,  <leader>rn , vim.lsp.buf.rename, bufopts)
 --  vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts) -- disabled in favor of formatter.nvim
   vim.keymap.set( n ,  <leader>ca , vim.lsp.buf.code_action, bufopts)
