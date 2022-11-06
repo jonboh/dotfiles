@@ -15,7 +15,7 @@ function DiffviewToggle()
     vim.cmd(":DiffviewOpen")
   end
 end
-nnoremap("<leader>gt", DiffviewToggle) -- TODO: make toggle
+nnoremap("<leader>gt", DiffviewToggle)
 
 -- gitsigns
 require( gitsigns ).setup {
@@ -88,7 +88,7 @@ require( gitsigns ).setup {
         -- map( n ,  <leader>hR , gs.reset_buffer)
         map( n ,  <leader>gh , gs.preview_hunk)
         -- map( n ,  <leader>hb , function() gs.blame_line{full=true} end)
-        map( n ,  <leader>gb , gs.toggle_current_line_blame) -- TODO: conflict with telescope branch
+        map( n ,  <leader>gb , gs.toggle_current_line_blame)
         map( n ,  <leader>gd , gs.diffthis)
         -- map( n ,  <leader>hD , function() gs.diffthis( ~ ) end)
         -- map( n ,  <leader>td , gs.toggle_deleted)
@@ -223,8 +223,8 @@ commit_log_panel = {
           ["U"]             = actions.unstage_all,        -- Unstage all entries.
           ["X"]             = actions.restore_entry,      -- Restore entry to the state on the left side.
           ["L"]             = actions.open_commit_log,    -- Open the commit log panel.
-          ["<c-u>"]         = actions.scroll_view(-0.25), -- Scroll the view up
-          ["<c-d>"]         = actions.scroll_view(0.25),  -- Scroll the view down
+          ["<c-u>"]         = actions.scroll_view(-0.125), -- Scroll the view up
+          ["<c-d>"]         = actions.scroll_view(0.125),  -- Scroll the view down
           ["<c-b>"]         = actions.scroll_view(-0.25), -- Scroll the view up
           ["<c-f>"]         = actions.scroll_view(0.25),  -- Scroll the view down
           ["<tab>"]         = actions.select_next_entry,
@@ -250,8 +250,8 @@ commit_log_panel = {
           ["<up>"]          = actions.prev_entry,
           ["<cr>"]          = actions.select_entry,
           ["o"]             = actions.select_entry,
-          ["<c-u>"]         = actions.scroll_view(-0.25),
-          ["<c-d>"]         = actions.scroll_view(0.25),
+          ["<c-u>"]         = actions.scroll_view(-0.125),
+          ["<c-d>"]         = actions.scroll_view(0.125),
           ["<c-b>"]         = actions.scroll_view(-0.25),
           ["<c-f>"]         = actions.scroll_view(0.25),
           ["<tab>"]         = actions.select_next_entry,
