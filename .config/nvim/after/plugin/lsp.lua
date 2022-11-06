@@ -67,27 +67,22 @@ require lspconfig .clangd.setup {
 }
 
 -- Python
-local set_python_lsp = function()
-    local lspenv = vim.fn.input("Environment: ")
-    require lspconfig .pylsp.setup{
-        cmd = {"source "..os.getenv("XDG_CONFIG_HOME").."/miniconda/arm-conda.sh".." && conda activate "..lspenv.." && pylsp"}, -- I hate conda contaminating my environment
-        settings = {
-            pylsp = {
-                plugins = {
-                    pycodestyle = {
-                        --ignore = {  },
-                        maxLineLength = 100
-                    }
+require lspconfig .pylsp.setup{
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    --ignore = {  },
+                    maxLineLength = 100
                 }
             }
-        },
-        on_attach = on_attach,
-        --config param available at 
-        --https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
-        --https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
+        }
+    },
+    on_attach = on_attach,
+    --config param available at 
+    --https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
+    --https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
 }
-end
-vim.api.nvim_create_user_command( SetPythonLSP , set_python_lsp, {})
 
 -- CMake
 require lspconfig .cmake.setup{}
