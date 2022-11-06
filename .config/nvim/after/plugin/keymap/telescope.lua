@@ -18,9 +18,9 @@ nnoremap("<leader>tw", grep_word)
 nnoremap("<leader>tt", telescope_builtin.resume)
 
 -- git
-nnoremap("<leader>gb", telescope_builtin.git_branches)
-nnoremap("<leader>gf", telescope_builtin.git_files)
-nnoremap("<leader>gw", telescope.extensions.git_worktree.git_worktrees)
+nnoremap("<leader>tgb", telescope_builtin.git_branches)
+nnoremap("<leader>tgf", telescope_builtin.git_files)
+nnoremap("<leader>tgw", telescope.extensions.git_worktree.git_worktrees)
 -- <Enter> - switches to that worktree
 -- <c-d> - deletes that worktree
 -- <c-f> - toggles forcing of the next deletion
@@ -29,13 +29,12 @@ nnoremap("<leader>gw", telescope.extensions.git_worktree.git_worktrees)
 search_dotfiles = function()
     require( jonbo.telescope ).search_dotfiles({ hidden = true }) -- config files
 end
-nnoremap("<leader>vk", telescope_builtin.keymaps)
-nnoremap("<leader>vb", telescope_builtin.buffers) --view open buffers
-nnoremap("<leader>vh", telescope_builtin.help_tags) -- easily access help with preview
-nnoremap("<leader>vrc", search_dotfiles)
-nnoremap("<leader>rg", telescope_builtin.registers)
+nnoremap("<leader>tk", telescope_builtin.keymaps)
+nnoremap("<leader>tvb", telescope_builtin.buffers) --view open buffers
+nnoremap("<leader>th", telescope_builtin.help_tags) -- easily access help with preview
+nnoremap("<leader>tvrc", search_dotfiles)
+nnoremap("<leader>tr", telescope_builtin.registers)
 
 -- telescope file explorer
 nnoremap("<leader>tb", telescope.extensions.file_browser.file_browser)
--- nnoremap("<leader>tx",  :Telescope file_browser )
 
