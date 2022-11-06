@@ -1,5 +1,4 @@
 local wezterm = require  wezterm 
-local mux = wezterm.mux
 
 local scheme = wezterm.get_builtin_color_schemes()[ tokyonight ]
 scheme.background =  black  -- black out background
