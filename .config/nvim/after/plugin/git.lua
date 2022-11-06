@@ -1,10 +1,7 @@
 -- neogit
 local nnoremap = require( jonbo.keymap ).nnoremap
 
-nnoremap("<leader>ga", "<cmd>!git fetch --all<CR>");
---TODO: add shortcut to open DiffviewFileHistory passing current file as arg
-
-function DiffviewToggle()
+function diffviewToggle()
   local lib = require diffview.lib 
   local view = lib.get_current_view()
   if view then
@@ -15,7 +12,14 @@ function DiffviewToggle()
     vim.cmd(":DiffviewOpen")
   end
 end
-nnoremap("<leader>gt", DiffviewToggle)
+
+function diffviewFileHistoryThisFile()
+    vim.cmd(":DiffviewFileHistory %")
+end
+
+nnoremap("<leader>ga", "<cmd>!git fetch --all<CR>");
+nnoremap("<leader>gt", diffviewToggle)
+nnoremap("<leader>gd", diffviewFileHistoryThisFile)
 
 -- gitsigns
 require( gitsigns ).setup {
@@ -89,7 +93,6 @@ require( gitsigns ).setup {
         map( n ,  <leader>gh , gs.preview_hunk)
         -- map( n ,  <leader>hb , function() gs.blame_line{full=true} end)
         map( n ,  <leader>gb , gs.toggle_current_line_blame)
-        map( n ,  <leader>gd , gs.diffthis)
         -- map( n ,  <leader>hD , function() gs.diffthis( ~ ) end)
         -- map( n ,  <leader>td , gs.toggle_deleted)
 
