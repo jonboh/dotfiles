@@ -38,24 +38,36 @@ cmp.setup({
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-nnoremap("gh", "<nop>")
+nnoremap( h ,  <nop> )
 local on_attach = function(client, bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set( n ,  gd , vim.lsp.buf.definition, bufopts)
-  vim.keymap.set( n ,  gD , vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set( n ,  gi , vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set( n ,  hd , function() 
+                                vim.lsp.buf.definition()
+                                vim.cmd(":normal zt")
+                            end, bufopts)
+  vim.keymap.set( n ,  hD , function()
+                                vim.lsp.buf.declaration()
+                                vim.cmd(":normal zt")
+                            end, bufopts)
+  vim.keymap.set( n ,  hi , vim.lsp.buf.implementation, bufopts)
   -- vim.keymap.set( n ,  gt , vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set( n ,  gr , vim.lsp.buf.references, bufopts)
+  vim.keymap.set( n ,  hr , vim.lsp.buf.references, bufopts)
   vim.keymap.set( i ,  <C-h> , vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set( n ,  gh , vim.lsp.buf.hover, bufopts)
-  vim.keymap.set( n ,  <leader>rn , vim.lsp.buf.rename, bufopts)
+  vim.keymap.set( n ,  hh , vim.lsp.buf.hover, bufopts)
+  vim.keymap.set( n ,  hrn , vim.lsp.buf.rename, bufopts)
 --  vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts) -- disabled in favor of formatter.nvim
-  vim.keymap.set( n ,  <leader>ca , vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set( n , "<leader>vd", vim.diagnostic.open_float)
-  vim.keymap.set( n , "]d", vim.diagnostic.goto_next)
-  vim.keymap.set( n , "[d", vim.diagnostic.goto_prev)
+  vim.keymap.set( n ,  hca , vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set( n , "hvd", vim.diagnostic.open_float)
+  vim.keymap.set( n , "]d", function()
+                                vim.diagnostic.goto_next()
+                                vim.cmd(":normal zz")
+                            end)
+  vim.keymap.set( n , "[d", function()
+                                vim.diagnostic.goto_prev()
+                                vim.cmd(":normal zz")
+                            end)
 end
 
 -- LSP Configuration
