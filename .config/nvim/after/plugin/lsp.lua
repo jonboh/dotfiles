@@ -54,8 +54,8 @@ local on_attach = function(client, bufnr)
 --  vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts) -- disabled in favor of formatter.nvim
   vim.keymap.set( n ,  <leader>ca , vim.lsp.buf.code_action, bufopts)
   vim.keymap.set( n , "<leader>vd", vim.diagnostic.open_float)
-  vim.keymap.set( n , "[d", vim.diagnostic.goto_next)
-  vim.keymap.set( n , "]d", vim.diagnostic.goto_prev)
+  vim.keymap.set( n , "]d", vim.diagnostic.goto_next)
+  vim.keymap.set( n , "[d", vim.diagnostic.goto_prev)
 end
 
 -- LSP Configuration
