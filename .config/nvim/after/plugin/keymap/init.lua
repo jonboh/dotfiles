@@ -28,8 +28,6 @@ nnoremap("<C-d>", "<C-d>zz") -- centered page moves
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-Down>", "<cmd>copen<CR><cmd>cnext<CR>zz")
 nnoremap("<C-Up>", "<cmd>copen<CR><cmd>cprev<CR>zz")
---nnoremap("<leader>k", "<cmd>lnext<CR>zz") -- move across locations
---nnoremap("<leader>j", "<cmd>lprev<CR>zz") 
 
 -- windows
 nnoremap("<A-Down>", "<C-W>j") -- navigation layer
@@ -44,29 +42,23 @@ nnoremap("<A-C-Right>", "<C-W>5>") -- size horizontally
 nnoremap("<A-C-Up>", "<C-W>+") -- size vertically
 nnoremap("<A-C-Down>", "<C-W>-") -- size vertically
 
-
--- Terminal mode
-nnoremap("<leader>te", ":terminal<CR>")
-tnoremap("<Esc>", "<C-\\><C-n>") -- Esc to exit terminal mode. C-c will still stop work
-tnoremap("<C-c>", "<C-c><C-\\><C-n>") -- C-c will still stop work, and exit from terminal mode
-
 -- undotree
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
 
 -- move line
-vnoremap("J", ":m  >+1<CR>gv=gv")
-vnoremap("K", ":m  <-2<CR>gv=gv")
+vnoremap("<S-Down>", ":m  >+1<CR>gv=gv")
+vnoremap("<S-Up>", ":m  <-2<CR>gv=gv")
 
 -- yanking and pasting from system clipboard
-nnoremap("<leader>y", "\"+y") 
-vnoremap("<leader>y", "\"+y")
-nmap("<leader>Y", "\"+Y")
-nnoremap("<leader>p", "\"+p")
-nnoremap("<leader>P", "\"+P")
+nnoremap("gy", "\"+y") 
+vnoremap("gy", "\"+y")
+nmap("gY", "\"+Y")
+nnoremap("gp", "\"+p")
+nnoremap("gP", "\"+P")
 
 -- delete into void register
-nnoremap("<leader>d", "\"_d")
-vnoremap("<leader>d", "\"_d")
+nnoremap("gd", "\"_d")
+vnoremap("gd", "\"_d")
 
 -- easily replace the current word
 nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") --<> on the selection limits the replacement to whole words
