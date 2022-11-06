@@ -36,6 +36,7 @@ vim.opt.termguicolors = true
 vim.opt.fileformat = "unix"
 vim.opt.ff = "unix"
 vim.opt.cmdheight = 1
+vim.opt.fillchars:append( diff:╱ )
 
 -- folding
 vim.opt.foldmethod =  expr 
