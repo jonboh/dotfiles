@@ -45,20 +45,28 @@ return require( packer ).startup(function(use)
 	use{ nvim-tree/nvim-web-devicons ,
         config = function() require( nvim-web-devicons ).setup{} end
     }
-    use{ neomake/neomake }
     use{ lambdalisue/suda.vim }
-    -- use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
-    --     "folke/noice.nvim",
-    --     event = "VimEnter",
-    --     config = function()
-    --         require("noice").setup()
-    --     end,
-    --     requires = {
-    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --         "MunifTanjim/nui.nvim",
-    --         "rcarriga/nvim-notify",
-    --     }
-    -- })
+--     use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
+--     "folke/noice.nvim",
+--     event = "VimEnter",
+--     config = function()
+--         require("noice").setup(
+--         {
+--             routes = {
+--                 {
+--                     view = "notify",
+--                     filter = { event = "msg_showmode" },
+--                 },
+--             },
+--         }
+--         )
+--     end,
+--     requires = {
+--         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+--         "MunifTanjim/nui.nvim",
+--         "rcarriga/nvim-notify",
+--     }
+-- })
 
     -- git 
     use { tpope/vim-fugitive }
@@ -101,7 +109,6 @@ return require( packer ).startup(function(use)
     -- check https://github.com/tpope/vim-unimpaired, might adapt mappings
     -- TODO: get a way to mass replace accross files in current project
     -- TODO: check neovim-tasks, quick cmake running
-	-- TODO: canfigure neomake, for linting (and build errors?)
     -- TODO: check https://gitlab.com/yorickpeterse/nvim-window, tmux style interactive window focus
     --use("onsails/lspkind-nvim")
     --use("glepnir/lspsaga.nvim")
