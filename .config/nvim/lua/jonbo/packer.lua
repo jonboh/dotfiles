@@ -97,6 +97,7 @@ return require( packer ).startup(function(use)
     -- Games
     use  ThePrimeagen/vim-be-good 
 
+    -- TODO: add https://github.com/jbyuki/one-small-step-for-vimkind for debugging nvim configs
     -- TODO: improve current word highlighting. treesitter refactor does not highlight from function signature
     -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
     -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
