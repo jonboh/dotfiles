@@ -76,6 +76,14 @@ return require( packer ).startup(function(use)
          lewis6991/gitsigns.nvim ,
         tag =  release  -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
+    use {
+       pwntester/octo.nvim ,
+      requires = {
+         nvim-lua/plenary.nvim ,
+         nvim-telescope/telescope.nvim ,
+         kyazdani42/nvim-web-devicons ,
+      }
+    }
 
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
@@ -97,6 +105,8 @@ return require( packer ).startup(function(use)
     -- Games
     use  ThePrimeagen/vim-be-good 
 
+    -- TODO: setup github integration with https://github.com/pwntester/octo.nvim
+        -- be able to review PRs from nvim woah! :D
     -- TODO: improve current word highlighting. treesitter refactor does not highlight from function signature
     -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
     -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
