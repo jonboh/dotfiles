@@ -55,3 +55,7 @@ vim.opt.updatetime = 50
 
 -- Don t pass messages to |ins-completion-menu|.
 vim.opt.shortmess:append("c")
+
+-- programs
+vim.opt.makeprg =  ninja 
+vim.opt.grepprg =  rg --vimgrep 
