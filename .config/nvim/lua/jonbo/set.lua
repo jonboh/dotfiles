@@ -59,3 +59,8 @@ vim.opt.shortmess:append("c")
 -- programs
 vim.opt.makeprg =  ninja 
 vim.opt.grepprg =  rg --vimgrep 
+vim.api.nvim_exec([[
+    set errorformat^=%-G%f:%l:\ warning:%m
+    set errorformat^=%-G%f:%l:\ note:%m
+    ]]
+    , true)-- TODO: toggle with command
