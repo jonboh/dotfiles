@@ -121,9 +121,10 @@ return require( packer ).startup(function(use)
     -- TODO: get a way to mass replace accross files in current project
     -- TODO: check neovim-tasks, quick cmake running
     -- TODO: check https://gitlab.com/yorickpeterse/nvim-window, tmux style interactive window focus
+    -- TODO: investigate snippets: 
+        --use("L3MON4D3/LuaSnip")
+        --use("saadparwaiz1/cmp_luasnip")
     --use("onsails/lspkind-nvim")
     --use("glepnir/lspsaga.nvim")
-    --use("L3MON4D3/LuaSnip")
-    --use("saadparwaiz1/cmp_luasnip")
 
 end)
