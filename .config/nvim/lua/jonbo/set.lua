@@ -42,7 +42,8 @@ vim.opt.fillchars:append( diff:╱ )
 vim.opt.foldmethod =  expr 
 vim.opt.foldexpr =  nvim_treesitter#foldexpr() 
 vim.opt.foldminlines = 3
-vim.opt.foldenable = false
+vim.opt.foldenable = true
+vim.opt.foldlevelstart = 2
 
 vim.g.mapleader = " "
 vim.opt.timeout = true
