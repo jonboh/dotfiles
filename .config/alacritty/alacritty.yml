@@ -509,7 +509,7 @@ hints:
    # - regex: "(?<=commit )[\\w]+"
    
    # words and contiguous characters or /
-   - regex: "[\\w|/]+"
+   - regex: "[\\w|/|.|_|0-9|-]+"
      action: Copy
      binding: 
        key: Y
