@@ -7,23 +7,25 @@ local vnoremap = Remap.vnoremap
 
 -- DAP Configuration
 local dap = require( dap )
-nnoremap("<leader>q", function()
+local dapui = require("dapui")
+
+nnoremap("<F1>", function()
     dap.close()
 end)
 
 -- TODO: add pause 
 
-nnoremap("<F5>", function()
+nnoremap("<F7>", function() -- navlayer left
     dap.continue()
 end)
-nnoremap("<F4>", function()
+nnoremap("<F8>", function() -- navlayer down
     dap.step_over()
 end)
-nnoremap("<F6>", function()
-    dap.step_into()
-end)
-nnoremap("<F3>", function()
+nnoremap("<F9>", function() -- navlayer up 
     dap.step_out()
+end)
+nnoremap("<F10>", function() -- navlayer right
+    dap.step_into()
 end)
 nnoremap("<Leader>b", function()
     dap.toggle_breakpoint()
@@ -35,8 +37,17 @@ nnoremap("<leader>rc", function()
     dap.run_to_cursor()
 end)
 
+-- Visual evaluation 
+vnoremap("<F5>", "<Cmd>lua require(\"dapui\").eval()<CR>")
+nnoremap("<F5>", "<Cmd>lua require(\"dapui\").eval(<cword>)<CR>")
+
+
+nnoremap("<F12>", function()
+    dapui.toggle(1)
+    dapui.toggle(2)
+end)
+
 -- DAP UI Config
-local dapui = require("dapui")
 dapui.setup({
   icons = { expanded = "▾", collapsed = "▸", current_frame = "▸" },
   mappings = {
@@ -94,10 +105,6 @@ dapui.setup({
   }
 })
 
-nnoremap("<F1>", function()
-    dapui.toggle(1)
-    dapui.toggle(2)
-end)
 
 -- Open/Close dapui with debugger session
 dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -111,7 +118,4 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
-
--- Visual evaluation 
-vnoremap("<C-x>", "<Cmd>lua require(\"dapui\").eval()<CR>")
 
