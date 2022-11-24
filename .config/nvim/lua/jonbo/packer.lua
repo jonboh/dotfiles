@@ -24,7 +24,7 @@ return require( packer ).startup(function(use)
     use {  nvim-lualine/lualine.nvim ,
           requires = {  kyazdani42/nvim-web-devicons , opt = true }
         }
-    use( mbbill/undotree ) 
+    use( mbbill/undotree )
     use{ terrortylor/nvim-comment }
     use{ anuvyklack/pretty-fold.nvim }
     use  lewis6991/impatient.nvim 
@@ -72,7 +72,7 @@ return require( packer ).startup(function(use)
     use { tpope/vim-fugitive }
     use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
     use {  sindrets/diffview.nvim , requires =  nvim-lua/plenary.nvim  }
-    use { 
+    use {
          lewis6991/gitsigns.nvim ,
         tag =  release  -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
@@ -124,6 +124,7 @@ return require( packer ).startup(function(use)
     -- TODO: investigate snippets: 
         --use("L3MON4D3/LuaSnip")
         --use("saadparwaiz1/cmp_luasnip")
+    -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
     --use("onsails/lspkind-nvim")
     --use("glepnir/lspsaga.nvim")
 

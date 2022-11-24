@@ -9,6 +9,7 @@ local vnoremap = Remap.vnoremap
 local dap = require( dap )
 local dapui = require("dapui")
 
+-- TODO: clear F1 from opening help
 nnoremap("<F1>", function()
     dap.close()
 end)
