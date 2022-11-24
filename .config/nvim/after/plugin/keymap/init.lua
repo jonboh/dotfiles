@@ -1,19 +1,12 @@
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap -- noremap for normal mode
 local vnoremap = Remap.vnoremap -- noremap for visual and select mode
-local xnoremap = Remap.xnoremap -- noremap for visual
-local tnoremap = Remap.tnoremap -- noremap for terminal mode
-local nmap = Remap.nmap
 
 -- <A-[]> Alt+[]
 -- <C-[]> Ctrl+[]
 
 -- TODO: add silence
-nnoremap("<Space>", "<nop>") 
--- nnoremap("<C-z>", "<nop>")
--- vnoremap("<C-z>", "<nop>")
--- xnoremap("<C-z>", "<nop>")
--- tnoremap("<C-z>", "<nop>")
+nnoremap("<Space>", "<nop>")
 
 nnoremap("j", "<nop>") -- you ll use your nav layer and you ll like it!
 nnoremap("k", "<nop>") -- you ll use your nav layer and you ll like it!
@@ -50,11 +43,12 @@ vnoremap("<S-Down>", ":m  >+1<CR>gv=gv")
 vnoremap("<S-Up>", ":m  <-2<CR>gv=gv")
 
 -- yanking and pasting from system clipboard
-nnoremap("gy", "\"+y") 
+nnoremap("gy", "\"+y")
 vnoremap("gy", "\"+y")
-nmap("gY", "\"+Y")
 nnoremap("gp", "\"+p")
 nnoremap("gP", "\"+P")
+vnoremap("gp", "\"+p")
+vnoremap("gP", "\"+P")
 
 -- delete into void register
 nnoremap("gd", "\"_d")

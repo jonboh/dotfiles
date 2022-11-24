@@ -13,7 +13,7 @@ grep_word = function()
     telescope_builtin.grep_string { search = vim.fn.expand("<cword>") }
 end
 nnoremap("<leader>tf", telescope_builtin.find_files) -- TODO: dont show hidden files
-nnoremap("<leader>tg", live_grep)
+nnoremap("<leader>trg", live_grep)
 nnoremap("<leader>tw", grep_word)
 nnoremap("<leader>tt", telescope_builtin.resume)
 
