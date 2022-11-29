@@ -1,7 +1,7 @@
--- neogit
+-- TODO: line history
 local nnoremap = require( jonbo.keymap ).nnoremap
 
-function diffviewToggle()
+local function diffviewToggle()
   local lib = require diffview.lib 
   local view = lib.get_current_view()
   if view then
@@ -13,7 +13,7 @@ function diffviewToggle()
   end
 end
 
-function diffviewFileHistoryThisFile()
+local function diffviewFileHistoryThisFile()
     vim.cmd(":DiffviewFileHistory %")
 end
 
