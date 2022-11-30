@@ -2,6 +2,7 @@
 alias gs= git status 
 alias gc= git commit 
 alias gw= git worktree 
+alias gd= git diff 
 
 alias gl= gl1 
 alias gl1= gl1-specific --all 
