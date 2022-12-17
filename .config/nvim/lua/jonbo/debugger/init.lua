@@ -16,18 +16,11 @@ end)
 
 -- TODO: add pause 
 
-nnoremap("<F7>", function() -- navlayer left
-    dap.continue()
-end)
-nnoremap("<F8>", function() -- navlayer down
-    dap.step_over()
-end)
-nnoremap("<F9>", function() -- navlayer up 
-    dap.step_out()
-end)
-nnoremap("<F10>", function() -- navlayer right
-    dap.step_into()
-end)
+nnoremap("<F7>", dap.continue)
+nnoremap("<F8>", dap.step_over)
+nnoremap("<F9>", dap.step_out)
+nnoremap("<F10>", dap.step_into)
+nnoremap("<F11>", dap.pause)
 nnoremap("<Leader>b", function()
     dap.toggle_breakpoint()
 end)
