@@ -50,7 +50,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set( n ,  hr , vim.lsp.buf.references, bufopts)
   vim.keymap.set( i ,  <C-h> , vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set( n ,  hh , vim.lsp.buf.hover, bufopts)
-  vim.keymap.set( n ,  hrn , vim.lsp.buf.rename, bufopts)
+  vim.keymap.set( n ,  hn , vim.lsp.buf.rename, bufopts)
 --  vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts) -- disabled in favor of formatter.nvim
   vim.keymap.set( n ,  hca , vim.lsp.buf.code_action, bufopts)
   vim.keymap.set( n , "hvd", vim.diagnostic.open_float)
