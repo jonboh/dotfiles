@@ -33,7 +33,7 @@ end)
 
 -- Visual evaluation 
 vnoremap("<F5>", "<Cmd>lua require(\"dapui\").eval()<CR>")
-nnoremap("<F5>", "<Cmd>lua require(\"dapui\").eval(<cword>)<CR>")
+nnoremap("<F5>", "<Cmd>lua require(\"dapui\").eval("..vim.fn.expand( <cword> )..")<CR>")
 
 
 nnoremap("<F12>", function()
