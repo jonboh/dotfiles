@@ -1,9 +1,12 @@
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap -- noremap for normal mode
 local vnoremap = Remap.vnoremap -- noremap for visual and select mode
+local tnoremap = Remap.tnoremap
 
 -- <A-[]> Alt+[]
 -- <C-[]> Ctrl+[]
+
+tnoremap("<Esc>", "<C-\\><C-n>")
 
 -- TODO: add silence
 nnoremap("<Space>", "<nop>")
