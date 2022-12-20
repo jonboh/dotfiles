@@ -45,7 +45,7 @@ return require( packer ).startup(function(use)
 	use{ nvim-tree/nvim-web-devicons ,
         config = function() require( nvim-web-devicons ).setup{} end
     }
-    use{ lambdalisue/suda.vim }
+    use{ lambdalisue/suda.vim } -- write with sudo
 --     use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
 --     "folke/noice.nvim",
 --     event = "VimEnter",
@@ -108,8 +108,6 @@ return require( packer ).startup(function(use)
     -- TODO: setup github integration with https://github.com/pwntester/octo.nvim
         -- be able to review PRs from nvim woah! :D
     -- TODO: add https://github.com/jbyuki/one-small-step-for-vimkind for debugging nvim configs
-    -- TODO: improve current word highlighting. treesitter refactor does not highlight from function signature
-    -- TODO: check more plugins from rcarriga dotfiles and https://github.com/rockerBOO/awesome-neovim#plugin-manager
     -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
             -- resolve merge conflicts
             -- navigating log --graph
@@ -119,13 +117,10 @@ return require( packer ).startup(function(use)
         -- give fugitive a try
     -- check https://github.com/tpope/vim-unimpaired, might adapt mappings
     -- TODO: get a way to mass replace accross files in current project
-    -- TODO: check neovim-tasks, quick cmake running
     -- TODO: check https://gitlab.com/yorickpeterse/nvim-window, tmux style interactive window focus
-    -- TODO: investigate snippets: 
-        --use("L3MON4D3/LuaSnip")
-        --use("saadparwaiz1/cmp_luasnip")
     -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
-    --use("onsails/lspkind-nvim")
-    --use("glepnir/lspsaga.nvim")
+    -- TODO: rework lsp configuration with lsp-zero
+    --      - this will include mason 
+    --      - snippets and more
 
 end)
