@@ -85,6 +85,12 @@ return require( packer ).startup(function(use)
       }
     }
 
+    -- Markdown
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
     use( nvim-treesitter/nvim-treesitter-refactor ) -- for symbol under cursor highlighting
