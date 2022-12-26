@@ -1,19 +1,19 @@
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
+local vnoremap = Remap.vnoremap
 
 local telescope = require( telescope )
 local telescope_builtin = require( telescope.builtin )
 --require("telescope").load_extension("git_worktree") -- not yet working
 
 -- files
-live_grep = function()
-    telescope_builtin.live_grep()--{ search = vim.fn.input("Grep For > ")}
-end
 grep_word = function()
     telescope_builtin.grep_string { search = vim.fn.expand("<cword>") }
 end
+
 nnoremap("<leader>tf", telescope_builtin.find_files) -- TODO: dont show hidden files
-nnoremap("<leader>trg", live_grep)
+nnoremap("<leader>ts", telescope_builtin.live_grep)
+vnoremap("<leader>ts", "\"zy<cmd>exec  Telescope grep_string search=  . escape(@z,    )<cr>") -- TODO: improve: selection search fails on spaces
 nnoremap("<leader>tw", grep_word)
 nnoremap("<leader>tt", telescope_builtin.resume)
 
