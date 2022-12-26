@@ -60,3 +60,4 @@ vnoremap("gd", "\"_d")
 -- easily replace the current word
 nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") --<> on the selection limits the replacement to whole words
 vnoremap("<leader>s", "\"0y:%s/<C-r>0/<C-r>0/gI<Left><Left><Left>") -- this uses register 0
+-- TODO: ^add escaping for https://superuser.com/questions/41378/how-to-search-for-selected-text-in-vim
