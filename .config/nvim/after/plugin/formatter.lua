@@ -1,3 +1,4 @@
+-- TODO: configure for rust and markdown
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
 

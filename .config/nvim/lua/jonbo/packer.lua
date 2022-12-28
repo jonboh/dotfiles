@@ -36,9 +36,6 @@ return require( packer ).startup(function(use)
         requires = "nvim-lua/plenary.nvim",
         config = function()
             require("todo-comments").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
             }
         end
     }
@@ -114,8 +111,7 @@ return require( packer ).startup(function(use)
     -- TODO: setup github integration with https://github.com/pwntester/octo.nvim
         -- be able to review PRs from nvim woah! :D
     -- TODO: add https://github.com/jbyuki/one-small-step-for-vimkind for debugging nvim configs
-    -- TODO: complete config for diffview, gitsigns and neogit. I need to quickly
-            -- resolve merge conflicts
+    -- TODO: complete config for diffview, gitsigns . I need to quickly
             -- navigating log --graph
             -- navigate history
             -- blame
@@ -123,10 +119,6 @@ return require( packer ).startup(function(use)
         -- give fugitive a try
     -- check https://github.com/tpope/vim-unimpaired, might adapt mappings
     -- TODO: get a way to mass replace accross files in current project
-    -- TODO: check https://gitlab.com/yorickpeterse/nvim-window, tmux style interactive window focus
     -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
-    -- TODO: rework lsp configuration with lsp-zero
-    --      - this will include mason 
-    --      - snippets and more
-
+    -- TODO: check https://github.com/akinsho/toggleterm.nvim, substitue harpoon tmux switching
 end)
