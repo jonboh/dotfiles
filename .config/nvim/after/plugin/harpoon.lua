@@ -10,5 +10,3 @@ nnoremap("<C-t>", function() require("harpoon.ui").nav_file(2) end, silent)
 nnoremap("<C-n>", function() require("harpoon.ui").nav_file(3) end, silent)
 nnoremap("<C-s>", function() require("harpoon.ui").nav_file(4) end, silent)
 
-nnoremap("<leader>.", function() require("harpoon.tmux").gotoTerminal(1)  end, silent)
-
