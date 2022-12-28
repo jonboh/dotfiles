@@ -38,6 +38,15 @@ nnoremap("<A-C-Right>", "<C-W>5>") -- size horizontally
 nnoremap("<A-C-Up>", "<C-W>+") -- size vertically
 nnoremap("<A-C-Down>", "<C-W>-") -- size vertically
 
+-- terminal
+tnoremap("<A-Down>", "<Cmd>wincmd j<CR>") -- navigation layer
+tnoremap("<A-Up>", "<Cmd>wincmd k<CR>")
+tnoremap("<A-Right>", "<Cmd>wincmd l<CR>")
+tnoremap("<A-Left>", "<Cmd>wincmd h<CR>")
+
+nnoremap("<leader>.", ":ToggleTerm<CR>", {silent = true})
+tnoremap("<leader>.", "<Cmd>ToggleTerm<CR>", {silent = true})
+
 -- undotree
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
 

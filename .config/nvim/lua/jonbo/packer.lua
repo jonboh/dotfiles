@@ -43,6 +43,9 @@ return require( packer ).startup(function(use)
         config = function() require( nvim-web-devicons ).setup{} end
     }
     use{ lambdalisue/suda.vim } -- write with sudo
+    use {"akinsho/toggleterm.nvim", tag =  * , config = function()
+      require("toggleterm").setup()
+    end}
 --     use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
 --     "folke/noice.nvim",
 --     event = "VimEnter",
