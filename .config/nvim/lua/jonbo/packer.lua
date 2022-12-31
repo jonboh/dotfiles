@@ -122,15 +122,18 @@ return require( packer ).startup(function(use)
     -- Debugger
     use("mfussenegger/nvim-dap")
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
+    use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
+    -- use( jbyuki/one-small-step-for-gimkind )
+
+    -- Obsidian
+    use{ epwalsh/obsidian.nvim }
 
     -- Games
     use  ThePrimeagen/vim-be-good 
 
     -- TODO: setup github integration with https://github.com/pwntester/octo.nvim
         -- be able to review PRs from nvim woah! :D
-    -- TODO: add https://github.com/jbyuki/one-small-step-for-vimkind for debugging nvim configs
     -- TODO: complete config for diffview, gitsigns . I need to quickly
             -- navigating log --graph
             -- navigate history
@@ -140,5 +143,4 @@ return require( packer ).startup(function(use)
     -- check https://github.com/tpope/vim-unimpaired, might adapt mappings
     -- TODO: get a way to mass replace accross files in current project
     -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
-    -- TODO: check https://github.com/akinsho/toggleterm.nvim, substitue harpoon tmux switching
 end)

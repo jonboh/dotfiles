@@ -26,7 +26,7 @@ lsp.setup()
 
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
-nnoremap( <leader>o , "<cmd>:ClangdSwitchSourceHeader<CR>") -- TODO: add this on attach
+nnoremap( ho , "<cmd>:ClangdSwitchSourceHeader<CR>") -- TODO: add this on attach
 
 
 -- local Remap = require("jonbo.keymap")
