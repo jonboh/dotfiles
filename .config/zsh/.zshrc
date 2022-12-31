@@ -21,6 +21,9 @@ _comp_options+=(globdots)
 source $XDG_CONFIG_HOME/zsh/external/completion.zsh # Phantas0s completion options
 fpath=($XDG_CONFIG_HOME/external/zsh-completions/src $fpath) # zsh-users completions
 
+# add zsh suggestions
+source $XDG_CONFIG_HOME/zsh/external/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # add syntax highlighting provided by zsh-syntax-highlighting package
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
