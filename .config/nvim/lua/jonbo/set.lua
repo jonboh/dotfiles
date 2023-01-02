@@ -47,6 +47,7 @@ vim.opt.foldlevelstart = 99
 
 vim.g.mapleader = " "
 vim.opt.timeout = true
+vim.opt.timeoutlen = 500
 
 vim.opt.autowrite = true
 
