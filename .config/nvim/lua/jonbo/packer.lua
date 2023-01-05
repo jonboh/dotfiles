@@ -119,6 +119,8 @@ return require( packer ).startup(function(use)
         { rafamadriz/friendly-snippets },
       }
     }
+    use { j-hui/fidget.nvim , -- adds a nice fidget that tracks lsp progress
+        config= function() require"fidget".setup{} end}
 
     -- Debugger
     use("mfussenegger/nvim-dap")
