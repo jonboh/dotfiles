@@ -38,6 +38,9 @@ vim.opt.ff = "unix"
 vim.opt.cmdheight = 1
 vim.opt.fillchars:append('diff:╱')
 
+-- winbar
+vim.opt.winbar="%f %m" -- show filename and modification status on top
+
 -- folding
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
