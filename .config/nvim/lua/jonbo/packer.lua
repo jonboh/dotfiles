@@ -46,7 +46,8 @@ return require( packer ).startup(function(use)
     use {"akinsho/toggleterm.nvim", tag =  * , config = function()
       require("toggleterm").setup()
     end}
---     use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now
+--  TODO: Time for a new opportunity? it has support for showcmd output. on virtual text?
+--     use({ -- this is nice but considerably degrades the responsiveness of nvim, passing for now. 
 --     "folke/noice.nvim",
 --     event = "VimEnter",
 --     config = function()
@@ -124,23 +125,31 @@ return require( packer ).startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
     use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
-    -- use( jbyuki/one-small-step-for-gimkind )
+    -- use( jbyuki/one-small-step-for-vimkind )
 
     -- Obsidian
     use{ epwalsh/obsidian.nvim }
 
+    -- Dashboard
+    use {
+         goolord/alpha-nvim ,
+        requires = {  nvim-tree/nvim-web-devicons  },
+        config = function ()
+            require alpha .setup(require alpha.themes.startify .config)
+        end
+    }
     -- Games
     use  ThePrimeagen/vim-be-good 
 
     -- TODO: setup github integration with https://github.com/pwntester/octo.nvim
         -- be able to review PRs from nvim woah! :D
-    -- TODO: complete config for diffview, gitsigns . I need to quickly
-            -- navigating log --graph
-            -- navigate history
-            -- blame
-        -- check lazygit and gitui
-        -- give fugitive a try
-    -- check https://github.com/tpope/vim-unimpaired, might adapt mappings
+    -- TODO:  Add git configurations. I need to quickly
+        -- navigating log --graph
+        -- navigate history
+        -- blame
+    -- TODO: check https://github.com/tpope/vim-unimpaired, might adapt mappings
     -- TODO: get a way to mass replace accross files in current project
     -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
+    -- TODO: configure snippets
+    -- TODO: check https://github.com/stevearc/oil.nvim. edit your filesystem on a neovim buffer
 end)
