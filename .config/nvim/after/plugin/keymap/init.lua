@@ -43,8 +43,8 @@ nnoremap("<A-C-Down>", "<C-W>-") -- size vertically
 -- tnoremap("<A-Up>", "<Cmd>wincmd k<CR>")
 -- tnoremap("<A-Right>", "<Cmd>wincmd l<CR>")
 -- tnoremap("<A-Left>", "<Cmd>wincmd h<CR>")
-nnoremap("<leader><backspace>", ":ToggleTerm direction=float<CR>", {silent = true})
-tnoremap("<leader><backspace>", "<Cmd>ToggleTerm<CR>", {silent = true})
+nnoremap("<leader><Esc>", ":ToggleTerm direction=float<CR>", {silent = true})
+tnoremap("<leader><Esc>", "<Cmd>ToggleTerm<CR>", {silent = true})
 
 -- undotree
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
