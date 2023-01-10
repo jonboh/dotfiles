@@ -1,9 +1,14 @@
-if [ "$(tty)" = "/dev/tty1" ];
-then
-    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+# if [ "$(tty)" = "/dev/tty1" ];
+# then
+#     pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+# fi
+
+export WLR_NO_HARDWARE_CURSORS=1
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec sway --unsupported-gpu
 fi
 
-pgrep fan2go  >/dev/null || $XDG_CONFIG_HOME/fan2go/fan2go.sh # if fan2go is not running start it
+# pgrep fan2go  >/dev/null || $XDG_CONFIG_HOME/fan2go/fan2go.sh # if fan2go is not running start it
 
 source $XDG_CONFIG_HOME/zsh/aliases
 

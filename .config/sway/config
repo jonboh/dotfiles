@@ -1,0 +1,267 @@
+exec $XDG_CONFIG_HOME/screenlayout/layout.sh
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# ## COLORS
+# # special
+# set_from_resource $foreground foreground #C6C6C6
+# set_from_resource $background background #1C1C1C
+# set_from_resource $cursorColor cursorColor #C6C6C6
+# # black
+# set_from_resource $black1 color0 #303030
+# set_from_resource $black2 color8 #444444
+# set $trueblack #000000
+# # red
+# set_from_resource $red1 color1 #d75f5f
+# set_from_resource $red2 color9 #d75f5f
+# # green
+# set_from_resource $green1 color2 #87AF87
+# set_from_resource $green2 color10 #87AF87
+# # yellow
+# set_from_resource $yellow1 color3 #ffd75f
+# set_from_resource $yellow2 color11 #ffd75f
+# # blue
+# set_from_resource $blue1 color4 #87afd7
+# set_from_resource $blue2 color12 #87afd7
+# # magenta
+# set_from_resource $cyan1 color5 #afafd7
+# set_from_resource $cyan2 color13 #afafd7
+# # cyan
+# set_from_resource $cyan1 color6 #afd7ff
+# set_from_resource $cyan2 color14 #afd7ff
+# # white
+# set_from_resource $white1 color7 #4E4E4E
+# set_from_resource $white2 color15 #ffffff
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# font pango:monospace 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+# font pango:DejaVu Sans Mono 12
+font pango:Inconsolata 12
+# font pango:FiraCode Nerd Font 12
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec alacritty
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec "rofi -show drun"
+# A more modern dmenu replacement is rofi:
+# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+# There also is i3-dmenu-desktop which only displays applications shipping a
+# .desktop file. It is a wrapper around dmenu, so you need that installed.
+# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+bindsym $mod+s exec scrot --select $HOME/screenshots/%Y-%m-%d-%H_%M.jpg
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $term "1: term"
+set $web "2: web"
+set $doc "3: doc"
+set $comm "4: comm"
+set $media "5: media"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# set workspace to montor
+workspace $term output HDMI-0 
+workspace $web output HDMI-0
+workspace $comm output HDMI-0
+
+# switch to workspace
+bindsym $mod+1 workspace number $term
+bindsym $mod+2 workspace number $web
+bindsym $mod+3 workspace number $doc
+bindsym $mod+4 workspace number $comm
+bindsym $mod+5 workspace number $media
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $term
+bindsym $mod+Shift+2 move container to workspace number $web
+bindsym $mod+Shift+3 move container to workspace number $doc
+bindsym $mod+Shift+4 move container to workspace number $comm
+bindsym $mod+Shift+5 move container to workspace number $media
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+focus_follows_mouse no
+workspace_auto_back_and_forth no
+
+# applications workspace assigment
+# run to get class and instance
+assign [class="Alacritty" instance="Alacritty"] $term
+assign [class="Brave-browser" instance="brave-browser"] $web
+assign [class="firefox" instance="Navigator"] $web
+assign [class="Zathura" instance="org.pwmt.zathura"] $doc
+# assign [class=, instance] $comm # TODO: add teams
+# assign [class=, instance] $comm # TODO: add thunderbird
+# turns out spotify is its own beast dealing with workspace assigment
+for_window [class="Spotify"] move container to workspace $media
+# assign [class="Spotify" instance="spotify"] $media
+
+# floating pop up automatically
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="Arandr"] floating enable
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# shutdown / restart / suspend...
+set $mode_system \
+        System (l) lock, (e) logout, (s) suspend, \
+        (h) hibernate, (r) reboot, (Ctrl+s) shutdown
+        mode "$mode_system" {
+            bindsym l exec --no-startup-id $i3lockwall, mode "default"
+                bindsym e exec --no-startup-id i3-msg exit, mode "default"
+                bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, \
+                mode "default"
+                bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, \
+                mode "default"
+                bindsym r exec --no-startup-id systemctl reboot, mode "default"
+                bindsym CTRL+s exec --no-startup-id systemctl poweroff -i, \
+                mode "default"
+# to close the menu: Enter or Escape
+                bindsym Return mode "default"
+                bindsym Escape mode "default"
+        }
+bindsym $mod+BackSpace mode "$mode_system"
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+##########
+# DESIGN #
+##########
+
+# hide borders
+hide_edge_borders both
+
+# class                 border  backgr. text    indicator child_border
+# client.focused          $background $black1 $white2 $background
+# client.focused_inactive $background $black1 $black2 $background
+# client.unfocused        $background $background $black2 $background
+# client.urgent           $red1 $red1 $white2 $red1 $red1
+# client.placeholder      $red1 $red1 $white2 $red1 $red1
+
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
+bar {
+    status_command i3status --config $XDG_CONFIG_HOME/i3/i3status.conf
+    # Disable all tray icons
+    tray_output none
+    # tray_output primary
+    separator_symbol "┃"
+    colors {
+        # background $black1
+        # statusline $white2
+        # separator $black2
+
+        #                  border background text
+        # focused_workspace  $background $background $red1
+        # active_workspace   $black1 $black1 $black2
+        # inactive_workspace $background $black1 $foreground
+        # urgent_workspace   $red1 $red1 $white2
+        # binding_mode       $background $red2 $white2
+    }
+}
+
+exec alacritty
