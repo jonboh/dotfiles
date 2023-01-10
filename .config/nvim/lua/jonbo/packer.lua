@@ -137,7 +137,10 @@ return require( packer ).startup(function(use)
          goolord/alpha-nvim ,
         requires = {  nvim-tree/nvim-web-devicons  },
         config = function ()
-            require alpha .setup(require alpha.themes.startify .config)
+            require alpha .setup(require alpha.themes.startify .config) 
+            -- TODO: configure to quickly go to main sessions
+            -- TODO: obsidian view?
+            -- TODO: go to .config/nvim and debug?
         end
     }
     -- Games
@@ -154,4 +157,5 @@ return require( packer ).startup(function(use)
     -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
     -- TODO: configure snippets
     -- TODO: check https://github.com/stevearc/oil.nvim. edit your filesystem on a neovim buffer
+    -- TODO: configure treesitter syntactic selection and navigation: https://youtu.be/stqUbv-5u2s?t=763
 end)
