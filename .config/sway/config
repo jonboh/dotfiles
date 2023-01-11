@@ -111,9 +111,10 @@ set $ws9 "9"
 set $ws10 "10"
 
 # set workspace to montor
-workspace $term output HDMI-0 
-workspace $web output HDMI-0
-workspace $comm output HDMI-0
+workspace $term output HDMI-A-1 
+workspace $web output HDMI-A-1
+workspace $comm output HDMI-A-1
+workspace $doc output DP-1
 
 # switch to workspace
 bindsym $mod+1 workspace number $term
