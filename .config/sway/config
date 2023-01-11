@@ -71,11 +71,11 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
+# split in horizontally. next window will apper below
+bindsym $mod+h split v
 
-# split in vertical orientation
-bindsym $mod+v split v
+# split in vertically. next window will appear to the left
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -83,7 +83,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+r layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -183,7 +183,7 @@ set $mode_system \
         }
 bindsym $mod+BackSpace mode "$mode_system"
 # resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $mod+Alt+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
