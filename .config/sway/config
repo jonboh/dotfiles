@@ -3,37 +3,6 @@ exec $XDG_CONFIG_HOME/screenlayout/layout.sh
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# ## COLORS
-# # special
-# set_from_resource $foreground foreground #C6C6C6
-# set_from_resource $background background #1C1C1C
-# set_from_resource $cursorColor cursorColor #C6C6C6
-# # black
-# set_from_resource $black1 color0 #303030
-# set_from_resource $black2 color8 #444444
-# set $trueblack #000000
-# # red
-# set_from_resource $red1 color1 #d75f5f
-# set_from_resource $red2 color9 #d75f5f
-# # green
-# set_from_resource $green1 color2 #87AF87
-# set_from_resource $green2 color10 #87AF87
-# # yellow
-# set_from_resource $yellow1 color3 #ffd75f
-# set_from_resource $yellow2 color11 #ffd75f
-# # blue
-# set_from_resource $blue1 color4 #87afd7
-# set_from_resource $blue2 color12 #87afd7
-# # magenta
-# set_from_resource $cyan1 color5 #afafd7
-# set_from_resource $cyan2 color13 #afafd7
-# # cyan
-# set_from_resource $cyan1 color6 #afd7ff
-# set_from_resource $cyan2 color14 #afd7ff
-# # white
-# set_from_resource $white1 color7 #4E4E4E
-# set_from_resource $white2 color15 #ffffff
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -236,15 +205,46 @@ mode "resize" {
 # DESIGN #
 ##########
 
-# hide borders
+# ## COLORS
+# # special
+set $foreground #C6C6C6
+set $background #1C1C1C
+set $cursorColor #C6C6C6
+# # black
+set $black1 #303030
+set $black2 #444444
+set $trueblack 000000
+# # red
+set $red1 #d75f5f
+set $red2 #d75f5f
+# # green
+set $green1 #87AF87
+set $green2 #87AF87
+# # yellow
+set $yellow1 #ffd75f
+set $yellow2 #ffd75f
+# # blue
+set $blue1 #87afd7
+set $blue2 #87afd7
+# # magenta
+set $cyan1 #afafd7
+set $cyan2 #afafd7
+# # cyan
+set $cyan1 #afd7ff
+set $cyan2 #afd7ff
+# # white
+set $white1 #4E4E4E
+set $white2 #ffffff
+
+
 hide_edge_borders both
 
 # class                 border  backgr. text    indicator child_border
-# client.focused          $background $black1 $white2 $background
-# client.focused_inactive $background $black1 $black2 $background
-# client.unfocused        $background $background $black2 $background
-# client.urgent           $red1 $red1 $white2 $red1 $red1
-# client.placeholder      $red1 $red1 $white2 $red1 $red1
+client.focused          $background $black1 $white2 $background
+client.focused_inactive $background $black1 $black2 $background
+client.unfocused        $background $background $black2 $background
+client.urgent           $red1 $red1 $white2 $red1 $red1
+client.placeholder      $red1 $red1 $white2 $red1 $red1
 
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
@@ -254,16 +254,16 @@ bar {
     # tray_output primary
     separator_symbol "┃"
     colors {
-        # background $black1
-        # statusline $white2
+        background $black1
+        statusline $white2
         # separator $black2
 
         #                  border background text
-        # focused_workspace  $background $background $red1
-        # active_workspace   $black1 $black1 $black2
-        # inactive_workspace $background $black1 $foreground
-        # urgent_workspace   $red1 $red1 $white2
-        # binding_mode       $background $red2 $white2
+        focused_workspace  $background $background $red1
+        active_workspace   $black1 $black1 $black2
+        inactive_workspace $background $black1 $foreground
+        urgent_workspace   $red1 $red1 $white2
+        binding_mode       $background $red2 $white2
     }
 }
 
