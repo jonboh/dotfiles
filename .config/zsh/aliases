@@ -1,4 +1,5 @@
 alias dotfiles= /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME 
+alias vault= /usr/bin/git -C ~/doc/vault 
 #
 # git
 alias gs= git status 
