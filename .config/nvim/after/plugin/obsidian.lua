@@ -1,5 +1,5 @@
 require("obsidian").setup({
-    dir = "~/doc/obsidian",
+    dir = "~/doc/vault",
     daily_notes = {
         folder = "Journal",
     },
