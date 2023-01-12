@@ -1,5 +1,6 @@
+local vault_dir ="~/doc/vault" 
 require("obsidian").setup({
-    dir = "~/doc/vault",
+    dir = vault_dir,
     daily_notes = {
         folder = "Journal",
     },
@@ -39,5 +40,6 @@ vim.keymap.set( n ,  gf ,
 vim.keymap.set( n ,  <leader>os ,  <cmd>ObsidianSearch<CR> )
 vim.keymap.set( n ,  <leader>ob ,  <cmd>ObsidianBacklinks<CR> )
 vim.keymap.set( n ,  <leader>on , ":ObsidianNew ")
+vim.keymap.set( n ,  <leader>ot , ":e "..vault_dir.."/TODO.md<CR>")
 
 -- vim.keymap.set( n ,   ,  <cmd>ObsidianNew<CR> )
