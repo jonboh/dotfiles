@@ -3,36 +3,6 @@ exec $XDG_CONFIG_HOME/screenlayout/layout.sh
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-## COLORS
-# special
-set_from_resource $foreground foreground #C6C6C6
-set_from_resource $background background #1C1C1C
-set_from_resource $cursorColor cursorColor #C6C6C6
-# black
-set_from_resource $black1 color0 #303030
-set_from_resource $black2 color8 #444444
-set $trueblack #000000
-# red
-set_from_resource $red1 color1 #d75f5f
-set_from_resource $red2 color9 #d75f5f
-# green
-set_from_resource $green1 color2 #87AF87
-set_from_resource $green2 color10 #87AF87
-# yellow
-set_from_resource $yellow1 color3 #ffd75f
-set_from_resource $yellow2 color11 #ffd75f
-# blue
-set_from_resource $blue1 color4 #87afd7
-set_from_resource $blue2 color12 #87afd7
-# magenta
-set_from_resource $cyan1 color5 #afafd7
-set_from_resource $cyan2 color13 #afafd7
-# cyan
-set_from_resource $cyan1 color6 #afd7ff
-set_from_resource $cyan2 color14 #afd7ff
-# white
-set_from_resource $white1 color7 #4E4E4E
-set_from_resource $white2 color15 #ffffff
 
 set $mod Mod4
 
@@ -67,6 +37,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -100,10 +73,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -111,7 +84,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+r layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -211,7 +184,7 @@ set $mode_system \
         }
 bindsym $mod+BackSpace mode "$mode_system"
 # resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $mod+Alt+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -232,6 +205,37 @@ mode "resize" {
 ##########
 # DESIGN #
 ##########
+
+## COLORS
+# special
+set_from_resource $foreground foreground #C6C6C6
+set_from_resource $background background #1C1C1C
+set_from_resource $cursorColor cursorColor #C6C6C6
+# black
+set_from_resource $black1 color0 #303030
+set_from_resource $black2 color8 #444444
+set $trueblack #000000
+# red
+set_from_resource $red1 color1 #d75f5f
+set_from_resource $red2 color9 #d75f5f
+# green
+set_from_resource $green1 color2 #87AF87
+set_from_resource $green2 color10 #87AF87
+# yellow
+set_from_resource $yellow1 color3 #ffd75f
+set_from_resource $yellow2 color11 #ffd75f
+# blue
+set_from_resource $blue1 color4 #87afd7
+set_from_resource $blue2 color12 #87afd7
+# magenta
+set_from_resource $cyan1 color5 #afafd7
+set_from_resource $cyan2 color13 #afafd7
+# cyan
+set_from_resource $cyan1 color6 #afd7ff
+set_from_resource $cyan2 color14 #afd7ff
+# white
+set_from_resource $white1 color7 #4E4E4E
+set_from_resource $white2 color15 #ffffff
 
 # hide borders
 hide_edge_borders both
