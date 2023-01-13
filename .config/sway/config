@@ -155,6 +155,7 @@ assign [app_id="org.pwmt.zathura"] $doc
 # assign [class=, instance] $comm # TODO: add thunderbird
 # turns out spotify is its own beast dealing with workspace assigment
 for_window [class="Spotify"] move container to workspace $media
+# assign [class="Spotify" instance="spotify"] $media
 
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
