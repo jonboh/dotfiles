@@ -153,8 +153,6 @@ assign [class="Alacritty" instance="Alacritty"] $term
 assign [class="Brave-browser" instance="brave-browser"] $web
 assign [class="firefox" instance="Navigator"] $web
 assign [class="Zathura" instance="org.pwmt.zathura"] $doc
-# assign [class=, instance] $comm # TODO: add teams
-# assign [class=, instance] $comm # TODO: add thunderbird
 # turns out spotify is its own beast dealing with workspace assigment
 for_window [class="Spotify"] move container to workspace $media
 # assign [class="Spotify" instance="spotify"] $media
@@ -176,8 +174,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # shutdown / restart / suspend...
 set $mode_system \
-        System (l) lock, (e) logout, (s) suspend, \
-        (h) hibernate, (r) reboot, (Ctrl+s) shutdown
+        System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
         mode "$mode_system" {
             bindsym l exec --no-startup-id $i3lockwall, mode "default"
                 bindsym e exec --no-startup-id i3-msg exit, mode "default"
