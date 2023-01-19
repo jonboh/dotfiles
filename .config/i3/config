@@ -98,6 +98,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+bindsym $mod+u exec $XDG_CONFIG_HOME/i3/scratchpad.sh; [class="Dropdown"] scratchpad show; [class="Dropdown"] move position center
+
+
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $term "1: term"
@@ -159,6 +163,12 @@ for_window [class="Spotify"] move container to workspace $media
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Arandr"] floating enable
+
+# Scratchpad
+for_window [class="Dropdown"] floating enable
+for_window [class="Dropdown"] resize set 1200 800
+for_window [class="Dropdown"] move scratchpad
+exec --no-startup-id alacritty --class Dropdown -e zsh 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

@@ -1,5 +1,6 @@
 alias dotfiles= /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME 
 alias vault= /usr/bin/git -C ~/doc/vault 
+alias vaultupdateall= vault add . && vault commit -m "update-all" && vault push 
 #
 # git
 alias gs= git status 
