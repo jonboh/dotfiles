@@ -98,7 +98,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-bindsym $mod+u exec $XDG_CONFIG_HOME/i3/scratchpad.sh; [class="Dropdown"] scratchpad show; [class="Dropdown"] move position center
+bindsym $mod+u exec $XDG_CONFIG_HOME/i3/scratchpad.sh; [class="TerminalScratchpad"] scratchpad show; [class="TerminalScratchpad"] move position center
+bindsym $mod+i exec $XDG_CONFIG_HOME/i3/math.sh; [class="MathScratchpad"] scratchpad show; [class="MathScratchpad"] move position center
 
 
 
@@ -162,11 +163,17 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Arandr"] floating enable
 
-# Scratchpad
-for_window [class="Dropdown"] floating enable
-for_window [class="Dropdown"] resize set 1200 800
-for_window [class="Dropdown"] move scratchpad
+# TerminalScratchpad
+for_window [class="TerminalScratchpad"] floating enable
+for_window [class="TerminalScratchpad"] resize set 1200 800
+for_window [class="TerminalScratchpad"] move scratchpad
 exec --no-startup-id alacritty --class Dropdown -e zsh 
+# MathScratchpad
+for_window [class="MathScratchpad"] floating enable
+for_window [class="MathScratchpad"] resize set 1200 800
+for_window [class="MathScratchpad"] move scratchpad
+exec --no-startup-id alacritty --class MathScratchpad -e python
+# theres probably a better alternative that running python
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -191,7 +198,7 @@ set $mode_system \
         }
 bindsym $mod+BackSpace mode "$mode_system"
 # resize window (you can also use the mouse for that)
-bindsym $mod+LAlt+r mode "resize"
+bindsym $mod+Ctrl+Shift+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -207,7 +214,7 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym Ctrl+c mode "default"
 }
 ##########
 # DESIGN #
