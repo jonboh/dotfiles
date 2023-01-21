@@ -140,7 +140,7 @@ return require( packer ).startup(function(use)
     use("mfussenegger/nvim-dap")
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
-    use("theHamsta/nvim-dap-virtual-text") -- TODO: configure!
+    use("theHamsta/nvim-dap-virtual-text")
     -- use( jbyuki/one-small-step-for-vimkind )
 
     -- Obsidian
