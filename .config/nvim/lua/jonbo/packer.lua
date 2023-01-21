@@ -24,6 +24,8 @@ return require( packer ).startup(function(use)
             requires = { { nvim-lua/plenary.nvim } }
     }
     use { "nvim-telescope/telescope-file-browser.nvim" }
+    use { nvim-telescope/telescope-fzf-native.nvim , 
+        run =  cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build  }
     use{"ThePrimeagen/harpoon", requires =  nvim-lua/plenary.nvim  }
     use{ ggandor/leap.nvim , requires= tpope/vim-repeat }
     use{ karb94/neoscroll.nvim }
