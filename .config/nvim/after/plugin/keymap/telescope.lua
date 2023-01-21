@@ -34,6 +34,8 @@ nnoremap("<leader>tvb", telescope_builtin.buffers) --view open buffers
 nnoremap("<leader>th", telescope_builtin.help_tags) -- easily access help with preview
 nnoremap("<leader>tvrc", search_dotfiles)
 nnoremap("<leader>tr", telescope_builtin.registers)
+nnoremap("<leader>:", telescope_builtin.commands)
+nnoremap("<leader><C-r>", telescope_builtin.command_history)
 
 -- telescope file explorer
 nnoremap("<leader>tb", telescope.extensions.file_browser.file_browser)
