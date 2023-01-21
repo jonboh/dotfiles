@@ -32,6 +32,8 @@ require("telescope").setup({
           }
 })
 require("telescope").load_extension("file_browser")
+ -- this plugin implements the fzf fuzzy finding algorithm which will allow to
+ -- search terms with spaces regardless of the order of the words
 require( telescope ).load_extension( fzf )
 
 local M = {}
