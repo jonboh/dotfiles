@@ -16,6 +16,10 @@ nnoremap("<leader>ts", telescope_builtin.live_grep)
 vnoremap("<leader>ts", "\"zy<cmd>exec  Telescope grep_string search=  . escape(@z,    )<cr>") -- TODO: improve: selection search fails on spaces
 nnoremap("<leader>tw", grep_word)
 nnoremap("<leader>tt", telescope_builtin.resume)
+nnoremap("<leader>/", function() telescope_builtin.current_buffer_fuzzy_find({
+    sorting_strategy="ascending",
+    layout_config={prompt_position="top"}
+}) end)
 
 -- git
 nnoremap("<leader>tgb", telescope_builtin.git_branches)
