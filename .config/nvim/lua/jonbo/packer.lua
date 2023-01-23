@@ -117,16 +117,16 @@ return require( packer ).startup(function(use)
         { williamboman/mason-lspconfig.nvim },
 
         -- Autocompletion
-        { hrsh7th/nvim-cmp },
-        { hrsh7th/cmp-buffer },
-        { hrsh7th/cmp-path },
-        { saadparwaiz1/cmp_luasnip },
-        { hrsh7th/cmp-nvim-lsp },
-        { hrsh7th/cmp-nvim-lua },
+        { hrsh7th/nvim-cmp }, -- completion engine
+        { hrsh7th/cmp-buffer }, -- completion provider based on buffer
+        { hrsh7th/cmp-path }, -- based on the filesystem
+        { saadparwaiz1/cmp_luasnip }, -- based on snippets
+        { hrsh7th/cmp-nvim-lsp }, -- based on lsp
+        { hrsh7th/cmp-nvim-lua }, -- based on neovim lua api
 
         -- Snippets
-        { L3MON4D3/LuaSnip },
-        { rafamadriz/friendly-snippets },
+        { L3MON4D3/LuaSnip }, -- snippet engine
+        { rafamadriz/friendly-snippets }, -- snippet provider
       }
     }
     use { j-hui/fidget.nvim , -- adds a nice fidget that tracks lsp progress
