@@ -12,7 +12,8 @@ function(client, bufnr)
     vim.keymap.set( n ,  hi , vim.lsp.buf.implementation, bufopts)
     vim.keymap.set( n ,  ht , vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set( n ,  hr , vim.lsp.buf.references, bufopts)
-    vim.keymap.set( i ,  <C-h> , vim.lsp.buf.signature_help, bufopts)
+    -- TODO: add automatic signature help
+    vim.keymap.set( n ,  hf , vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set( n ,  hh , vim.lsp.buf.hover, bufopts)
     vim.keymap.set( n ,  hn , vim.lsp.buf.rename, bufopts)
     -- vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts) -- disabled in favor of formatter.nvim
