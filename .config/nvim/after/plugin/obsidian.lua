@@ -1,12 +1,8 @@
-local vault_dir ="~/doc/vault" 
+local vault_dir ="~/doc/vault"
 require("obsidian").setup({
     dir = vault_dir,
-    daily_notes = {
-        folder = "Journal",
-    },
     completion = {
         nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
-        use_advanced_uri = true,
     },
     note_id_func = function(title)
         -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
@@ -25,7 +21,20 @@ require("obsidian").setup({
 
 })
 
--- TODO: check difference with https://github.com/epwalsh/obsidian.nvim#using-nvim-treesitter
+search_obsidian_notes_files = function()
+	require("telescope.builtin").find_files({
+		prompt_title = "< Vault Notes >",
+		cwd = vault_dir,
+		hidden = false,
+	})
+end
+grep_obsidian_notes = function()
+	require("telescope.builtin").live_grep({
+		prompt_title = "< Vault Grep >",
+		cwd = vault_dir,
+		hidden = false,
+	})
+end
 
 vim.keymap.set( n ,  gf ,
   function()
@@ -37,9 +46,10 @@ vim.keymap.set( n ,  gf ,
   end,
   { noremap = false, expr = true}
 )
-vim.keymap.set( n ,  <leader>os ,  <cmd>ObsidianSearch<CR> )
+vim.keymap.set( n ,  <leader>os , grep_obsidian_notes)
 vim.keymap.set( n ,  <leader>ob ,  <cmd>ObsidianBacklinks<CR> )
 vim.keymap.set( n ,  <leader>on , ":ObsidianNew ")
 vim.keymap.set( n ,  <leader>ot , ":e "..vault_dir.."/TODO.md<CR>")
+vim.keymap.set( n ,  <leader>of , search_obsidian_notes_files)
 
 -- vim.keymap.set( n ,   ,  <cmd>ObsidianNew<CR> )
