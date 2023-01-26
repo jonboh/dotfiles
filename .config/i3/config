@@ -197,8 +197,8 @@ set $mode_system \
                 bindsym Escape mode "default"
         }
 bindsym $mod+BackSpace mode "$mode_system"
-# resize window (you can also use the mouse for that)
-bindsym $mod+Ctrl+Shift+r mode "resize"
+# resize window (you can also use the mouse for that) # Mod1 is Alt
+bindsym $mod+Mod1+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -282,4 +282,4 @@ bar {
     }
 }
 
-exec alacritty
+# exec alacritty
