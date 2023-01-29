@@ -2,8 +2,7 @@ local lsp = require( lsp-zero )
 
 lsp.preset( recommended )
 
-lsp.on_attach(
-function(client, bufnr)
+local mappings = function(client, bufnr)
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -22,8 +21,21 @@ function(client, bufnr)
     vim.keymap.set( n , "]d", vim.diagnostic.goto_next)
     vim.keymap.set( n , "[d", vim.diagnostic.goto_prev)
 end
-)
+
+lsp.on_attach(mappings)
+
+lsp.skip_server_setup({ rust_analyzer })
+
 lsp.setup()
+
+local rust_lsp = lsp.build_options( rust_analyzer , {})
+rust_analyzer_cmd = { rustup ,  run ,  stable ,  rust-analyzer }
+rust_lsp[ cmd ] = rust_analyzer_cmd
+
+rt = require("rust-tools")
+rt.setup({server=rust_lsp})
+
+
 
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap

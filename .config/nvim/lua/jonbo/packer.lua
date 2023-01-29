@@ -132,6 +132,9 @@ return require( packer ).startup(function(use)
     use { j-hui/fidget.nvim , -- adds a nice fidget that tracks lsp progress
         config= function() require"fidget".setup{} end}
 
+    -- Rust
+    use  simrat39/rust-tools.nvim 
+
     -- Lua
     use { milisims/nvim-luaref } -- will add help docs about Lua
     use { nanotee/luv-vimdocs } -- will add help docs about libuv which is used by Lua
