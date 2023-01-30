@@ -37,6 +37,7 @@ vim.opt.fileformat = "unix"
 vim.opt.ff = "unix"
 vim.opt.cmdheight = 1 -- on 1 because on 0 makes every command to prompt for enter to continue
 vim.opt.fillchars:append( diff:╱ )
+vim.api.nvim_exec([[cabbrev h vert h]], false)
 
 -- winbar
 vim.opt.winbar="%f %m" -- show filename and modification status on top
@@ -68,4 +69,4 @@ vim.api.nvim_exec([[
     set errorformat^=%-G%f:%l:\ warning:%m
     set errorformat^=%-G%f:%l:\ note:%m
     ]]
-    , true)-- TODO: toggle with command
+    , false)-- TODO: toggle with command
