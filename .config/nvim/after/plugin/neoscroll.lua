@@ -1,24 +1,32 @@
- require( neoscroll ).setup({
-    -- All these keys will be mapped to their corresponding default scrolling animation
-    mappings = {},
-    hide_cursor = true,          -- Hide cursor while scrolling
-    stop_eof = true,             -- Stop at <EOF> when scrolling downwards
-    respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
-    cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-    easing_function = nil,       -- Default easing function
-    pre_hook = nil,              -- Function to run before the scrolling animation starts
-    post_hook = nil,             -- Function to run after the scrolling animation ends
-    performance_mode = false,    -- Disable "Performance Mode" on all buffers.
-})
---
-local t = {}
--- Syntax: t[keys] = {function, {function arguments}}
-t[ <C-u> ] = { scroll , { -vim.wo.scroll ,  true ,  35 }}
-t[ <C-d> ] = { scroll , {  vim.wo.scroll ,  true ,  35 }} --TODO: fix centering
-t[ <C-b> ] = { scroll , { -vim.api.nvim_win_get_height(0) ,  true ,  45 }}
-t[ <C-f> ] = { scroll , {  vim.api.nvim_win_get_height(0) ,  true ,  45 }}
-t[ zt ]    = { zt , { 25 }}
-t[ zz ]    = { zz , { 25 }}
-t[ zb ]    = { zb , { 25 }}
+local neoscroll = require("neoscroll")
 
-require( neoscroll.config ).set_mappings(t)
+local easing = "sine"
+local zz_time_ms = 15
+local jump_time_ms = 25
+
+neoscroll.setup({
+	post_hook = function(info)
+		if info ~= "center" then
+			return
+		end
+
+		-- The `defer_fn` is a bit of a hack.
+		-- We use it so that `neoscroll.init.scroll` will be false when we call `neoscroll.zz`
+		-- As long as we don t input another neoscroll mapping in the timeout,
+		-- we should be able to center the cursor.
+		local defer_time_ms = 5
+		vim.defer_fn(function()
+			neoscroll.zz(zz_time_ms, easing)
+		end, defer_time_ms)
+	end,
+})
+
+local mappings = {}
+
+mappings["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", jump_time_ms, easing, " center " } }
+mappings["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", jump_time_ms, easing, " center " } }
+mappings[ zt ]    = { zt , {jump_time_ms}}
+mappings[ zz ]    = { zz , {jump_time_ms}}
+mappings[ zb ]    = { zb , {jump_time_ms}}
+
+require("neoscroll.config").set_mappings(mappings)
