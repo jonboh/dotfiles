@@ -39,7 +39,7 @@ return require( packer ).startup(function(use)
     use{ anuvyklack/pretty-fold.nvim }
     use  lewis6991/impatient.nvim 
     use{ MTDL9/vim-log-highlighting }
-    use "lukas-reineke/indent-blankline.nvim"
+    use "lukas-reineke/indent-blankline.nvim" -- TODO: configure or use https://github.com/echasnovski/mini.indentscope
     use {  mhartington/formatter.nvim  }
     use {
         "folke/todo-comments.nvim",
@@ -86,14 +86,6 @@ return require( packer ).startup(function(use)
     use {
          lewis6991/gitsigns.nvim ,
         tag =  release  -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-    }
-    use {
-       pwntester/octo.nvim ,
-      requires = {
-         nvim-lua/plenary.nvim ,
-         nvim-telescope/telescope.nvim ,
-         kyazdani42/nvim-web-devicons ,
-      }
     }
 
     -- Markdown
@@ -164,14 +156,13 @@ return require( packer ).startup(function(use)
         require( packer ).sync()
     end
 
-    -- TODO: setup github integration with https://github.com/pwntester/octo.nvim
-        -- be able to review PRs from nvim woah! :D
     -- TODO:  Add git configurations. I need to quickly
         -- navigating log --graph
         -- navigate history
         -- blame
     -- TODO: check https://github.com/tpope/vim-unimpaired, might adapt mappings
     -- TODO: get a way to mass replace accross files in current project
+        -- check https://github.com/nvim-pack/nvim-spectre?
     -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
     -- TODO: configure snippets
     -- TODO: check https://github.com/stevearc/oil.nvim. edit your filesystem on a neovim buffer
