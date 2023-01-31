@@ -1,10 +1,11 @@
-local neoscroll = require("neoscroll")
+neoscroll = require( neoscroll )
 
 local easing = "sine"
 local zz_time_ms = 15
 local jump_time_ms = 25
 
 neoscroll.setup({
+    mappings = {},
 	post_hook = function(info)
 		if info ~= "center" then
 			return
