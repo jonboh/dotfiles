@@ -94,6 +94,8 @@ return require( packer ).startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+    use( preservim/vim-markdown ) -- primarily for fenced code highlighting
+
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
     use( nvim-treesitter/nvim-treesitter-refactor ) -- for symbol under cursor highlighting
