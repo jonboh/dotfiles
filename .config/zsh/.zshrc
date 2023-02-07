@@ -51,3 +51,6 @@ bindkey -M vicmd v edit-command-line # press  v  on vimode to open nvim and edit
 # TODO: check bd directory navigation for quickly going back directories
 
 autoload -Uz compinit; compinit # initialize completion engine
+
+# zoxide initialization
+eval "$(zoxide init zsh)"
