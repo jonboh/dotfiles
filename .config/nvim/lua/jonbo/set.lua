@@ -70,3 +70,6 @@ vim.api.nvim_exec([[
     set errorformat^=%-G%f:%l:\ note:%m
     ]]
     , false)-- TODO: toggle with command
+
+-- prevent mappings form vimscript plugins
+vim.g.vim_markdown_no_default_key_mappings = 1
