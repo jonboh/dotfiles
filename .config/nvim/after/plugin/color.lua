@@ -36,3 +36,4 @@ require("tokyonight").setup({
 vim.opt.background = "dark"
 
 vim.cmd("colorscheme tokyonight")
+vim.api.nvim_set_hl(0, "CursorLineNr", {fg="#af00af"})
