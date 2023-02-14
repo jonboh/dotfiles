@@ -180,18 +180,15 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # shutdown / restart / suspend...
-set $mode_system \
-        System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
+set $mode_system System (AllMod) + (e) logout, (r) reboot, (s) shutdown
+        # System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
         mode "$mode_system" {
-            bindsym l exec --no-startup-id $i3lockwall, mode "default"
-                bindsym e exec --no-startup-id i3-msg exit, mode "default"
-                bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, \
-                mode "default"
-                bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, \
-                mode "default"
-                bindsym r exec --no-startup-id systemctl reboot, mode "default"
-                bindsym CTRL+s exec --no-startup-id systemctl poweroff -i, \
-                mode "default"
+            # bindsym l exec --no-startup-id $i3lockwall, mode "default"
+                bindsym $mod+Mod1+Ctrl+Shift+e exec --no-startup-id i3-msg exit, mode "default"
+                # bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
+                # bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
+                bindsym $mod+Mod1+Ctrl+Shift+r exec --no-startup-id systemctl reboot, mode "default"
+                bindsym $mod+Mod1+Ctrl+Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 # to close the menu: Enter or Escape
                 bindsym Return mode "default"
                 bindsym Escape mode "default"
