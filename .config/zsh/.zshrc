@@ -54,3 +54,6 @@ autoload -Uz compinit; compinit # initialize completion engine
 
 # zoxide initialization
 eval "$(zoxide init zsh)"
+
+# path additions
+PATH="$HOME/.cargo/bin/:$PATH"

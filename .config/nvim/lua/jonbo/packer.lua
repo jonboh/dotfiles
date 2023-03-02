@@ -128,6 +128,8 @@ return require( packer ).startup(function(use)
 
     -- Rust
     use  simrat39/rust-tools.nvim 
+    use  rust-lang/rust.vim 
+    use  Canop/nvim-bacon 
 
     -- Lua
     use { milisims/nvim-luaref } -- will add help docs about Lua
