@@ -142,6 +142,9 @@ return require( packer ).startup(function(use)
     use("theHamsta/nvim-dap-virtual-text")
     -- use( jbyuki/one-small-step-for-vimkind )
 
+    --- graphviz
+    use{"liuchengxu/graphviz.vim"}
+
     -- Obsidian
     use{ epwalsh/obsidian.nvim }
 
@@ -151,8 +154,6 @@ return require( packer ).startup(function(use)
         requires = {  nvim-tree/nvim-web-devicons  },
         config = function ()
             require alpha .setup(require alpha.themes.startify .config) 
-            -- TODO: configure to quickly go to main sessions
-            -- TODO: obsidian view?
             -- TODO: go to .config/nvim and debug?
         end
     }
@@ -162,7 +163,6 @@ return require( packer ).startup(function(use)
     if packer_bootstrap then -- Automatically set up configuration after clonning packer.nvim
         require( packer ).sync()
     end
-
     -- TODO:  Add git configurations. I need to quickly
         -- navigating log --graph
         -- navigate history
@@ -174,4 +174,5 @@ return require( packer ).startup(function(use)
     -- TODO: configure snippets
     -- TODO: check https://github.com/stevearc/oil.nvim. edit your filesystem on a neovim buffer
     -- TODO: configure treesitter syntactic selection and navigation: https://youtu.be/stqUbv-5u2s?t=763
+    -- TODO: https://github.com/Houl/repmo-vim
 end)
