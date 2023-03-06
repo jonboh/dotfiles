@@ -33,6 +33,17 @@ require nvim-treesitter.configs .setup {
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
     },
+ 
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "<C-space>",
+            node_incremental = "<C-space>",
+            node_decremental = "<A-space>",
+            scope_incremental = "<C-s>",
+        }
+    },
+
     refactor = {
         highlight_definitions = {
             enable = true,
@@ -40,6 +51,15 @@ require nvim-treesitter.configs .setup {
             clear_on_cursor_move = true,
         },
     },
+
+
+    -- textobjects = {
+    --     select = {
+    --     }
+    --     move = {
+    --     }
+    -- },
+
     playground = {
         enable = true,
         disable = {},

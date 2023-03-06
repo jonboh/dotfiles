@@ -98,9 +98,18 @@ return require( packer ).startup(function(use)
 
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
-    use( nvim-treesitter/nvim-treesitter-refactor ) -- for symbol under cursor highlighting
-    use("nvim-treesitter/nvim-treesitter-context") -- for the sticky context lines
-    use( nvim-treesitter/playground )
+    use({ "nvim-treesitter/nvim-treesitter-textobjects", -- for textobject selections
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter", })
+    use({ nvim-treesitter/nvim-treesitter-refactor , -- for symbol under cursor highlighting
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter"})
+    use({"nvim-treesitter/nvim-treesitter-context", -- for the sticky context lines
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter"})
+    use({ nvim-treesitter/playground ,
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter"})
 
     -- LSP
     use {
@@ -136,6 +145,8 @@ return require( packer ).startup(function(use)
     use { milisims/nvim-luaref } -- will add help docs about Lua
     use { nanotee/luv-vimdocs } -- will add help docs about libuv which is used by Lua
 
+    -- Graphviz
+    use { liuchengxu/graphviz.vim }
     -- Debugger
     use("mfussenegger/nvim-dap")
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
