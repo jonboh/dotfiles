@@ -94,6 +94,7 @@ return require( packer ).startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
     use( preservim/vim-markdown ) -- primarily for fenced code highlighting
+    use( dhruvasagar/vim-table-mode )
 
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
