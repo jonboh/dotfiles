@@ -144,6 +144,8 @@ return require( packer ).startup(function(use)
     use { milisims/nvim-luaref } -- will add help docs about Lua
     use { nanotee/luv-vimdocs } -- will add help docs about libuv which is used by Lua
 
+    -- Graphviz
+    use { liuchengxu/graphviz.vim }
     -- Debugger
     use("mfussenegger/nvim-dap")
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
