@@ -96,6 +96,10 @@ return require( packer ).startup(function(use)
     use( preservim/vim-markdown ) -- primarily for fenced code highlighting
     use( dhruvasagar/vim-table-mode )
 
+    -- LaTex
+    use({"mattn/libcallex-vim",  run= "make -C autoload" })
+    use({"bytesnake/vim-graphical-preview", run= "cargo build --release" })
+
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
     use({ "nvim-treesitter/nvim-treesitter-textobjects", -- for textobject selections
