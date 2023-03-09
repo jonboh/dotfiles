@@ -151,15 +151,13 @@ return require( packer ).startup(function(use)
 
     -- Graphviz
     use { liuchengxu/graphviz.vim }
+
     -- Debugger
     use("mfussenegger/nvim-dap")
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
     use("theHamsta/nvim-dap-virtual-text")
     -- use( jbyuki/one-small-step-for-vimkind )
-
-    --- graphviz
-    use{"liuchengxu/graphviz.vim"}
 
     -- Obsidian
     use{ epwalsh/obsidian.nvim }
