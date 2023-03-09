@@ -94,6 +94,11 @@ return require( packer ).startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
     use( preservim/vim-markdown ) -- primarily for fenced code highlighting
+    use( dhruvasagar/vim-table-mode )
+
+    -- LaTex
+    use({"mattn/libcallex-vim",  run= "make -C autoload" })
+    use({"bytesnake/vim-graphical-preview", run= "cargo build --release" })
 
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
@@ -146,6 +151,7 @@ return require( packer ).startup(function(use)
 
     -- Graphviz
     use { liuchengxu/graphviz.vim }
+
     -- Debugger
     use("mfussenegger/nvim-dap")
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
@@ -162,8 +168,6 @@ return require( packer ).startup(function(use)
         requires = {  nvim-tree/nvim-web-devicons  },
         config = function ()
             require alpha .setup(require alpha.themes.startify .config) 
-            -- TODO: configure to quickly go to main sessions
-            -- TODO: obsidian view?
             -- TODO: go to .config/nvim and debug?
         end
     }
@@ -173,7 +177,6 @@ return require( packer ).startup(function(use)
     if packer_bootstrap then -- Automatically set up configuration after clonning packer.nvim
         require( packer ).sync()
     end
-
     -- TODO:  Add git configurations. I need to quickly
         -- navigating log --graph
         -- navigate history
@@ -185,4 +188,5 @@ return require( packer ).startup(function(use)
     -- TODO: configure snippets
     -- TODO: check https://github.com/stevearc/oil.nvim. edit your filesystem on a neovim buffer
     -- TODO: configure treesitter syntactic selection and navigation: https://youtu.be/stqUbv-5u2s?t=763
+    -- TODO: https://github.com/Houl/repmo-vim
 end)
