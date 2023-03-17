@@ -31,6 +31,13 @@ lsp.setup()
 local rust_lsp = lsp.build_options( rust_analyzer , {})
 rust_analyzer_cmd = { rustup ,  run ,  stable ,  rust-analyzer }
 rust_lsp[ cmd ] = rust_analyzer_cmd
+rust_lsp[ settings ] = {
+    ["rust-analyzer"] = {
+        checkOnSave = {
+            command = "clippy"
+        }
+    }
+}
 
 rt = require("rust-tools")
 rt.setup({server=rust_lsp})
