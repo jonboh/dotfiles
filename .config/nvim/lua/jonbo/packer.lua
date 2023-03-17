@@ -187,6 +187,6 @@ return require( packer ).startup(function(use)
     -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
     -- TODO: configure snippets
     -- TODO: check https://github.com/stevearc/oil.nvim. edit your filesystem on a neovim buffer
-    -- TODO: configure treesitter syntactic selection and navigation: https://youtu.be/stqUbv-5u2s?t=763
     -- TODO: https://github.com/Houl/repmo-vim
+    -- TODO: https://github.com/folke/trouble.nvim
 end)
