@@ -16,7 +16,14 @@ require("telescope").setup({
 		grep_previewer = previewers.vim_buffer_vimgrep.new,
 		qflist_previewer = previewers.vim_buffer_qflist.new,
 
-        file_ignore_patterns = {"vcpkg/", "vcpkg\\", "build/", "build\\" }
+        file_ignore_patterns = {
+            "vcpkg/", 
+            "vcpkg\\", 
+            "build/", 
+            "build\\",
+            "target/", 
+            "target\\",
+    }
 --		mappings = {
 --			i = {
 --				["<C-x>"] = false,
