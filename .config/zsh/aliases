@@ -25,3 +25,7 @@ alias l= exa --color=always --icons -F -1 --group-directories-first
 alias la= exa --color=always --icons -F -1 --group-directories-first -a 
 alias ll= exa --color=always --icons -F -1 --group-directories-first -l -a 
 
+# keyboard switching
+alias asdf="setxkbmap dvorak" # from us firmware + us mode -> dvorak mode (us on firmware)
+alias aoeu="setxkbmap us" # from dvorak -> us
+alias "ar.g"="setxkbmap us" # from dvorak firmware + dvorak mode -> us mode (dvorak on firmware)
