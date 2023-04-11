@@ -40,9 +40,21 @@ rust_lsp[ settings ] = {
 }
 
 rt = require("rust-tools")
-rt.setup({server=rust_lsp})
+local extension_path = vim.fn.stdpath("data").."/mason".."/packages".."/codelldb".."/extension"
+local codelldb_path = extension_path ..  /adapter/codelldb 
+local liblldb_path = extension_path ..  /lldb/lib/liblldb.so   -- MacOS: This may be .dylib
 
+local opts = {
+    -- ... other configs
+    server=rust_lsp,
+    dap = {
+        adapter = require( rust-tools.dap ).get_codelldb_adapter(
+            codelldb_path, liblldb_path)
+    }
+}
 
+-- Normal setup
+require( rust-tools ).setup(opts)
 
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
