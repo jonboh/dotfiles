@@ -80,7 +80,6 @@ return require( packer ).startup(function(use)
 
     -- git 
     use { tpope/vim-fugitive }
-    use { ThePrimeagen/git-worktree.nvim } -- cool but does not seem to work on windows
     use {  sindrets/diffview.nvim , requires =  nvim-lua/plenary.nvim  }
     use {
          lewis6991/gitsigns.nvim ,
@@ -95,10 +94,6 @@ return require( packer ).startup(function(use)
     })
     use( preservim/vim-markdown ) -- primarily for fenced code highlighting
     use( dhruvasagar/vim-table-mode )
-
-    -- LaTex
-    use({"mattn/libcallex-vim",  run= "make -C autoload" })
-    use({"bytesnake/vim-graphical-preview", run= "cargo build --release" })
 
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
@@ -146,8 +141,8 @@ return require( packer ).startup(function(use)
     use  Canop/nvim-bacon 
 
     -- Lua
-    use { milisims/nvim-luaref } -- will add help docs about Lua
-    use { nanotee/luv-vimdocs } -- will add help docs about libuv which is used by Lua
+    use { milisims/nvim-luaref } -- add help docs about Lua
+    use { nanotee/luv-vimdocs } -- add help docs about libuv which is used by Lua
 
     -- Graphviz
     use { liuchengxu/graphviz.vim }
@@ -188,5 +183,4 @@ return require( packer ).startup(function(use)
     -- TODO: configure snippets
     -- TODO: check https://github.com/stevearc/oil.nvim. edit your filesystem on a neovim buffer
     -- TODO: https://github.com/Houl/repmo-vim
-    -- TODO: https://github.com/folke/trouble.nvim
 end)
