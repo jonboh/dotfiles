@@ -76,3 +76,6 @@ vnoremap("$", "$<Left>") -- visual mode dont include line jump on selection
 -- rust-tools
 nnoremap("<leader>f", ":RustFmt<CR>")
 vnoremap("<leader>f", ":RustFmtRange<CR>")
+
+-- diagnostics
+nnoremap("<leader>x", vim.diagnostic.setqflist, {silent=true})
