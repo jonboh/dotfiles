@@ -32,7 +32,7 @@ nnoremap("<A-Right>", "<C-W>l")
 nnoremap("<A-Left>", "<C-W>h")
 nnoremap("<A-v>", "<C-W><C-v><C-W><C-l>")
 nnoremap("<A-h>", "<C-W><C-s><C-W><C-j>")
-nnoremap("<A-q>", "<C-W>c")
+nnoremap("<A-q>", ":bd<CR>", {silent=true})
 nnoremap("<A-C-Left>", "<C-W>5<") -- size horizontally
 nnoremap("<A-C-Right>", "<C-W>5>") -- size horizontally
 nnoremap("<A-C-Up>", "<C-W>+") -- size vertically
