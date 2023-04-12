@@ -30,7 +30,9 @@ vim.opt.undofile = true
 vim.opt.hidden = true
 
 -- other
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = ""
+vim.opt.colorcolumn:append("80")
+vim.opt.colorcolumn:append("100")
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.fileformat = "unix"
