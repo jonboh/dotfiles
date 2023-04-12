@@ -29,3 +29,6 @@ alias ll= exa --color=always --icons -F -1 --group-directories-first -l -a
 alias asdf="setxkbmap dvorak" # from us firmware + us mode -> dvorak mode (us on firmware)
 alias aoeu="setxkbmap us" # from dvorak -> us
 alias "ar.g"="setxkbmap us" # from dvorak firmware + dvorak mode -> us mode (dvorak on firmware)
+#
+# cal
+alias cal= cal --monday 
