@@ -132,6 +132,8 @@ return require( packer ).startup(function(use)
         { rafamadriz/friendly-snippets }, -- snippet provider
       }
     }
+    use { tzachar/cmp-fuzzy-path , requires = { hrsh7th/nvim-cmp ,  tzachar/fuzzy.nvim }}
+
     use { j-hui/fidget.nvim , -- adds a nice fidget that tracks lsp progress
         config= function() require"fidget".setup{} end}
 

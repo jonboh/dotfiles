@@ -1,6 +1,6 @@
 local lsp = require( lsp-zero )
 
-lsp.preset( recommended )
+lsp.preset( lsp-only ) -- lsp-only does not configure cmp, so that we 
 
 local mappings = function(client, bufnr)
     -- Mappings.
@@ -28,9 +28,9 @@ lsp.skip_server_setup({ rust_analyzer })
 
 -- Python LSP Configuration
 -- require( lspconfig ).pylsp.setup({
---     cmd={ pylsp ,
---     on_attach = mappings,
--- })
+    --     cmd={ pylsp ,
+    --     on_attach = mappings,
+    -- })
 
 lsp.setup()
 
@@ -67,5 +67,86 @@ local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
 nnoremap( ho , "<cmd>:ClangdSwitchSourceHeader<CR>") -- TODO: add this on attach
 
+local cmp = require( cmp )
+local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
 
+cmp.setup({
+    mapping = {
+        [ <C-y> ] = cmp.mapping.confirm({select = true}),
+        [ <C-e> ] = cmp.mapping.abort(),
+        [ <C-u> ] = cmp.mapping.scroll_docs(-4),
+        [ <C-d> ] = cmp.mapping.scroll_docs(4),
+        [ <C-p> ] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_prev_item(cmp_select_opts)
+            else
+                cmp.complete()
+            end
+        end),
+        [ <C-n> ] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_next_item(cmp_select_opts)
+            else
+                cmp.complete()
+            end
+        end),
+    },
+    snippet = {
+        expand = function(args)
+            require( luasnip ).lsp_expand(args.body)
+        end,
+    },
+    window = {
+        documentation = {
+            max_height = 15,
+            max_width = 60,
+        }
+    },
+    formatting = {
+        fields = { abbr ,  menu ,  kind },
+        format = function(entry, item)
+            local short_name = {
+                nvim_lsp =  LSP ,
+                -- nvim_lsp_signature_help =  LSPh ,
+                nvim_lua =  nvim ,
+                luasnip =  snip ,
+                fuzzy_path =  path 
+            }
 
+            local menu_name = short_name[entry.source.name] or entry.source.name
+
+            item.menu = string.format( [%s] , menu_name)
+            return item
+        end,
+    },
+    sources = {
+        -- { name = "nvim_lsp_signature_help" },
+        -- { name = "cmp_tabnine", priority = 8 },
+        { name = "nvim_lsp", priority = 8 },
+        { name = "luasnip", priority = 7 },
+        { name = "buffer", priority = 7 }, -- first for locality sorting?
+        -- { name = "spell", keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] },
+        -- { name = "dictionary", keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] }, -- from uga-rosa/cmp-dictionary plug
+        -- { name =  rg },
+        { name = "nvim_lua", priority = 5 },
+        -- { name =  path  },
+        { name = "fuzzy_path", priority = 4 }, -- from tzacher
+        -- { name = "calc", priority = 3 },
+    },
+    sorting = {
+        priority_weight = 1.0,
+        comparators = {
+            -- compare.score_offset, -- not good at all
+            cmp.config.compare.locality,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
+            cmp.config.compare.offset,
+            cmp.config.compare.order,
+            -- compare.scopes, -- what?
+            -- compare.sort_text,
+            -- compare.exact,
+            -- compare.kind,
+            -- compare.length, -- useless 
+        },
+    }
+})
