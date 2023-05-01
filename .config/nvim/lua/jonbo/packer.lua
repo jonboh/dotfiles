@@ -133,6 +133,8 @@ return require( packer ).startup(function(use)
       }
     }
     use { tzachar/cmp-fuzzy-path , requires = { hrsh7th/nvim-cmp ,  tzachar/fuzzy.nvim }}
+    use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
+    use({ hrsh7th/cmp-cmdline })
 
     use { j-hui/fidget.nvim , -- adds a nice fidget that tracks lsp progress
         config= function() require"fidget".setup{} end}
