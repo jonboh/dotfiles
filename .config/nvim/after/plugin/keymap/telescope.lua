@@ -24,7 +24,7 @@ nnoremap("<leader>/", function() telescope_builtin.current_buffer_fuzzy_find({
 -- git
 nnoremap("<leader>tgb", telescope_builtin.git_branches)
 nnoremap("<leader>tgf", telescope_builtin.git_files)
-nnoremap("<leader>tgw", telescope.extensions.git_worktree.git_worktrees)
+-- nnoremap("<leader>tgw", telescope.extensions.git_worktree.git_worktrees)
 -- <Enter> - switches to that worktree
 -- <c-d> - deletes that worktree
 -- <c-f> - toggles forcing of the next deletion
