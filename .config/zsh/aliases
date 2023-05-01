@@ -15,10 +15,12 @@ alias gl1-specific="git log --graph --abbrev-commit --decorate --format=format: 
 alias gl2-specific="git log --graph --abbrev-commit --decorate --format=format: %C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n            %C(white)%s%C(reset) %C(dim white)- %an%C(reset) "
 alias gl3-specific="git log --graph --abbrev-commit --decorate --format=format: %C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n            %C(white)%s%C(reset)%n            %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset) "
 
+alias diff= delta 
 # less
 alias less= less -r  # this will process colors
 # Modern Utilities
-alias cat=bat
+alias cat= bat 
+alias man= batman 
 # exa
 alias ls= exa --color=always -1 --group-directories-first 
 alias l= exa --color=always --icons -F -1 --group-directories-first 
@@ -32,3 +34,5 @@ alias "ar.g"="setxkbmap us" # from dvorak firmware + dvorak mode -> us mode (dvo
 #
 # cal
 alias cal= cal --monday 
+
+
