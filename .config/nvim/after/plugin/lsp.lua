@@ -56,7 +56,7 @@ local opts = {
     server=rust_lsp,
     dap = {
         adapter = require( rust-tools.dap ).get_codelldb_adapter(
-            codelldb_path, liblldb_path)
+        codelldb_path, liblldb_path)
     }
 }
 
