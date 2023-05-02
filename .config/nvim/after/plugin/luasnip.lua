@@ -11,34 +11,35 @@ local d = ls.dynamic_node
 local r = ls.restore_node
 
 ls.config.set_config {
-    -- updateevents = "TextChanged,TextChangedI",
+    updateevents = "TextChanged,TextChangedI",
 
-	ext_opts = {
-		[types.choiceNode] = {
-			active = {
-				virt_text = {{"activeChoiceNode", "Comment"}}
-			},
-            passive = {
-                virt_text = {{"choiceNode", "Comment"}}
-            }
-		},
-		[types.textNode] = {
-			active = {
-				virt_text = {{"activeTextNode", "Comment"}}
-			},
-            passive = {
-                virt_text = {{"textNode", "Comment"}}
-            }
-		},
-		[types.insertNode] = {
-			active = {
-				virt_text = {{"activeInsertNode", "Comment"}}
-			},
-            passive = {
-                virt_text = {{"insertNode", "Comment"}}
-            }
-		}
-	    }
+    -- TODO: Configure virtual_text
+	-- ext_opts = {
+	-- 	[types.choiceNode] = {
+	-- 		active = {
+	-- 			virt_text = {{"activeChoiceNode", "Comment"}}
+	-- 		},
+	--             passive = {
+	--                 virt_text = {{"choiceNode", "Comment"}}
+	--             }
+	-- 	},
+	-- 	[types.textNode] = {
+	-- 		active = {
+	-- 			virt_text = {{"activeTextNode", "Comment"}}
+	-- 		},
+	--             passive = {
+	--                 virt_text = {{"textNode", "Comment"}}
+	--             }
+	-- 	},
+	-- 	[types.insertNode] = {
+	-- 		active = {
+	-- 			virt_text = {{"activeInsertNode", "Comment"}}
+	-- 		},
+	--             passive = {
+	--                 virt_text = {{"insertNode", "Comment"}}
+	--             }
+	-- 	}
+	--     }
 
 }
 ls.add_snippets("rust", {
