@@ -36,6 +36,8 @@ end
 nnoremap("<leader>tk", telescope_builtin.keymaps)
 nnoremap("<leader>tvb", telescope_builtin.buffers) --view open buffers
 nnoremap("<leader>th", telescope_builtin.help_tags) -- easily access help with preview
+nnoremap("htws", telescope_builtin.lsp_workspace_symbols)
+nnoremap("hts", telescope_builtin.lsp_document_symbols)
 nnoremap("<leader>tvrc", search_dotfiles)
 nnoremap("<leader>tr", telescope_builtin.registers)
 nnoremap("<leader>:", telescope_builtin.commands)

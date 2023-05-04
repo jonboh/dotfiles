@@ -138,8 +138,8 @@ cmp.setup({
     sources = {
         -- { name = "nvim_lsp_signature_help" },
         -- { name = "cmp_tabnine", priority = 8 },
+        { name = "luasnip", priority = 9 },
         { name = "nvim_lsp", priority = 8 },
-        { name = "luasnip", priority = 7 },
         { name = "buffer", priority = 7 }, -- first for locality sorting?
         -- { name = "spell", keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] },
         -- { name = "dictionary", keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] }, -- from uga-rosa/cmp-dictionary plug
