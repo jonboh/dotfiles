@@ -7,8 +7,6 @@ local tnoremap = Remap.tnoremap
 -- <C-[]> Ctrl+[]
 
 tnoremap("<Esc>", "<C-\\><C-n>")
-nnoremap("<Esc>", "<C-c>")
-nnoremap("<C-c>", "<Esc>")
 
 -- TODO: add silence
 nnoremap("<Space>", "<nop>")
