@@ -37,3 +37,4 @@ vim.opt.background = "dark"
 
 vim.cmd("colorscheme tokyonight")
 vim.api.nvim_set_hl(0, "CursorLineNr", {fg="#af00af"})
+vim.api.nvim_set_hl(0, "LineNr", {fg="#B1A6F7"})
