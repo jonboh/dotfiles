@@ -126,7 +126,7 @@ cmp.setup({
                 -- nvim_lsp_signature_help =  LSPh ,
                 nvim_lua =  nvim ,
                 luasnip =  snip ,
-                fuzzy_path =  path 
+                -- fuzzy_path =  path 
             }
 
             local menu_name = short_name[entry.source.name] or entry.source.name
@@ -145,8 +145,8 @@ cmp.setup({
         -- { name = "dictionary", keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] }, -- from uga-rosa/cmp-dictionary plug
         -- { name =  rg },
         { name = "nvim_lua", priority = 5 },
-        -- { name =  path  },
-        { name = "fuzzy_path", priority = 4 }, -- from tzacher
+        { name =  path , priority=4 },
+        -- { name = "fuzzy_path", priority = 4 }, -- from tzacher
         -- { name = "calc", priority = 3 },
     },
     sorting = {
