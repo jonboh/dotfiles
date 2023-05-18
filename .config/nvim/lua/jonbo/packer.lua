@@ -144,6 +144,9 @@ return require( packer ).startup(function(use)
     use  rust-lang/rust.vim 
     use  Canop/nvim-bacon 
 
+    -- LaTex
+    use  lervag/vimtex 
+
     -- Lua
     use { milisims/nvim-luaref } -- add help docs about Lua
     use { nanotee/luv-vimdocs } -- add help docs about libuv which is used by Lua
@@ -170,6 +173,22 @@ return require( packer ).startup(function(use)
             -- TODO: go to .config/nvim and debug?
         end
     }
+    -- AI
+    use({
+      "jackMort/ChatGPT.nvim",
+        config = function()
+          require("chatgpt").setup(
+          {api_key_cmd = "cat $HOME/secrets/chatgpt.key"}
+
+          )
+        end,
+        requires = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
+        }
+    })
+
     -- Games
     use  ThePrimeagen/vim-be-good 
 
