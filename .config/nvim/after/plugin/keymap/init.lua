@@ -79,3 +79,6 @@ vnoremap("<leader>f", ":RustFmtRange<CR>")
 
 -- diagnostics
 nnoremap("<leader>x", vim.diagnostic.setqflist, {silent=true})
+
+-- AI
+nnoremap("<C-x>", ":ChatGPT<CR>")
