@@ -73,10 +73,6 @@ vnoremap("<leader>s", "\"0y:%s/<C-r>0/<C-r>0/gI<Left><Left><Left>") -- this uses
 -- selection
 vnoremap("$", "$<Left>") -- visual mode dont include line jump on selection
 
--- rust-tools
-nnoremap("<leader>f", ":RustFmt<CR>")
-vnoremap("<leader>f", ":RustFmtRange<CR>")
-
 -- diagnostics
 nnoremap("<leader>x", vim.diagnostic.setqflist, {silent=true})
 
