@@ -42,10 +42,19 @@ if [ $(command -v "fzf") ]; then
     source /usr/share/fzf/key-bindings.zsh
 fi
 
+# command line vim edit
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line # press  v  on vimode to open nvim and edit command
-# TODO: check bd directory navigation for quickly going back directories
+
+# lf cd functionality
+LFCD="$XDG_CONFIG_HOME/lf/lfcd.sh"
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
+bindkey -s  ^o   lfcd\n   # zsh
+
+
 
 autoload -Uz compinit; compinit # initialize completion engine
 
