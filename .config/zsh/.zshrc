@@ -57,6 +57,7 @@ bindkey -s  ^o   lfcd\n   # zsh
 
 
 autoload -Uz compinit; compinit # initialize completion engine
+autoload -U +X bashcompinit && bashcompinit # load bash-completions
 
 # zoxide initialization
 eval "$(zoxide init zsh)"
