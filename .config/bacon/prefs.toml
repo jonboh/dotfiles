@@ -4,7 +4,7 @@
 # Uncomment and change the value (true/false) to
 # specify whether bacon should start in summary mode
 #
-summary = true
+summary = false
 
 # Uncomment and change the value (true/false) to
 # specify whether bacon should start with lines wrapped
