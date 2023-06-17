@@ -15,7 +15,6 @@ local mappings = function(client, bufnr)
     vim.keymap.set( i ,  <C-k> , vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set( n ,  K , vim.lsp.buf.hover, bufopts)
     vim.keymap.set( n ,  hn , vim.lsp.buf.rename, bufopts)
-    -- vim.keymap.set( n ,  <leader>f , vim.lsp.buf.formatting, bufopts) -- disabled in favor of formatter.nvim
     vim.keymap.set( n ,  ha , vim.lsp.buf.code_action, bufopts)
     vim.keymap.set( n , "he", vim.diagnostic.open_float)
     vim.keymap.set( n , "]d", vim.diagnostic.goto_next)

@@ -34,10 +34,10 @@ search_dotfiles = function()
     require( jonbo.telescope ).search_dotfiles({ hidden = true }) -- config files
 end
 nnoremap("<leader>tk", telescope_builtin.keymaps)
-nnoremap("<leader>tvb", telescope_builtin.buffers) --view open buffers
+nnoremap("<leader>vb", telescope_builtin.buffers) --view open buffers
 nnoremap("<leader>th", telescope_builtin.help_tags) -- easily access help with preview
 nnoremap("hs", telescope_builtin.lsp_dynamic_workspace_symbols)
-nnoremap("<leader>tvrc", search_dotfiles)
+nnoremap("<leader>rc", search_dotfiles)
 nnoremap("<leader>tr", telescope_builtin.registers)
 nnoremap("<leader>:", telescope_builtin.commands)
 nnoremap("<leader><C-r>", telescope_builtin.command_history)
