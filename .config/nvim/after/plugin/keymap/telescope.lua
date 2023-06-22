@@ -43,5 +43,5 @@ nnoremap("<leader>:", telescope_builtin.commands)
 nnoremap("<leader><C-r>", telescope_builtin.command_history)
 
 -- telescope file explorer
-nnoremap("<leader>tb", telescope.extensions.file_browser.file_browser)
+nnoremap("<leader>b", telescope.extensions.file_browser.file_browser)
 
