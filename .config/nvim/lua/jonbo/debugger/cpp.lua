@@ -23,15 +23,16 @@ dap.adapters.cppdbg = {
     command = cpptools_path,
 }
 
+local get_exec_path = function()
+            return vim.fn.input( Path to executable:  , vim.fn.getcwd() ..  / ,  file )
+        end
 
 dap.configurations.cpp = {
     {
         name = "(lldb) Launch file",
         type = "codelldb",
         request = "launch",
-        program = function()
-            return vim.fn.input( Path to executable:  , vim.fn.getcwd() ..  / ,  file )
-        end,
+        program = get_exec_path,
         cwd =  ${workspaceFolder} ,
         stopOnEntry = true,
     },
@@ -39,9 +40,7 @@ dap.configurations.cpp = {
         name = "(gdb) Launch file",
         type = "cppdbg",
         request = "launch",
-        program = function()
-            return vim.fn.input( Path to executable:  , vim.fn.getcwd() ..  / ,  file )
-        end,
+        program = get_exec_path,
         cwd =  ${workspaceFolder} ,
         stopAtEntry = true,
     },
@@ -49,11 +48,11 @@ dap.configurations.cpp = {
         name= "rr",
         type= "cppdbg",
         request= "launch",
-        program= "${workspaceRoot}/../obj-ff-dbg/dist/bin/firefox",
+        program = get_exec_path,
         args= {},
         miDebuggerServerAddress= "localhost:50505",
         stopAtEntry= false,
-        cwd= "${workspaceRoot}/../obj-ff-dbg/dist/bin",
+        cwd= vim.fn.getcwd,
         environment= {},
         externalConsole= true,
         linux= {
