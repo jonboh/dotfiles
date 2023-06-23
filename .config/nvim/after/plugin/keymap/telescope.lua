@@ -11,9 +11,9 @@ grep_word = function()
     telescope_builtin.grep_string { search = vim.fn.expand("<cword>") }
 end
 
-nnoremap("<leader>tf", telescope_builtin.find_files)
-nnoremap("<leader>ts", telescope_builtin.live_grep)
-vnoremap("<leader>ts", "\"zy<cmd>exec  Telescope grep_string search=  . escape(@z,    )<cr>")
+nnoremap("<leader>f", telescope_builtin.find_files)
+nnoremap("<leader>s", telescope_builtin.live_grep)
+vnoremap("<leader>s", "\"zy<cmd>exec  Telescope grep_string search=  . escape(@z,    )<cr>")
 nnoremap("<leader>tw", grep_word)
 nnoremap("<leader>tt", telescope_builtin.resume)
 nnoremap("<leader>/", function() telescope_builtin.current_buffer_fuzzy_find({

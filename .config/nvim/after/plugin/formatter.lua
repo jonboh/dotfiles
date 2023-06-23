@@ -2,7 +2,7 @@
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
 
-nnoremap("<leader>f", ":FormatWrite<CR>", {silent=true})
+nnoremap("<leader>F", ":FormatWrite<CR>", {silent=true})
 
 -- Utilities for creating configurations
 local util = require "formatter.util"
