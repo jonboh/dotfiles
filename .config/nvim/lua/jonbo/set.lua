@@ -37,7 +37,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.fileformat = "unix"
 vim.opt.ff = "unix"
-vim.opt.cmdheight = 1 -- on 1 because on 0 makes every command to prompt for enter to continue
+-- vim.opt.cmdheight = 1 -- on 1 because on 0 makes every command to prompt for enter to continue
 vim.opt.fillchars:append( diff:╱ )
 vim.api.nvim_exec([[cabbrev h vert h]], false)
 
