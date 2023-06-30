@@ -46,10 +46,8 @@ vim.keymap.set( n ,  gf ,
   end,
   { noremap = false, expr = true}
 )
-vim.keymap.set( n ,  <leader>os , grep_obsidian_notes)
-vim.keymap.set( n ,  <leader>ob ,  <cmd>ObsidianBacklinks<CR> )
-vim.keymap.set( n ,  <leader>on , ":ObsidianNew ")
-vim.keymap.set( n ,  <leader>ot , ":e "..vault_dir.."/TODO.md<CR>")
-vim.keymap.set( n ,  <leader>of , search_obsidian_notes_files)
-
--- vim.keymap.set( n ,   ,  <cmd>ObsidianNew<CR> )
+vim.keymap.set( n ,  <leader>os , grep_obsidian_notes, {silent=true})
+vim.keymap.set( n ,  <leader>ob ,  <cmd>ObsidianBacklinks<CR> , {silent=true})
+vim.keymap.set( n ,  <leader>on , ":ObsidianNew ", {silent=true})
+vim.keymap.set( n ,  <leader>ot , ":e "..vault_dir.."/TODO.md<CR>", {silent=true})
+vim.keymap.set( n ,  <leader>of , search_obsidian_notes_files, {silent=true})
