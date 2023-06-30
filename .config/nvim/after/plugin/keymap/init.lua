@@ -20,8 +20,8 @@ nnoremap("l", "<nop>") -- you ll use your nav layer and you ll like it!
 nnoremap("<leader>x", ":Ex<CR>")
 nnoremap("n", "nzzzv") -- next result, center cursor, open folds to selection
 nnoremap("N", "Nzzzv")
-nnoremap("<C-d>", "<C-d>zz") -- centered page moves
-nnoremap("<C-u>", "<C-u>zz")
+-- nnoremap("<C-d>", "<C-d>zz") -- centered page moves
+-- nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-Down>", "<cmd>copen<CR><cmd>cnext<CR>zz")
 nnoremap("<C-Up>", "<cmd>copen<CR><cmd>cprev<CR>zz")
 
@@ -77,4 +77,4 @@ vnoremap("$", "$<Left>") -- visual mode dont include line jump on selection
 nnoremap("<leader>x", vim.diagnostic.setqflist, {silent=true})
 
 -- AI
-nnoremap("<C-x>", ":ChatGPT<CR>")
+nnoremap("<C-x>", ":ChatGPT<CR>", {silent=true})
