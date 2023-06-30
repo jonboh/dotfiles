@@ -123,7 +123,7 @@ return require( packer ).startup(function(use)
     use({ hrsh7th/cmp-cmdline })
 
     use { j-hui/fidget.nvim , -- adds a nice fidget that tracks lsp progress
-        config= function() require"fidget".setup{} end}
+        config= function() require"fidget".setup{} end, tag="legacy"}
 
     -- Rust
     use  simrat39/rust-tools.nvim 
@@ -161,19 +161,19 @@ return require( packer ).startup(function(use)
     }
     -- AI
     use({
-      "jackMort/ChatGPT.nvim",
-        config = function()
-          require("chatgpt").setup(
-          {api_key_cmd = "cat $HOME/.secrets/chatgpt.key"}
-
-          )
-        end,
-        requires = {
-          "MunifTanjim/nui.nvim",
-          "nvim-lua/plenary.nvim",
-          "nvim-telescope/telescope.nvim"
-        }
-    })
+  "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup({
+        -- optional configuration
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    },
+    -- tag= "*" -- aka latest tag
+})
 
     -- Games
     use  ThePrimeagen/vim-be-good 
