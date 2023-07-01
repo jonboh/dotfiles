@@ -1,4 +1,4 @@
-scratchpad_cmd="$TERM --class MathScratchpad -e python"
+scratchpad_cmd="$TERM_EXEC --class MathScratchpad -e python"
 
 running_cmd=$(ps aux | grep "${scratchpad_cmd}" | wc --lines)
 # running_cmd will be 1 when no running scratchpad is running, because

@@ -5,7 +5,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERM="kitty"
+export TERM="wezterm"
+export TERM_EXEC="wezterm start"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 

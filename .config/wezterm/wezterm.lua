@@ -14,12 +14,6 @@ return {
     color_scheme = "tokyonight",
     font = wezterm.font  FiraCode Nerd Font ,
     window_decorations = "NONE",
-    window_background_opacity = 0.9,
-    keys = {
-        {
-            key =  f ,
-            mods =  SUPER ,
-            action = wezterm.action.ToggleFullScreen,
-        },
-    },   
+    window_background_opacity = 1,
+    enable_tab_bar = false,
 }

@@ -304,4 +304,4 @@ mode "$mode_display" {
 bindsym $mod+x mode $mode_display
 
 for_window [class="FirstTerminal"] fullscreen enable
-exec --no-startup-id $TERM --class FirstTerminal -e zellij
+exec --no-startup-id $TERM_EXEC --class FirstTerminal -e zellij
