@@ -32,11 +32,12 @@ nnoremap("<A-Right>", "<C-W>l")
 nnoremap("<A-Left>", "<C-W>h")
 nnoremap("<A-v>", "<C-W><C-v><C-W><C-l>")
 nnoremap("<A-h>", "<C-W><C-s><C-W><C-j>")
-nnoremap("<A-q>", ":bd<CR>", {silent=true})
-nnoremap("<A-C-Left>", "<C-W>5<") -- size horizontally
-nnoremap("<A-C-Right>", "<C-W>5>") -- size horizontally
-nnoremap("<A-C-Up>", "<C-W>+") -- size vertically
-nnoremap("<A-C-Down>", "<C-W>-") -- size vertically
+nnoremap("<A-q>", ":bd<CR>", {silent=true}) -- close buffe
+nnoremap("<A-x>", "<C-W>q", {silent=true}) -- close windov
+nnoremap("<A-S-Left>", "<C-W>5<") -- size horizontally
+nnoremap("<A-S-Right>", "<C-W>5>") -- size horizontally
+nnoremap("<A-S-Up>", "<C-W>+") -- size vertically
+nnoremap("<A-S-Down>", "<C-W>-") -- size vertically
 
 -- terminal
 -- tnoremap("<A-Down>", "<Cmd>wincmd j<CR>") -- navigation layer
@@ -47,7 +48,7 @@ nnoremap("<leader><Esc>", ":ToggleTerm direction=float<CR>", {silent = true})
 tnoremap("<leader><Esc>", "<Cmd>ToggleTerm<CR>", {silent = true})
 
 -- undotree
-nnoremap("<leader>u", ":UndotreeToggle<CR>")
+nnoremap("<leader>u", ":UndotreeToggle<CR>", {silent=true})
 
 -- move line
 vnoremap("<S-Down>", ":m  >+1<CR>gv=gv")
