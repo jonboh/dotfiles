@@ -24,6 +24,13 @@ nnoremap("N", "Nzzzv")
 -- nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-Down>", "<cmd>copen<CR><cmd>cnext<CR>zz")
 nnoremap("<C-Up>", "<cmd>copen<CR><cmd>cprev<CR>zz")
+-- <C-o> go back
+-- <C-O> go forward
+nnoremap("<CS-O>", "<C-I>") -- this might not work in other terminal emulators
+-- wezterm: ok
+-- alacritty: not
+-- kitty: not
+
 
 -- windows
 nnoremap("<A-Down>", "<C-W>j") -- navigation layer
