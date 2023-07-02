@@ -158,4 +158,12 @@ end
 config.disable_default_key_bindings = true
 config.warn_about_missing_glyphs = false -- TODO: fix these misiing glyphs
 config.debug_key_events = false
+
+
+config.launch_menu = {}
+for i, command in ipairs(require("ssh_commands").ssh_commands) do
+    table.insert(config.launch_menu, command)
+end
+
+
 return config
