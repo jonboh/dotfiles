@@ -14,13 +14,14 @@ act = wezterm.action
 local io = require  io 
 local os = require  os 
 local act = wezterm.action
+local scrollback = 3500
 
 wezterm.on( trigger-vim-with-visible-text , function(window, pane)
   -- Retrieve the current viewport s text.
   --
   -- Note: You could also pass an optional number of lines (eg: 2000) to
   -- retrieve that number of lines starting from the bottom of the viewport.
-  local viewport_text = pane:get_lines_as_text()
+  local viewport_text = pane:get_lines_as_text(scrollback+100)
 
   -- Create a temporary file to pass to vim
   local name = os.tmpname()
@@ -54,7 +55,7 @@ config = {
     font = wezterm.font  FiraCode Nerd Font ,
     window_decorations = "NONE",
     use_fancy_tab_bar = false,
-    scrollback_lines = 3500,
+    scrollback_lines = scrollback,
     leader = { key= Space , mods= CTRL , timeout_milliseconds=1000},
     keys = {
         {
@@ -129,7 +130,7 @@ config = {
         { key =  9 , mods =  ALT|CTRL , action = act.ActivateTab(-1) },
         { key =  ; , mods =  ALT|CTRL , action = act.ShowDebugOverlay },
     },
-    key_table = {
+    key_tables = {
         search_mode = {
             { key =  Enter , mods =  NONE , action = act.CopyMode  PriorMatch  },
             { key =  Escape , mods =  NONE , action = act.CopyMode  Close  },
@@ -156,5 +157,5 @@ for i = 1, 8 do
 end
 config.disable_default_key_bindings = true
 config.warn_about_missing_glyphs = false -- TODO: fix these misiing glyphs
-config.debug_key_events = true
+config.debug_key_events = false
 return config
