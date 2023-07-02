@@ -109,6 +109,12 @@ cmd zip ${{
     rm -rf $1
 }}
 
+cmd move ${{
+    set -f
+    mkdir -p $1
+    mv $fx $1
+    }}
+
 # edit config
 cmd edit-config ${{
     $EDITOR ~/.config/lf/lfrc
