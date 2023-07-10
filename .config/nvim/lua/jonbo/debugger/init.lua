@@ -17,7 +17,9 @@ end)
 -- TODO: add pause 
 
 nnoremap("<F7>", dap.continue)
+nnoremap("<F19>", dap.reverse_continue)
 nnoremap("<F8>", dap.step_over)
+nnoremap("<F20>", dap.step_back)
 nnoremap("<F9>", dap.step_out)
 nnoremap("<F10>", dap.step_into)
 nnoremap("<F11>", dap.pause)
