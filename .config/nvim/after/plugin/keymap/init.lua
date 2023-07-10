@@ -58,8 +58,8 @@ tnoremap("<leader><Esc>", "<Cmd>ToggleTerm<CR>", {silent = true})
 nnoremap("<leader>u", ":UndotreeToggle<CR>", {silent=true})
 
 -- move line
-vnoremap("<S-Down>", ":m  >+1<CR>gv=gv")
-vnoremap("<S-Up>", ":m  <-2<CR>gv=gv")
+vnoremap("<S-Down>", ":m  >+1<CR>gv=gv", {silent=true})
+vnoremap("<S-Up>", ":m  <-2<CR>gv=gv", {silent=true})
 
 -- yanking and pasting from system clipboard
 nnoremap("gy", "\"+y")
