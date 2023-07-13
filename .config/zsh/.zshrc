@@ -47,6 +47,20 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line # press  v  on vimode to open nvim and edit command
 
+setopt HIST_IGNORE_SPACE
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER=" fg"
+    zle accept-line
+  else
+    zle push-input
+    BUFFER=" fg"
+    zle accept-line
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey  ^Z  fancy-ctrl-z
+
 # lf cd functionality
 LFCD="$XDG_CONFIG_HOME/lf/lfcd.sh"
 if [ -f "$LFCD" ]; then
