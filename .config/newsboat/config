@@ -21,6 +21,10 @@ macro v set browser "yt-dlp -qo - %u | mpv -" ; open-in-browser ; set browser br
 
 bind-key ^U halfpageup
 bind-key ^D halfpagedown
+unbind-key G
+bind-key G end
+unbind-key g
+bind-key g home
 
 
 highlight all "---.*---" yellow default bold
