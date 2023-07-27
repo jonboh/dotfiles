@@ -16,6 +16,11 @@ require("telescope").setup({
 		grep_previewer = previewers.vim_buffer_vimgrep.new,
 		qflist_previewer = previewers.vim_buffer_qflist.new,
 
+        preview = {
+              filesize_limit = 1, -- top at 1 mb
+              timeout = 100, -- ms
+        },
+
         file_ignore_patterns = {
             "vcpkg/", 
             "vcpkg\\", 
