@@ -14,13 +14,39 @@ nnoremap("<F1>", function()
     dap.close()
 end)
 
--- TODO: add pause 
+local exec_reverse_step = function()
+    local s = require("dap").session()
+    if not s then
+      return
+    end
+    s:evaluate("-exec reverse-step")
+    -- s:evaluate("-exec reverse-step", function(err, resp)
+    --   -- you can handle the response on this function
+    -- end)
+  end
+local exec_reverse_continue = function()
+    local s = require("dap").session()
+    if not s then
+      return
+    end
+    s:evaluate("-exec reverse-continue")
+  end
+local exec_reverse_finish = function()
+    local s = require("dap").session()
+    if not s then
+      return
+    end
+    s:evaluate("-exec reverse-finish")
+  end
 
 nnoremap("<F7>", dap.continue)
-nnoremap("<F19>", dap.reverse_continue)
+-- nnoremap("<F19>", dap.reverse_continue)
+nnoremap("<F19>", exec_reverse_step)
 nnoremap("<F8>", dap.step_over)
-nnoremap("<F20>", dap.step_back)
+-- nnoremap("<F20>", dap.step_back)
+nnoremap("<F20>", exec_reverse_continue)
 nnoremap("<F9>", dap.step_out)
+nnoremap("<F21>", exec_reverse_finish)
 nnoremap("<F10>", dap.step_into)
 nnoremap("<F11>", dap.pause)
 nnoremap("<F6>", function()
