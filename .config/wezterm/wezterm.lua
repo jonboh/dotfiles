@@ -100,21 +100,22 @@ config = {
         -- Panes
         { key =  v , mods =  ALT|CTRL , action = act.SplitHorizontal {domain=  CurrentPaneDomain } },
         { key =  h , mods =  ALT|CTRL , action = act.SplitVertical {domain=  CurrentPaneDomain } },
-        { key =  x , mods =  ALT|CTRL , action = act.CloseCurrentPane {confirm=false} },
         { key =  r , mods =  ALT|CTRL , action = act.RotatePanes  Clockwise },
         { key =  R , mods =  ALT|CTRL , action = act.RotatePanes  CounterClockwise },
         { key =  s , mods =  ALT|CTRL , action = act.PaneSelect { alphabet =  strdyfneai , }, },
         { key =  m , mods =  ALT|CTRL , action = act.PaneSelect { mode =  SwapWithActive , }, },
 
-        { key =  LeftArrow , mods = ALT|CTRL , action = act.ActivatePaneDirection  Left , },
-        { key =  RightArrow , mods =  ALT|CTRL , action = act.ActivatePaneDirection  Right , },
-        { key =  UpArrow , mods =  ALT|CTRL , action = act.ActivatePaneDirection  Up , },
-        { key =  DownArrow , mods =  ALT|CTRL , action = act.ActivatePaneDirection  Down , },
+        -- pane move(nvim aware)
+        { key =  LeftArrow ,  mods =  ALT , action = wezterm.action({ EmitEvent = "move-left" }) },
+        { key =  RightArrow , mods =  ALT , action = wezterm.action({ EmitEvent = "move-right" }) },
+        { key =  UpArrow ,    mods =  ALT , action = wezterm.action({ EmitEvent = "move-up" }) },
+        { key =  DownArrow ,  mods =  ALT , action = wezterm.action({ EmitEvent = "move-down" }) },
+        { key =  x , mods =  ALT , action = wezterm.action({EmitEvent="close-pane"})},
         -- TODO: move resizing to its own mode with key_table
-        { key =  LeftArrow , mods = CMD|ALT|CTRL , action = act.AdjustPaneSize { Left , 5}, },
-        { key =  RightArrow , mods =  CMD|ALT|CTRL , action = act.AdjustPaneSize { Right , 5}, },
-        { key =  UpArrow , mods =  CMD|ALT|CTRL , action = act.AdjustPaneSize { Up , 5}, },
-        { key =  DownArrow , mods =  CMD|ALT|CTRL , action = act.AdjustPaneSize { Down ,5}, },
+        { key =  LeftArrow , mods = ALT|CTRL , action = act.AdjustPaneSize { Left , 5}, },
+        { key =  RightArrow , mods =  ALT|CTRL , action = act.AdjustPaneSize { Right , 5}, },
+        { key =  UpArrow , mods =  ALT|CTRL , action = act.AdjustPaneSize { Up , 5}, },
+        { key =  DownArrow , mods =  ALT|CTRL , action = act.AdjustPaneSize { Down ,5}, },
 
 
         -- Tabs
@@ -164,6 +165,9 @@ config.launch_menu = {}
 for i, command in ipairs(require("ssh_commands").ssh_commands) do
     table.insert(config.launch_menu, command)
 end
+
+
+require("nvim_pane")
 
 
 return config

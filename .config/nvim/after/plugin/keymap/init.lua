@@ -33,14 +33,15 @@ nnoremap("<CS-O>", "<C-I>") -- this might not work in other terminal emulators
 
 
 -- windows
-nnoremap("<A-Down>", "<C-W>j") -- navigation layer
-nnoremap("<A-Up>", "<C-W>k")
-nnoremap("<A-Right>", "<C-W>l")
-nnoremap("<A-Left>", "<C-W>h")
+local mux = require("wezterm-mux")
+nnoremap("<A-Down>", mux.wezterm_move_down)
+nnoremap("<A-Up>",  mux.wezterm_move_up)
+nnoremap("<A-Right>", mux.wezterm_move_right)
+nnoremap("<A-Left>", mux.wezterm_move_left)
 nnoremap("<A-v>", "<C-W><C-v><C-W><C-l>")
 nnoremap("<A-h>", "<C-W><C-s><C-W><C-j>")
 nnoremap("<A-q>", ":bd<CR>", {silent=true}) -- close buffe
-nnoremap("<A-x>", "<C-W>q", {silent=true}) -- close windov
+nnoremap("<A-x>", "<C-W>q", {silent=true}) -- close window
 nnoremap("<A-S-Left>", "<C-W>5<") -- size horizontally
 nnoremap("<A-S-Right>", "<C-W>5>") -- size horizontally
 nnoremap("<A-S-Up>", "<C-W>+") -- size vertically
