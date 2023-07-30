@@ -18,7 +18,7 @@ local scrollback = 3500
 
 wezterm.on( trigger-vim-with-visible-text , function(window, pane)
   -- Retrieve the current viewport s text.
-  --
+
   -- Note: You could also pass an optional number of lines (eg: 2000) to
   -- retrieve that number of lines starting from the bottom of the viewport.
   local viewport_text = pane:get_lines_as_text(scrollback+100)
@@ -46,6 +46,47 @@ wezterm.on( trigger-vim-with-visible-text , function(window, pane)
   -- to avoid cluttering up the temporary directory.
   wezterm.sleep_ms(1000)
   os.remove(name)
+end)
+
+function iszoomed(window)
+    local tab = window:active_tab()
+    for _, pane in ipairs(tab:panes_with_info()) do
+        if pane.is_active then
+            return pane.is_zoomed
+        end
+    end
+end
+
+wezterm.on( toggle-fullscreen , function(window, pane)
+    local overrides = window:get_config_overrides() or {}
+    if iszoomed(window) then
+        -- remove frames then unset zoomed
+        overrides.window_frame = {
+              border_left_width =  0cell ,
+              border_right_width =  0cell ,
+              border_bottom_height =  0cell ,
+              border_top_height =  0cell ,
+              border_left_color =  purple ,
+              border_right_color =  purple ,
+              border_bottom_color =  purple ,
+              border_top_color =  purple ,
+                    }
+        window:active_tab():set_zoomed(false)
+    else
+        -- add frames then set zoomed
+        overrides.window_frame = {
+              border_left_width =  0.25cell ,
+              border_right_width =  0.25cell ,
+              border_bottom_height =  0.125cell ,
+              border_top_height =  0.125cell ,
+              border_left_color =  purple ,
+              border_right_color =  purple ,
+              border_bottom_color =  purple ,
+              border_top_color =  purple ,
+            }
+        window:active_tab():set_zoomed(true)
+    end
+    window:set_config_overrides(overrides)
 end)
 
 
@@ -92,11 +133,8 @@ config = {
         { key =  d , mods =  ALT|CTRL , action = act.ScrollByPage(0.5) },
         { key =  PageUp , mods =   , action = act.ScrollByPage(-1) },
         { key =  PageDown , mods =   , action = act.ScrollByPage(1) },
-        {
-            key =  E ,
-            mods =  ALT|CTRL ,
-            action = act.EmitEvent  trigger-vim-with-visible-text ,
-        },
+        { key =  e , mods =  ALT|CTRL , action = act.EmitEvent  trigger-vim-with-visible-text },
+        { key =  f , mods =  ALT|CTRL , action = act.EmitEvent  toggle-fullscreen },
         -- Panes
         { key =  v , mods =  ALT|CTRL , action = act.SplitHorizontal {domain=  CurrentPaneDomain } },
         { key =  h , mods =  ALT|CTRL , action = act.SplitVertical {domain=  CurrentPaneDomain } },
