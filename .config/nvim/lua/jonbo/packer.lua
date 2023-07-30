@@ -28,6 +28,7 @@ return require( packer ).startup(function(use)
         run =  cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build  }
     use{"ThePrimeagen/harpoon", requires =  nvim-lua/plenary.nvim  }
     use{ ggandor/leap.nvim , requires= tpope/vim-repeat }
+    use {"jonboh/wezterm-mux.nvim"}
 
     -- Utilities
     use {  nvim-lualine/lualine.nvim ,
@@ -144,7 +145,7 @@ return require( packer ).startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use("mfussenegger/nvim-dap-python") -- configs for debugpy
     use("theHamsta/nvim-dap-virtual-text")
-    -- use( jbyuki/one-small-step-for-vimkind )
+    use( jbyuki/one-small-step-for-vimkind )
 
     -- Obsidian
     use{ epwalsh/obsidian.nvim }

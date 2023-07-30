@@ -1,5 +1,6 @@
 require("jonbo.debugger.python")
 require("jonbo.debugger.cpp")
+require("jonbo.debugger.vimkind")
 
 local Remap = require("jonbo.keymap")
 local nnoremap = Remap.nnoremap
