@@ -1,5 +1,12 @@
 export WINIT_X11_SCALE_FACTOR=1.25
 
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+
 if [ "$(tty)" = "/dev/tty1" ];
 then
     pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
