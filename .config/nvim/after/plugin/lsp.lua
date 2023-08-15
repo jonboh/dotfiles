@@ -39,8 +39,12 @@ rust_analyzer_cmd = { rustup ,  run ,  stable ,  rust-analyzer }
 rust_lsp[ cmd ] = rust_analyzer_cmd
 rust_lsp[ settings ] = {
     ["rust-analyzer"] = {
-        checkOnSave = {
-            command = "clippy"
+        check = {
+            -- command = "clippy"
+            command = "check"
+        },
+        rustc = {
+            source= "discover"
         }
     }
 }
