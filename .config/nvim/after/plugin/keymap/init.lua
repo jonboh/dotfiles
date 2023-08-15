@@ -83,7 +83,8 @@ vnoremap("<leader>r", "\"0y:%s/<C-r>0/<C-r>0/gI<Left><Left><Left>") -- this uses
 vnoremap("$", "$<Left>") -- visual mode dont include line jump on selection
 
 -- diagnostics
-nnoremap("<leader>x", vim.diagnostic.setqflist, {silent=true})
+-- nnoremap("<leader>x", "<cmd>lua vim.diagnostic.setqflist()<CR><cmd>cfirst<CR>, {silent=true}) -- TODO: fix messy when lots of warnings
+nnoremap("<leader>x", "<cmd>BaconLoad<CR><cmd>copen<CR><cmd>cfirst<CR>", {silent=true}) -- TODO: handle filetype
 
 -- AI
 nnoremap("<C-x>", ":ChatGPT<CR>", {silent=true})
