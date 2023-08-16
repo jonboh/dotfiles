@@ -46,3 +46,13 @@ g = "scroll-to-top"
 shift-g = "scroll-to-bottom"
 # k = "scroll-lines(-1)"
 # j = "scroll-lines(1)"
+c = "job:clippy_w"
+shift-c = "job:clippy"
+
+[jobs.clippy_w]
+command = ["cargo", "clippy", "--color", "always", "--", 
+            "-W", "clippy::pedantic",
+            "-W", "clippy::style",
+            "-W", "clippy::nursery",
+            "-W", "clippy::unwrap_used",
+            ]
