@@ -16,7 +16,7 @@ vim.opt.mouse =
 vim.opt.scrolloff = 8
 
 -- search
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
