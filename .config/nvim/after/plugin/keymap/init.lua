@@ -7,7 +7,7 @@ local tnoremap = Remap.tnoremap
 -- <C-[]> Ctrl+[]
 
 tnoremap("<Esc>", "<C-\\><C-n>")
-nnoremap("<Esc><Esc>", "<cmd>nohls<cr>", {silent=true}) -- clear highlight search
+nnoremap("<Esc><Esc>", "<cmd>nohls<cr><Esc>", {silent=true}) -- clear highlight search
 
 -- TODO: add silence
 nnoremap("<Space>", "<nop>")
