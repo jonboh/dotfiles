@@ -1,4 +1,3 @@
-show-read-feeds no
 show-read-articles no
 auto-reload yes
 refresh-on-startup yes
