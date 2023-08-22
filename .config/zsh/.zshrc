@@ -86,3 +86,6 @@ eval "$(zoxide init zsh)"
 
 # path additions
 PATH="$HOME/.cargo/bin/:$PATH"
+
+# shai intergration :D
+source $XDG_CONFIG_HOME/shai/zsh_assistant.zsh
