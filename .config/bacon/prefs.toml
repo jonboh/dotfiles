@@ -22,7 +22,20 @@ summary = false
 # 
 # See https://dystroy.org/bacon/config/#export-locations
 # 
-export_locations = true
+# export_locations = true
+
+[export]
+enabled = true
+path = ".bacon-locations"
+line_format = "{kind} {path}:{line}:{column} {message}"
+
+[jobs.klippy]
+command = ["cargo", "clippy", "--color", "always", "--", 
+            "-W", "clippy::pedantic",
+            "-W", "clippy::style",
+            "-W", "clippy::nursery",
+            "-W", "clippy::unwrap_used",
+            ]
 
 # Uncomment and change the key-bindings you want to define
 # (some of those ones are the defaults)
@@ -46,13 +59,6 @@ g = "scroll-to-top"
 shift-g = "scroll-to-bottom"
 # k = "scroll-lines(-1)"
 # j = "scroll-lines(1)"
-c = "job:clippy_w"
-shift-c = "job:clippy"
+k = "job:klippy"
+c = "job:clippy"
 
-[jobs.clippy_w]
-command = ["cargo", "clippy", "--color", "always", "--", 
-            "-W", "clippy::pedantic",
-            "-W", "clippy::style",
-            "-W", "clippy::nursery",
-            "-W", "clippy::unwrap_used",
-            ]
