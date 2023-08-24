@@ -3,10 +3,10 @@ shell="zsh"
 model="open-aigpt35-turbo"
 
 ask-assistant() {
-    VISUAL="shai ask --operating-system \"$os\" --shell \"$shell\" --model $model --edit-file" zle edit-command-line
+    VISUAL="env OPENAI_API_KEY=$(cat ~/.secrets/chatgpt.key) shai ask --operating-system \"$os\" --shell \"$shell\" --model $model --edit-file"  zle edit-command-line
 }
 explain-assistant() {
-    VISUAL="shai explain --operating-system \"$os\" --shell \"$shell\" --model $model --edit-file" zle edit-command-line
+    VISUAL="env OPENAI_API_KEY=$(cat ~/.secrets/chatgpt.key) shai explain --operating-system \"$os\" --shell \"$shell\" --model $model --edit-file" zle edit-command-line
 }
 # Bind a key combination to trigger the custom widget
 zle -N ask-assistant
