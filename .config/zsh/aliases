@@ -40,5 +40,8 @@ alias cal= cal --monday
 alias killselect= kill $(xprop | rg -i "pid" | rg -o "[0-9]+") 
 
 # nvim+openaikey: chatgpt.nvim doesn t get the key from vim.env, but from os.getenv
-alias nvim="export OPENAI_API_KEY=$(cat ~/.secrets/chatgpt.key); nvim"
-alias v="export OPENAI_API_KEY=$(cat ~/.secrets/chatgpt.key); nvim"
+alias nvim="OPENAI_API_KEY=$(cat ~/.secrets/chatgpt.key) nvim"
+alias v="OPENAI_API_KEY=$(cat ~/.secrets/chatgpt.key) nvim"
+
+
+ 
