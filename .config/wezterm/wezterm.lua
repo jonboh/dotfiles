@@ -103,7 +103,7 @@ config = {
             key= y ,
             mods=  ALT|CTRL ,
             action=act.QuickSelectArgs {
-                alphabet="strdyfneai",
+                alphabet="dnretasi",
                 action=act.CopyTo  Clipboard ,
             }
         },
