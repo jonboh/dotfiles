@@ -25,17 +25,12 @@ lsp.on_attach(mappings)
 
 lsp.skip_server_setup({ rust_analyzer })
 
--- Python LSP Configuration
--- require( lspconfig ).pylsp.setup({
-    --     cmd={ pylsp ,
-    --     on_attach = mappings,
-    -- })
-
 lsp.setup()
 
 -- Rust LSP Configuration
 local rust_lsp = lsp.build_options( rust_analyzer , {})
-rust_analyzer_cmd = { rustup ,  run ,  stable ,  rust-analyzer }
+-- rust_analyzer_cmd = { rustup ,  run ,  stable ,  rust-analyzer }
+rust_analyzer_cmd = {"rust-analyzer"}
 rust_lsp[ cmd ] = rust_analyzer_cmd
 rust_lsp[ settings ] = {
     ["rust-analyzer"] = {
