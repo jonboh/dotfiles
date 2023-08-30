@@ -14,6 +14,8 @@ ibus-daemon -rxR &
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 systemctl start --user xdg-desktop-portal.service
 
+export SSH_ASKPASS=ssh-askpass
+
 exec i3
 # log i3
 # exec i3 -V -d all &>> "$HOME/i3.log"
