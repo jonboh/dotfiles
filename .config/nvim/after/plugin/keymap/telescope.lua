@@ -16,6 +16,7 @@ nnoremap("<leader>s", telescope_builtin.live_grep)
 vnoremap("<leader>s", "\"zy<cmd>exec  Telescope grep_string search=  . escape(@z,    )<cr>")
 nnoremap("<leader>tw", grep_word)
 nnoremap("<leader>tt", telescope_builtin.resume)
+nnoremap("<leader>tq", telescope_builtin.quickfix)
 nnoremap("<leader>/", function() telescope_builtin.current_buffer_fuzzy_find({
     sorting_strategy="ascending",
     layout_config={prompt_position="top"}

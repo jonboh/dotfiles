@@ -181,8 +181,6 @@ return require( packer ).startup(function(use)
         -- navigate history
         -- blame
     -- TODO: check https://github.com/tpope/vim-unimpaired, might adapt mappings
-    -- TODO: get a way to mass replace accross files in current project
-        -- check https://github.com/nvim-pack/nvim-spectre?
     -- TODO: check https://maxwellrules.com/misc/nvim_jupyter.html
     -- TODO: configure snippets
     -- TODO: check https://github.com/stevearc/oil.nvim. edit your filesystem on a neovim buffer
