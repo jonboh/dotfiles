@@ -66,14 +66,26 @@ vnoremap("<S-Up>", ":m  <-2<CR>gv=gv", {silent=true})
 -- yanking and pasting from system clipboard
 nnoremap("gy", "\"+y")
 vnoremap("gy", "\"+y")
+nnoremap("gY", "\"+Y")
+vnoremap("gY", "\"+Y")
 nnoremap("gp", "\"+p")
-nnoremap("gP", "\"+P")
 vnoremap("gp", "\"+p")
+nnoremap("gP", "\"+P")
 vnoremap("gP", "\"+P")
 
--- delete into void register
-nnoremap("gd", "\"_d")
-vnoremap("gd", "\"_d")
+-- delete / paste into void register
+nnoremap("<leader>d", "\"_d")
+vnoremap("<leader>d", "\"_d")
+nnoremap("<leader>D", "\"_D")
+vnoremap("<leader>D", "\"_D")
+nnoremap("<leader>c", "\"_c")
+vnoremap("<leader>c", "\"_c")
+nnoremap("<leader>C", "\"_C")
+vnoremap("<leader>C", "\"_C")
+nnoremap("<leader>p", "\"0p")
+vnoremap("<leader>p", "\"0p")
+nnoremap("<leader>P", "\"0P")
+vnoremap("<leader>P", "\"0P")
 
 -- easily replace the current word
 nnoremap("<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") --<> on the selection limits the replacement to whole words
