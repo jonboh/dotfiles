@@ -40,9 +40,9 @@ def get_vpn():
     if len(g) > 0:
         text += "BQV-VPN"
     if os.path.exists("/sys/class/net/wg-mullvad"):
-        text += "WG-MULLVAD"
-    if os.path.exists("/sys/class/net/ov-mullvad"):
-        text += "OV-MULLVAD"
+        text += "WG-VPN"
+    if os.path.exists("/sys/class/net/tun0"):
+        text += "OV-VPN"
     if text == "WG-VPN" or text == "OV-VPN":
         color = None
     elif text == "BQV-VPN":
@@ -91,5 +91,3 @@ if __name__ ==  __main__ :
         j.insert(7, get_vpn())
         # and echo back new encoded json
         print_line(prefix+json.dumps(j))
-        with open("/home/jonvolt/status", "w") as f:
-            json.dump(j, f)
