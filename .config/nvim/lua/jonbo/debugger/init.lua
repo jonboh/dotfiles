@@ -57,7 +57,7 @@ end)
 nnoremap("<F18>", function()
     dap.set_breakpoint(vim.fn.input( Breakpoint condition:  ))
 end)
-nnoremap("<leader>rc", function()
+nnoremap("<F2>", function()
     dap.run_to_cursor()
 end)
 
@@ -70,6 +70,7 @@ nnoremap("<F12>", function()
     dapui.toggle(1)
     dapui.toggle(2)
 end)
+
 
 -- DAP UI Config
 dapui.setup({

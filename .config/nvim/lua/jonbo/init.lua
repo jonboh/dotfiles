@@ -1,5 +1,5 @@
 require("jonbo.set")
-require("jonbo.packer")
+require("jonbo.lazy")
 require("jonbo.debugger")
 require("jonbo.telescope")
 
