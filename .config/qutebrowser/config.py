@@ -235,6 +235,7 @@ config.bind( <Shift-Left> ,  back )
 config.bind( <Shift-Down> ,  tab-next )
 config.bind( <Shift-Up> ,  tab-prev )
 config.bind( <Shift-Right> ,  forward )
+config.bind( <space>o ,  spawn brave --url {url} )
 
 # c.content.javascript.enabled = False
 
