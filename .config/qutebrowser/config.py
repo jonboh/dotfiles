@@ -237,5 +237,4 @@ config.bind( <Shift-Up> ,  tab-prev )
 config.bind( <Shift-Right> ,  forward )
 
 # c.content.javascript.enabled = False
-config.bind( <space>pq ,  spawn --userscript qute-bitwarden )
-config.bind( <space>ps ,  spawn --userscript qute-bitwarden --password-only )
+
