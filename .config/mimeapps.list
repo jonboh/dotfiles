@@ -1,3 +1,7 @@
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+x-scheme-handler/notion=notion-app.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+text/html=org.qutebrowser.qutebrowser.desktop
 

@@ -4,7 +4,7 @@ refresh-on-startup yes
 reload-threads 100
 
 max-items 50
-browser brave
+browser qutebrowser
 
 
 color listnormal cyan default
@@ -16,7 +16,7 @@ color article white default bold
 
 bind-key SPACE macro-prefix 
 unbind-key v
-macro v set browser "yt-dlp -qo - %u | mpv -" ; open-in-browser ; set browser brave;
+macro v set browser "yt-dlp -qo - %u | mpv -" ; open-in-browser ; set browser qutebrowser;
 
 bind-key ^U halfpageup
 bind-key ^D halfpagedown
