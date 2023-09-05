@@ -36,6 +36,8 @@ alias "ar.g"="setxkbmap us" # from dvorak firmware + dvorak mode -> us mode (dvo
 # cal
 alias cal= cal --monday 
 
+alias fd= fd --hidden  # search everything including .files
+
 # killselect
 alias killselect= kill $(xprop | rg -i "pid" | rg -o "[0-9]+") 
 
