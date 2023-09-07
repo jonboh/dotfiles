@@ -16,7 +16,7 @@ color article white default bold
 
 bind-key SPACE macro-prefix 
 unbind-key v
-macro v set browser "yt-dlp -qo - %u | mpv -" ; open-in-browser ; set browser qutebrowser;
+macro v set browser "yt-dlp -q -f \"bestvideo[height<2160]+bestaudio\" -o  - %u | mpv -" ; open-in-browser ; set browser qutebrowser;
 
 bind-key ^U halfpageup
 bind-key ^D halfpagedown
