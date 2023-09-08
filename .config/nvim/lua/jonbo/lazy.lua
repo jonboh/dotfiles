@@ -57,6 +57,10 @@ require("lazy").setup({
             "rcarriga/nvim-notify",
         }
     },
+    {
+       stevearc/dressing.nvim ,
+      opts = {},
+    },
 
     -- git 
      tpope/vim-fugitive ,
