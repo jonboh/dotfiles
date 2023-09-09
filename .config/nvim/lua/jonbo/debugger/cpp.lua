@@ -23,16 +23,18 @@ dap.adapters.cppdbg = {
     command = cpptools_path,
 }
 
-local get_exec_path = function()
-            return vim.fn.input( Path to executable:  , vim.fn.getcwd() ..  / ,  file )
-        end
+local M = {}
+M.get_exec_path = function()
+    return vim.fn.input( Path to executable:  , vim.fn.getcwd() ..  / ,  file )
+end
 
-dap.configurations.cpp = {
+
+dap.configurations.rust = {
     {
         name = "(lldb) Launch file",
         type = "codelldb",
         request = "launch",
-        program = get_exec_path,
+        program = M.get_exec_path,
         cwd =  ${workspaceFolder} ,
         stopOnEntry = true,
     },
@@ -40,43 +42,13 @@ dap.configurations.cpp = {
         name = "(gdb) Launch file",
         type = "cppdbg",
         request = "launch",
-        program = get_exec_path,
+        program = M.get_exec_path,
         cwd =  ${workspaceFolder} ,
         stopAtEntry = true,
     },
-    {
-        name= "rr",
-        type= "cppdbg",
-        request= "launch",
-        program = get_exec_path,
-        args= {},
-        miDebuggerServerAddress= "localhost:50505",
-        stopAtEntry= false,
-        cwd= vim.fn.getcwd,
-        environment= {},
-        externalConsole= true,
-        linux= {
-            MIMode= "gdb",
-            setupCommands= {
-                {
-                    description= "Setup to resolve symbols",
-                    text= "set sysroot /",
-                    ignoreFailures= false
-                },
-            },
-        },
-        osx= {
-            MIMode= "gdb"
-        },
-        windows= {
-            MIMode= "gdb"
-        }
-    }
 }
 
 
--- TODO: fix cwd management
--- If you want to use this for Rust and C, add something like this:
-
+dap.configurations.cpp = dap.configurations.rust
 dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+return M

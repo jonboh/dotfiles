@@ -1,5 +1,6 @@
 require("jonbo.debugger.python")
 require("jonbo.debugger.cpp")
+local rr = require("jonbo.debugger.rr")
 require("jonbo.debugger.vimkind")
 
 local Remap = require("jonbo.keymap")
@@ -10,45 +11,19 @@ local vnoremap = Remap.vnoremap
 local dap = require( dap )
 local dapui = require("dapui")
 
--- TODO: clear F1 from opening help
 nnoremap("<F1>", function()
     dap.close()
 end)
-
-local exec_reverse_step = function()
-    local s = require("dap").session()
-    if not s then
-      return
-    end
-    s:evaluate("-exec reverse-step")
-    -- s:evaluate("-exec reverse-step", function(err, resp)
-    --   -- you can handle the response on this function
-    -- end)
-  end
-local exec_reverse_continue = function()
-    local s = require("dap").session()
-    if not s then
-      return
-    end
-    s:evaluate("-exec reverse-continue")
-  end
-local exec_reverse_finish = function()
-    local s = require("dap").session()
-    if not s then
-      return
-    end
-    s:evaluate("-exec reverse-finish")
-  end
-
-nnoremap("<F7>", dap.continue)
+nnoremap("<F7>", rr.continue)
 -- nnoremap("<F19>", dap.reverse_continue)
-nnoremap("<F19>", exec_reverse_step)
-nnoremap("<F8>", dap.step_over)
+nnoremap("<F19>", rr.reverse_continue) -- <S-F7> == <F19>
+nnoremap("<F8>", rr.next)
 -- nnoremap("<F20>", dap.step_back)
-nnoremap("<F20>", exec_reverse_continue)
-nnoremap("<F9>", dap.step_out)
-nnoremap("<F21>", exec_reverse_finish)
-nnoremap("<F10>", dap.step_into)
+nnoremap("<F20>", rr.reverse_next)
+nnoremap("<F9>", rr.step_out)
+nnoremap("<F21>", rr.reverse_finish)
+nnoremap("<F10>", rr.step)
+nnoremap("<F22>", rr.reverse_step)
 nnoremap("<F11>", dap.pause)
 nnoremap("<F6>", function()
     dap.toggle_breakpoint()
