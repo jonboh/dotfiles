@@ -21,14 +21,6 @@ require("telescope").setup({
               timeout = 100, -- ms
         },
 
-        file_ignore_patterns = {
-            "vcpkg/", 
-            "vcpkg\\", 
-            "build/", 
-            "build\\",
-            "target/", 
-            "target\\",
-    }
 --		mappings = {
 --			i = {
 --				["<C-x>"] = false,
@@ -56,5 +48,19 @@ M.search_dotfiles = function()
 		hidden = true,
 	})
 end
+
+M.find_files = function()
+	require("telescope.builtin").find_files({
+        file_ignore_patterns = { -- TODO: add only for <<leader>-f>
+            "vcpkg/", 
+            "vcpkg\\", 
+            "build/", 
+            "build\\",
+            "target/", 
+            "target\\",
+        }
+    })
+end
+
 
 return M

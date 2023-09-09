@@ -11,7 +11,7 @@ grep_word = function()
     telescope_builtin.grep_string { search = vim.fn.expand("<cword>") }
 end
 
-nnoremap("<leader>f", telescope_builtin.find_files)
+nnoremap("<leader>f", require("jonbo.telescope").find_files)
 nnoremap("<leader>s", telescope_builtin.live_grep)
 vnoremap("<leader>s", "\"zy<cmd>exec  Telescope grep_string search=  . escape(@z,    )<cr>")
 nnoremap("<leader>tw", grep_word)
