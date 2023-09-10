@@ -154,6 +154,9 @@ config = {
         { key =  RightArrow , mods =  ALT|CTRL , action = act.AdjustPaneSize { Right , 5}, },
         { key =  UpArrow , mods =  ALT|CTRL , action = act.AdjustPaneSize { Up , 5}, },
         { key =  DownArrow , mods =  ALT|CTRL , action = act.AdjustPaneSize { Down ,5}, },
+        { key =  UpArrow , mods =  CMD|ALT|CTRL , action = act.IncreaseFontSize, },
+        { key =  DownArrow , mods =  CMD|ALT|CTRL , action = act.DecreaseFontSize, },
+        { key =  LeftArrow , mods =  CMD|ALT|CTRL , action = act.ResetFontSize, },
 
 
         -- Tabs
