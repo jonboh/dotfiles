@@ -14,22 +14,22 @@ local get_rust_lldb_path = function()
 end
 
 dap.configurations.rust = {
-    -- {
-    --     name = "(lldb) Launch file",
-    --     type = "codelldb",
-    --     request = "launch",
-    --     program = debug_utils.get_program,
-    --     miDebuggerPath = get_rust_lldb_path,
-    --     cwd =  ${workspaceFolder} ,
-    --     stopOnEntry = true,
-    -- },
+    {
+        name = "(lldb) Launch file",
+        type = "codelldb",
+        request = "launch",
+        program = debug_utils.get_program,
+        miDebuggerPath = get_rust_lldb_path,
+        cwd =  ${workspaceFolder} ,
+        stopOnEntry = true,
+    },
     {
         name = "(gdb) Launch file",
         type = "cppdbg",
         request = "launch",
         program = debug_utils.get_program,
         miDebuggerPath = get_rust_gdb_path,
-        cwd =  ${workspaceFolder} ,
+        cwd= vim.fn.getcwd,
         stopAtEntry = true,
     },
 }

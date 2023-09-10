@@ -32,24 +32,20 @@ dap.adapters.cppdbg = {
     command = cpptools_path,
 }
 
-nnoremap("<F1>", function()
-    dap.terminate()
-end)
+nnoremap("<F1>", dap.terminate)
 nnoremap("<F7>", dap.continue)
 nnoremap("<F8>", dap.step_over)
 nnoremap("<F9>", dap.step_out)
 nnoremap("<F10>", dap.step_into)
 nnoremap("<F11>", dap.pause)
-nnoremap("<F6>", function()
-    dap.toggle_breakpoint()
-end)
+nnoremap("<F6>", dap.toggle_breakpoint)
+nnoremap("<F56>", dap.down) -- <A-F8>
+nnoremap("<F57>", dap.up) -- <A-F9>
 -- <S-F6> == <F18>
 nnoremap("<F18>", function()
     dap.set_breakpoint(vim.fn.input( Breakpoint condition:  ))
 end)
-nnoremap("<F2>", function()
-    dap.run_to_cursor()
-end)
+nnoremap("<F2>", dap.run_to_cursor)
 
 -- Visual evaluation 
 vnoremap("<F5>", "<Cmd>lua require(\"dapui\").eval()<CR>")
@@ -61,6 +57,7 @@ nnoremap("<F12>", function()
     dapui.toggle(2)
 end)
 
+-- rr dap
 local rr_dap = require("nvim-dap-rr")
 rr_dap.setup({
     mappings = {
@@ -80,8 +77,6 @@ rr_dap.setup({
         reverse_step_into_i = "<F46>", -- <SC-F10>
     }
 })
-
-
 table.insert(dap.configurations.rust, rr_dap.get_rust_config())
 table.insert(dap.configurations.cpp, rr_dap.get_config())
 
@@ -111,10 +106,10 @@ dapui.setup({
     {
       elements = {
       -- Elements can be strings or table with id and size keys.
-        { id = "scopes", size = 0.25 },
+        "watches",
         "breakpoints",
         "stacks",
-        "watches",
+        { id = "scopes", size = 0.25 },
       },
       size = 40, -- 40 columns
       position = "left",

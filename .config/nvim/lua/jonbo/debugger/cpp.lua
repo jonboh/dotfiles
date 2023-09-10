@@ -9,7 +9,7 @@ dap.configurations.cpp = {
         type = "codelldb",
         request = "launch",
         program = debug_utils.get_program,
-        cwd =  ${workspaceFolder} ,
+        cwd= vim.fn.getcwd,
         stopOnEntry = true,
     },
     {
@@ -17,7 +17,7 @@ dap.configurations.cpp = {
         type = "cppdbg",
         request = "launch",
         program = debug_utils.get_program,
-        cwd =  ${workspaceFolder} ,
+        cwd= vim.fn.getcwd,
         stopAtEntry = true,
     },
 }
