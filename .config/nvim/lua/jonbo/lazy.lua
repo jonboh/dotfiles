@@ -134,6 +134,7 @@ require("lazy").setup({
     "mfussenegger/nvim-dap-python", -- configs for debugpy
     "theHamsta/nvim-dap-virtual-text",
      jbyuki/one-small-step-for-vimkind ,
+    {"jonboh/nvim-dap-rr", dependencies = {"nvim-dap", "telescope.nvim"}, dev=true},
 
     -- Obsidian
      epwalsh/obsidian.nvim ,
@@ -164,4 +165,9 @@ require("lazy").setup({
     -- TODO: configure snippets
     -- TODO: https://github.com/Houl/repmo-vim
 }, {
+    dev = {
+        path="~/devel",
+        patterns = {},
+        fallback=false
+    }
 })
