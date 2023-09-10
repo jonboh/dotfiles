@@ -134,7 +134,7 @@ require("lazy").setup({
     "mfussenegger/nvim-dap-python", -- configs for debugpy
     "theHamsta/nvim-dap-virtual-text",
      jbyuki/one-small-step-for-vimkind ,
-    {"jonboh/nvim-dap-rr", dependencies = {"nvim-dap", "telescope.nvim"}, dev=true},
+    {"jonboh/nvim-dap-rr", dependencies = {"nvim-dap", "telescope.nvim"}},
 
     -- Obsidian
      epwalsh/obsidian.nvim ,
