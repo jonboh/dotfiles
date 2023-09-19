@@ -16,6 +16,8 @@ systemctl start --user xdg-desktop-portal.service
 
 export SSH_ASKPASS=ssh-askpass
 
+xset r rate 175 60
+
 exec i3
 # log i3
 # exec i3 -V -d all &>> "$HOME/i3.log"
