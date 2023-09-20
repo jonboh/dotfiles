@@ -237,5 +237,16 @@ config.bind( <Shift-Up> ,  tab-prev )
 config.bind( <Shift-Right> ,  forward )
 config.bind( <space>o ,  spawn brave --url {url} )
 
+config.bind( <Alt-0> ,  tab-focus --no-last -1 )
+config.bind( <Alt-1> ,  tab-focus --no-last 1 )
+config.bind( <Alt-2> ,  tab-focus --no-last 2 )
+config.bind( <Alt-3> ,  tab-focus --no-last 3 )
+config.bind( <Alt-4> ,  tab-focus --no-last 4 )
+config.bind( <Alt-5> ,  tab-focus --no-last 5 )
+config.bind( <Alt-6> ,  tab-focus --no-last 6 )
+config.bind( <Alt-7> ,  tab-focus --no-last 7 )
+config.bind( <Alt-8> ,  tab-focus --no-last 8 )
+config.bind( <Alt-9> ,  tab-focus --no-last 9 )
+
 # c.content.javascript.enabled = False
 
